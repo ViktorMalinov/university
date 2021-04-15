@@ -2,6 +2,7 @@ package main.dataaccess.apigroup;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ApiGroupDaoHMapImpl implements ApiGroupDao {
 
@@ -29,6 +30,12 @@ public class ApiGroupDaoHMapImpl implements ApiGroupDao {
 	@Override
 	public void delete(Long id) {
 		datasource.remove(id);
+	}
+	
+	@Override
+	public Set<Long> keySet() {
+		Set<Long> res = datasource.keySet();
+		return res;
 	}
 
 }
