@@ -11,20 +11,20 @@ public class ApiUserDaoHMapImpl implements ApiUserDao {
 	
 	
 	@Override
-	public ApiUser create(ApiUser usr) {
-		datasource.put(usr.getId(), usr);
-		return usr;
+	public ApiUser create(ApiUser obj) {
+		datasource.put(obj.getId(), obj);
+		return obj;
 	}
 
 	@Override
 	public ApiUser get(Long id) {
-		ApiUser usr = datasource.get(id);
-		return usr;	}
+		ApiUser obj = datasource.get(id);
+		return obj;	
+	}
 
 	@Override
-	public void update(ApiUser usr) {
-		datasource.put(usr.getId(), usr);
-
+	public void update(ApiUser obj) {
+		datasource.put(obj.getId(), obj);
 	}
 
 	@Override

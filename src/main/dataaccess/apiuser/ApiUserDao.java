@@ -3,9 +3,9 @@ package main.dataaccess.apiuser;
 
 public interface ApiUserDao {
 
-	ApiUser create(ApiUser usr);
+	ApiUser create(ApiUser obj);
 	ApiUser get(Long id);
-	void update(ApiUser usr);
+	void update(ApiUser obj);
 	void delete(Long id);
 	
 }

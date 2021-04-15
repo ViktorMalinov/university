@@ -7,20 +7,6 @@ public class ApiGroupParam {
 	private String name;
 	private String description;
 	
-	public ApiGroupParam() {
-		this.id = 0L;
-		this.code = 0L;
-		this.name = "";
-		this.description = "";
-	}
-
-	
-	public ApiGroupParam(Long id, Long code, String name, String description) {
-		this.id = id;
-		this.code = code;
-		this.name = name;
-		this.description = description;
-	}
 
 
 	public Long getId() {

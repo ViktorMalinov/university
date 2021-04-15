@@ -1,13 +1,13 @@
-package main.dataaccess.apiuser;
+package main.dataaccess.department;
 
-public class ApiUser {
+public class Department {
 
 	private Long id;
 	private Long code;
 	private String name;
 	private String description;
-
 	
+
 
 	public Long getId() {
 		return id;
@@ -48,7 +48,6 @@ public class ApiUser {
 		this.description = description;
 	}
 
-	
 	
 	
 }

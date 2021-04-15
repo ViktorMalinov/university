@@ -2,8 +2,8 @@ package main.dataaccess.apigroupuser;
 
 public interface ApiGroupUserDao {
 
-	ApiGroupUser create(ApiGroupUser gu);
+	ApiGroupUser create(ApiGroupUser obj);
 	ApiGroupUser get(Long id);
-	void update(ApiGroupUser gu);
+	void update(ApiGroupUser obj);
 	void delete(Long id);
 }

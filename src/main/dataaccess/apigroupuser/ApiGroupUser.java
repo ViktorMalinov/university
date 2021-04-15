@@ -8,21 +8,6 @@ public class ApiGroupUser {
 	private String description;
 	
 	
-	public ApiGroupUser() {
-		this.id = 0L;
-		this.code = 0L;
-		this.name = "";
-		this.description = "";
-	}
-
-
-	public ApiGroupUser(Long id, Long code, String name, String description) {
-		this.id = id;
-		this.code = code;
-		this.name = name;
-		this.description = description;
-	}
-
 
 	public Long getId() {
 		return id;
