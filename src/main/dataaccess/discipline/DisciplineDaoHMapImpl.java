@@ -2,6 +2,7 @@ package main.dataaccess.discipline;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 
 public class DisciplineDaoHMapImpl implements DisciplineDao {
@@ -29,5 +30,12 @@ public class DisciplineDaoHMapImpl implements DisciplineDao {
 	public void delete(Long id) {
 		datasource.remove(id);
 	}
+	
+	@Override
+	public Set<Long> getKeySet() {
+		Set<Long> res = datasource.keySet();
+		return res;
+	}
+
 
 }

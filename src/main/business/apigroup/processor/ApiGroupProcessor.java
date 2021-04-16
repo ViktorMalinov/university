@@ -5,9 +5,9 @@ import main.service.apigroup.ApiGroupResult;
 
 public interface ApiGroupProcessor {
 
-	ApiGroupResult create(ApiGroupParam obj);
+	ApiGroupResult create(ApiGroupParam param);
 	ApiGroupResult get(Long id);
-	void update(ApiGroupParam obj);
+	void update(ApiGroupParam param);
 	void delete(Long id);
 
 }

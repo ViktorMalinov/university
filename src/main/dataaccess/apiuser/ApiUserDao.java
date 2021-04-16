@@ -1,5 +1,6 @@
 package main.dataaccess.apiuser;
 
+import java.util.Set;
 
 public interface ApiUserDao {
 
@@ -7,5 +8,5 @@ public interface ApiUserDao {
 	ApiUser get(Long id);
 	void update(ApiUser obj);
 	void delete(Long id);
-	
+	Set<Long> getKeySet();
 }

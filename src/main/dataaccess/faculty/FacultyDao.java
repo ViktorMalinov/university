@@ -1,5 +1,6 @@
 package main.dataaccess.faculty;
 
+import java.util.Set;
 
 public interface FacultyDao {
 
@@ -7,5 +8,5 @@ public interface FacultyDao {
 	Faculty get(Long id);
 	void update(Faculty obj);
 	void delete(Long id);
-
+	Set<Long> getKeySet();
 }

@@ -2,6 +2,7 @@ package main.dataaccess.speciality;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 
 public class SpecialityDaoHMapImpl implements SpecialityDao {
@@ -29,6 +30,12 @@ public class SpecialityDaoHMapImpl implements SpecialityDao {
 	@Override
 	public void delete(Long id) {
 		datasource.remove(id);
+	}
+
+	@Override
+	public Set<Long> getKeySet() {
+		Set<Long> res = datasource.keySet();
+		return res;
 	}
 
 }

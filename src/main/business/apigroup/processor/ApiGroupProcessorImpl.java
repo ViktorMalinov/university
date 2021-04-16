@@ -5,12 +5,13 @@ import main.business.apigroup.transformer.ApiGroupParamTransformer;
 import main.business.apigroup.transformer.ApiGroupParamTransformerImpl;
 import main.business.apigroup.transformer.ApiGroupResultTransformer;
 import main.business.apigroup.transformer.ApiGroupResultTransformerImpl;
+import main.common.Utils;
 import main.dataaccess.apigroup.ApiGroup;
 import main.dataaccess.apigroup.ApiGroupDao;
 import main.dataaccess.apigroup.ApiGroupDaoHMapImpl;
 import main.service.apigroup.ApiGroupParam;
 import main.service.apigroup.ApiGroupResult;
-import main.common.*;
+
 
 public class ApiGroupProcessorImpl implements ApiGroupProcessor {
 
@@ -20,36 +21,34 @@ public class ApiGroupProcessorImpl implements ApiGroupProcessor {
 	
 	
 	@Override
-	public ApiGroupResult create(ApiGroupParam obj) {
-		ApiGroup dbObj = paramTransformer.transform(obj); 
-		Set<Long> idSet = db.keySet();
-		Long id = getNextId(idSet);
-				
+	public ApiGroupResult create(ApiGroupParam param) {
+		ApiGroup entity = paramTransformer.transform(param); 
+		Set<Long> idSet = db.getKeySet();		// get all id's from db object
+		Long id = Utils.getNextId(idSet); 	// get next id
+		entity.setId(id);		
 		
-		dbObj = db.create(dbObj);
+		entity = db.create(entity);
 		
-		ApiGroupResult res = resultTransformer.transform(dbObj);
-		return res;
+		ApiGroupResult result = resultTransformer.transform(entity);
+		return result;
 	}
-
-	
 	
 	@Override
 	public ApiGroupResult get(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		ApiGroup entity = db.get(id);
+		ApiGroupResult result = resultTransformer.transform(entity);
+		return result;
 	}
 
 	@Override
-	public void update(ApiGroupParam obj) {
-		// TODO Auto-generated method stub
-
+	public void update(ApiGroupParam param) {
+		ApiGroup entity = paramTransformer.transform(param);
+		db.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
-
+		db.delete(id);
 	}
 
 }

@@ -1,5 +1,6 @@
 package main.dataaccess.lecturer;
 
+import java.util.Set;
 
 public interface LecturerDao {
 
@@ -7,5 +8,5 @@ public interface LecturerDao {
 	Lecturer get(Long id);
 	void update(Lecturer obj);
 	void delete(Long id);
-
+	Set<Long> getKeySet();
 }

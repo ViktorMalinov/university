@@ -2,6 +2,7 @@ package main.dataaccess.faculty;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 
 public class FacultyDaoHMapImpl implements FacultyDao {
@@ -30,6 +31,12 @@ public class FacultyDaoHMapImpl implements FacultyDao {
 	@Override
 	public void delete(Long id) {
 		datasource.remove(id);
+	}
+
+	@Override
+	public Set<Long> getKeySet() {
+		Set<Long> res = datasource.keySet();
+		return res;
 	}
 
 }

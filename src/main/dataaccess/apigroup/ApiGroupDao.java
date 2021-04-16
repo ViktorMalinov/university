@@ -8,5 +8,5 @@ public interface ApiGroupDao {
 	ApiGroup get(Long id);
 	void update(ApiGroup obj);
 	void delete(Long id);
-	Set<Long> keySet();
+	Set<Long> getKeySet();
 }

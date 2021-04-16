@@ -2,6 +2,7 @@ package main.dataaccess.department;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 
 public class DepartmentDaoHMapImpl implements DepartmentDao {
@@ -32,5 +33,12 @@ public class DepartmentDaoHMapImpl implements DepartmentDao {
 		datasource.remove(id);
 
 	}
+	
+	@Override
+	public Set<Long> getKeySet() {
+		Set<Long> res = datasource.keySet();
+		return res;
+	}
+
 
 }

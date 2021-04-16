@@ -33,9 +33,10 @@ public class ApiGroupDaoHMapImpl implements ApiGroupDao {
 	}
 	
 	@Override
-	public Set<Long> keySet() {
+	public Set<Long> getKeySet() {
 		Set<Long> res = datasource.keySet();
 		return res;
 	}
+
 
 }
