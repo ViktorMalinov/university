@@ -6,6 +6,7 @@ public class SpecialityParam {
 	private Long code;
 	private String name;
 	private String description;
+	private Long facultyId;
 	
 	public Long getId() {
 		return id;
@@ -30,6 +31,12 @@ public class SpecialityParam {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public Long getFacultyId() {
+		return facultyId;
+	}
+	public void setFacultyId(Long facultyId) {
+		this.facultyId = facultyId;
 	}
 	
 }

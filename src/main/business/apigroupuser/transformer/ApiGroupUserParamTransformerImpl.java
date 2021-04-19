@@ -10,9 +10,8 @@ public class ApiGroupUserParamTransformerImpl implements ApiGroupUserParamTransf
 		ApiGroupUser res = new ApiGroupUser();
 		
 		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
+		res.setApiGroupId(obj.getApiGroupId());
+		res.setApiUserId(obj.getApiUserId());
 		
 		return res;
 	}

@@ -3,9 +3,8 @@ package main.dataaccess.apigroupuser;
 public class ApiGroupUser {
 
 	private Long id;
-	private Long code;
-	private String name;
-	private String description;
+	private Long apiGroupId;
+	private Long apiUserId;
 	
 	
 
@@ -19,33 +18,23 @@ public class ApiGroupUser {
 	}
 
 
-	public Long getCode() {
-		return code;
+	public Long getApiUserId() {
+		return apiUserId;
 	}
 
 
-	public void setCode(Long code) {
-		this.code = code;
+	public void setApiUserId(Long apiUserId) {
+		this.apiUserId = apiUserId;
 	}
 
 
-	public String getName() {
-		return name;
+	public Long getApiGroupId() {
+		return apiGroupId;
 	}
 
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public String getDescription() {
-		return description;
-	}
-
-
-	public void setDescription(String description) {
-		this.description = description;
+	public void setApiGroupId(Long apiGroupId) {
+		this.apiGroupId = apiGroupId;
 	}
 	
 	

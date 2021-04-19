@@ -14,6 +14,10 @@ public class LecturerResultTransformerImpl implements LecturerResultTransformer 
 		res.setName(obj.getName());
 		res.setDescription(obj.getDescription());
 		
+		res.setFamilyName(obj.getFamilyName());
+		res.setApiUserId(obj.getApiUserId());
+		res.setDepartmentId(obj.getDepartmentId());
+		
 		return res;
 	}
 

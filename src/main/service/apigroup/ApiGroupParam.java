@@ -6,7 +6,7 @@ public class ApiGroupParam {
 	private Long code;
 	private String name;
 	private String description;
-	
+	private String displayName;
 
 
 	public Long getId() {
@@ -46,6 +46,16 @@ public class ApiGroupParam {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 	

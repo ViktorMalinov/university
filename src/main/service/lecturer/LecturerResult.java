@@ -6,8 +6,23 @@ public class LecturerResult {
 	private Long code;
 	private String name;
 	private String description;
+	private String familyName;
+	private Long apiUserId;
+	private Long departmentId;
 	
 	
+	public Long getApiUserId() {
+		return apiUserId;
+	}
+	public void setApiUserId(Long apiUserId) {
+		this.apiUserId = apiUserId;
+	}
+	public Long getDepartmentId() {
+		return departmentId;
+	}
+	public void setDepartmentId(Long departmentId) {
+		this.departmentId = departmentId;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -32,7 +47,12 @@ public class LecturerResult {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public String getFamilyName() {
+		return familyName;
+	}
+	public void setFamilyName(String familyName) {
+		this.familyName = familyName;
+	}
 
-	
 	
 }

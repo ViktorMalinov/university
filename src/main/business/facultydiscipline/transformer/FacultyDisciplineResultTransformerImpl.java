@@ -10,9 +10,8 @@ public class FacultyDisciplineResultTransformerImpl implements FacultyDiscipline
 		FacultyDisciplineResult res = new FacultyDisciplineResult();
 		
 		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
+		res.setDisciplineId(obj.getDisciplineId());
+		res.setFacultyId(obj.getFacultyId());
 		
 		return res;
 	}

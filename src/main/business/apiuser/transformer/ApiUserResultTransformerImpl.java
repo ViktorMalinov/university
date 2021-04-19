@@ -11,8 +11,11 @@ public class ApiUserResultTransformerImpl implements ApiUserResultTransformer {
 		
 		res.setId(obj.getId());
 		res.setCode(obj.getCode());
-		res.setName(obj.getName());
 		res.setDescription(obj.getDescription());
+		res.setDisplayName(obj.getDisplayName());
+		res.setEmail(obj.getEmail());
+		res.setPassword(obj.getPassword());		
+		res.setUsername(obj.getUsername());
 		
 		return res;
 	}

@@ -13,6 +13,7 @@ public class DepartmentParamTransformerImpl implements DepartmentParamTransforme
 		res.setCode(obj.getCode());
 		res.setName(obj.getName());
 		res.setDescription(obj.getDescription());
+		res.setFacultyId(obj.getFacultyId());
 		
 		return res;
 	}

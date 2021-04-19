@@ -13,6 +13,7 @@ public class ApiGroupResultTransformerImpl implements ApiGroupResultTransformer 
 		res.setCode(obj.getCode());
 		res.setName(obj.getName());
 		res.setDescription(obj.getDescription());
+		res.setDisplayName(obj.getDisplayName());
 		
 		return res;
 	}

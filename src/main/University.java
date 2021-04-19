@@ -8,6 +8,34 @@ import main.service.apigroupuser.ApiGroupUserParam;
 import main.service.apigroupuser.ApiGroupUserResult;
 import main.service.apigroupuser.ApiGroupUserService;
 import main.service.apigroupuser.ApiGroupUserServiceImpl;
+import main.service.apiuser.ApiUserParam;
+import main.service.apiuser.ApiUserResult;
+import main.service.apiuser.ApiUserService;
+import main.service.apiuser.ApiUserServiceImpl;
+import main.service.department.DepartmentParam;
+import main.service.department.DepartmentResult;
+import main.service.department.DepartmentService;
+import main.service.department.DepartmentServiceImpl;
+import main.service.discipline.DisciplineParam;
+import main.service.discipline.DisciplineResult;
+import main.service.discipline.DisciplineService;
+import main.service.discipline.DisciplineServiceImpl;
+import main.service.faculty.FacultyParam;
+import main.service.faculty.FacultyResult;
+import main.service.faculty.FacultyService;
+import main.service.faculty.FacultyServiceImpl;
+import main.service.facultydiscipline.FacultyDisciplineParam;
+import main.service.facultydiscipline.FacultyDisciplineResult;
+import main.service.facultydiscipline.FacultyDisciplineService;
+import main.service.facultydiscipline.FacultyDisciplineServiceImpl;
+import main.service.lecturer.LecturerParam;
+import main.service.lecturer.LecturerResult;
+import main.service.lecturer.LecturerService;
+import main.service.lecturer.LecturerServiceImpl;
+import main.service.speciality.SpecialityParam;
+import main.service.speciality.SpecialityResult;
+import main.service.speciality.SpecialityService;
+import main.service.speciality.SpecialityServiceImpl;
 
 public class University {
 
@@ -16,10 +44,17 @@ public class University {
 		apiGroupTest(); 
 		apiGroupUserTest();
 		
+		// ApiUserTest();
+		// DepartmentTest();
+		// DisciplineTest();
+		// FacultyTest();
+		// FacultyDisciplineTest();
+		// LecturerTest();
+		// SpecialityTest();
+		
+		
 		System.out.println("");
 	}
-	
-	
 	
 	
 	
@@ -36,23 +71,26 @@ public class University {
 		param.setCode(10L);
 		param.setName("Group 1");
 		param.setDescription("First group ever... :)");
+		param.setDisplayName("Display Name AG");
 		apiGroup.create(param);
 
 		param.setCode(20L);
 		param.setName("Group 2");
 		param.setDescription("Secong group ever... :)");
+		param.setDisplayName("Display Name AG - 2");
 		apiGroup.create(param);
 
 		param.setCode(30L);
 		param.setName("Group 3");
 		param.setDescription("Last group ever... :)");
+		param.setDisplayName("Display Name AG-3");
 		
 		// get
 		ApiGroupResult res =  apiGroup.get(1L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, code: %d, name: %s, description: %s , displayName: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription(), res.getDisplayName());
 		
 		res =  apiGroup.get(2L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, code: %d, name: %s, description: %s , displayName: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription(), res.getDisplayName());
 		
 		// update
 		param.setId(res.getId());
@@ -61,7 +99,7 @@ public class University {
 		param.setName("Group 2a");
 		apiGroup.update(param);
 		res =  apiGroup.get(2L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, code: %d, name: %s, description: %s , displayName: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription(), res.getDisplayName());
 		
 		// delete
 		apiGroup.delete(3L); // deleting group 
@@ -80,35 +118,29 @@ public class University {
 		System.out.println("------ ApiGroupUser TEST ----------");
 		// create
 		//param.setId(id);
-		param.setCode(11L);
-		param.setName("Group 11");
-		param.setDescription("11 First group ever... :)");
+		param.setApiGroupId(123L);
+		param.setApiUserId(12L);
 		apiGroupUser.create(param);
 
-		param.setCode(20L);
-		param.setName("Group 2");
-		param.setDescription("Secong group ever... :)");
+		param.setApiGroupId(12L);
+		param.setApiUserId(1L);
 		apiGroupUser.create(param);
 
-		param.setCode(30L);
-		param.setName("Group 3");
-		param.setDescription("Last group ever... :)");
+		param.setApiGroupId(1000L);
+		param.setApiUserId(2000L);
+		apiGroupUser.create(param);
 		
 		// get
 		ApiGroupUserResult res =  apiGroupUser.get(1L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, Groupid: %d, user id: %d%n", res.getId(), res.getApiGroupId(), res.getApiUserId());
 		
 		res =  apiGroupUser.get(2L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
-		
+		System.out.printf("id: %d, Groupid: %d, user id: %d%n", res.getId(), res.getApiGroupId(), res.getApiUserId());
+
+		res =  apiGroupUser.get(3L);
+		System.out.printf("id: %d, Groupid: %d, user id: %d%n", res.getId(), res.getApiGroupId(), res.getApiUserId());
+
 		// update
-		param.setId(res.getId());
-		param.setDescription(res.getDescription());
-		param.setCode(21L);
-		param.setName("Group 2a");
-		apiGroupUser.update(param);
-		res =  apiGroupUser.get(2L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
 		
 		// delete
 		apiGroupUser.delete(3L); // deleting group 
@@ -118,6 +150,355 @@ public class University {
 		System.out.println();
 	}
 
+	
+	/*
+	
+	public static void ApiUserTest() {
+		ApiUserService аpiUser = new ApiUserServiceImpl(); 
+		ApiUserParam param = new ApiUserParam();
+		
+		
+		System.out.println("------ ApiUser TEST ----------");
+		// create
+		//param.setId(id);
+		param.setCode(10L);
+		param.setName("Group 1");
+		param.setDescription("First group ever... :)");
+		аpiUser.create(param);
+
+		param.setCode(20L);
+		param.setName("Group 2");
+		param.setDescription("Secong group ever... :)");
+		аpiUser.create(param);
+
+		param.setCode(30L);
+		param.setName("Group 3");
+		param.setDescription("Last group ever... :)");
+		
+		// get
+		ApiUserResult res =  аpiUser.get(1L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		res =  аpiUser.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// update
+		param.setId(res.getId());
+		param.setDescription(res.getDescription());
+		param.setCode(21L);
+		param.setName("Group 2a");
+		аpiUser.update(param);
+		res =  аpiUser.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// delete
+		аpiUser.delete(3L); // deleting group 
+		System.out.println("id: 3 was deleted...");
+		
+		System.out.println();
+		System.out.println();
+	}
+
+
+	
+	
+	
+	public static void DepartmentTest() {
+		DepartmentService Department = new DepartmentServiceImpl(); 
+		DepartmentParam param = new DepartmentParam();
+		
+		
+		System.out.println("------ Department TEST ----------");
+		// create
+		//param.setId(id);
+		param.setCode(10L);
+		param.setName("Group 1");
+		param.setDescription("First group ever... :)");
+		Department.create(param);
+
+		param.setCode(20L);
+		param.setName("Group 2");
+		param.setDescription("Secong group ever... :)");
+		Department.create(param);
+
+		param.setCode(30L);
+		param.setName("Group 3");
+		param.setDescription("Last group ever... :)");
+		
+		// get
+		DepartmentResult res =  Department.get(1L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		res =  Department.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// update
+		param.setId(res.getId());
+		param.setDescription(res.getDescription());
+		param.setCode(21L);
+		param.setName("Group 2a");
+		Department.update(param);
+		res =  Department.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// delete
+		Department.delete(3L); // deleting group 
+		System.out.println("id: 3 was deleted...");
+		
+		System.out.println();
+		System.out.println();
+	}
+
+
+	
+	
+	
+	public static void DisciplineTest() {
+		DisciplineService Discipline = new DisciplineServiceImpl(); 
+		DisciplineParam param = new DisciplineParam();
+		
+		
+		System.out.println("------ Discipline TEST ----------");
+		// create
+		//param.setId(id);
+		param.setCode(10L);
+		param.setName("Group 1");
+		param.setDescription("First group ever... :)");
+		Discipline.create(param);
+
+		param.setCode(20L);
+		param.setName("Group 2");
+		param.setDescription("Secong group ever... :)");
+		Discipline.create(param);
+
+		param.setCode(30L);
+		param.setName("Group 3");
+		param.setDescription("Last group ever... :)");
+		
+		// get
+		DisciplineResult res =  Discipline.get(1L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		res =  Discipline.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// update
+		param.setId(res.getId());
+		param.setDescription(res.getDescription());
+		param.setCode(21L);
+		param.setName("Group 2a");
+		Discipline.update(param);
+		res =  Discipline.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// delete
+		Discipline.delete(3L); // deleting group 
+		System.out.println("id: 3 was deleted...");
+		
+		System.out.println();
+		System.out.println();
+	}
+
+
+	
+	
+	
+	public static void FacultyTest() {
+		FacultyService Faculty = new FacultyServiceImpl(); 
+		FacultyParam param = new FacultyParam();
+		
+		
+		System.out.println("------ Faculty TEST ----------");
+		// create
+		//param.setId(id);
+		param.setCode(10L);
+		param.setName("Group 1");
+		param.setDescription("First group ever... :)");
+		Faculty.create(param);
+
+		param.setCode(20L);
+		param.setName("Group 2");
+		param.setDescription("Secong group ever... :)");
+		Faculty.create(param);
+
+		param.setCode(30L);
+		param.setName("Group 3");
+		param.setDescription("Last group ever... :)");
+		
+		// get
+		FacultyResult res =  Faculty.get(1L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		res =  Faculty.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// update
+		param.setId(res.getId());
+		param.setDescription(res.getDescription());
+		param.setCode(21L);
+		param.setName("Group 2a");
+		Faculty.update(param);
+		res =  Faculty.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// delete
+		Faculty.delete(3L); // deleting group 
+		System.out.println("id: 3 was deleted...");
+		
+		System.out.println();
+		System.out.println();
+	}
+
+	
+	
+	
+	public static void FacultyDisciplineTest() {
+		FacultyDisciplineService FacultyDiscipline = new FacultyDisciplineServiceImpl(); 
+		FacultyDisciplineParam param = new FacultyDisciplineParam();
+		
+		
+		System.out.println("------ FacultyDiscipline TEST ----------");
+		// create
+		//param.setId(id);
+		param.setCode(10L);
+		param.setName("Group 1");
+		param.setDescription("First group ever... :)");
+		FacultyDiscipline.create(param);
+
+		param.setCode(20L);
+		param.setName("Group 2");
+		param.setDescription("Secong group ever... :)");
+		FacultyDiscipline.create(param);
+
+		param.setCode(30L);
+		param.setName("Group 3");
+		param.setDescription("Last group ever... :)");
+		
+		// get
+		FacultyDisciplineResult res =  FacultyDiscipline.get(1L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		res =  FacultyDiscipline.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// update
+		param.setId(res.getId());
+		param.setDescription(res.getDescription());
+		param.setCode(21L);
+		param.setName("Group 2a");
+		FacultyDiscipline.update(param);
+		res =  FacultyDiscipline.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// delete
+		FacultyDiscipline.delete(3L); // deleting group 
+		System.out.println("id: 3 was deleted...");
+		
+		System.out.println();
+		System.out.println();
+	}
+
+
+	
+	
+	
+	public static void LecturerTest() {
+		LecturerService Lecturer = new LecturerServiceImpl(); 
+		LecturerParam param = new LecturerParam();
+		
+		
+		System.out.println("------ Lecturer TEST ----------");
+		// create
+		//param.setId(id);
+		param.setCode(10L);
+		param.setName("Group 1");
+		param.setDescription("First group ever... :)");
+		Lecturer.create(param);
+
+		param.setCode(20L);
+		param.setName("Group 2");
+		param.setDescription("Secong group ever... :)");
+		Lecturer.create(param);
+
+		param.setCode(30L);
+		param.setName("Group 3");
+		param.setDescription("Last group ever... :)");
+		
+		// get
+		LecturerResult res =  Lecturer.get(1L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		res =  Lecturer.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// update
+		param.setId(res.getId());
+		param.setDescription(res.getDescription());
+		param.setCode(21L);
+		param.setName("Group 2a");
+		Lecturer.update(param);
+		res =  Lecturer.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// delete
+		Lecturer.delete(3L); // deleting group 
+		System.out.println("id: 3 was deleted...");
+		
+		System.out.println();
+		System.out.println();
+	}
+
+
+	
+	
+	
+	public static void SpecialityTest() {
+		SpecialityService Speciality = new SpecialityServiceImpl(); 
+		SpecialityParam param = new SpecialityParam();
+		
+		
+		System.out.println("------ Speciality TEST ----------");
+		// create
+		//param.setId(id);
+		param.setCode(10L);
+		param.setName("Group 1");
+		param.setDescription("First group ever... :)");
+		Speciality.create(param);
+
+		param.setCode(20L);
+		param.setName("Group 2");
+		param.setDescription("Secong group ever... :)");
+		Speciality.create(param);
+
+		param.setCode(30L);
+		param.setName("Group 3");
+		param.setDescription("Last group ever... :)");
+		
+		// get
+		SpecialityResult res =  Speciality.get(1L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		res =  Speciality.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// update
+		param.setId(res.getId());
+		param.setDescription(res.getDescription());
+		param.setCode(21L);
+		param.setName("Group 2a");
+		Speciality.update(param);
+		res =  Speciality.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// delete
+		Speciality.delete(3L); // deleting group 
+		System.out.println("id: 3 was deleted...");
+		
+		System.out.println();
+		System.out.println();
+	}
+
+*/
 	
 	
 

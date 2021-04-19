@@ -10,9 +10,8 @@ public class FacultyDisciplineParamTransformerImpl implements FacultyDisciplineP
 		FacultyDiscipline res = new FacultyDiscipline();
 		
 		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
+		res.setDisciplineId(obj.getDisciplineId());
+		res.setFacultyId(obj.getFacultyId());
 		
 		return res;
 	}

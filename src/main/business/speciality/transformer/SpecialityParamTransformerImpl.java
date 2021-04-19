@@ -14,6 +14,8 @@ public class SpecialityParamTransformerImpl implements SpecialityParamTransforme
 		res.setName(obj.getName());
 		res.setDescription(obj.getDescription());
 		
+		res.setFacultyId(obj.getFacultyId());
+		
 		return res;
 	}
 
