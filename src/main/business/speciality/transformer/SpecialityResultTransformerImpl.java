@@ -6,17 +6,17 @@ import main.service.speciality.SpecialityResult;
 public class SpecialityResultTransformerImpl implements SpecialityResultTransformer {
 
 	@Override
-	public SpecialityResult transform(Speciality obj) {
-		SpecialityResult res = new SpecialityResult();
+	public SpecialityResult transform(Speciality entity) {
+		SpecialityResult result = new SpecialityResult();
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
+		result.setId(entity.getId());
+		result.setCode(entity.getCode());
+		result.setName(entity.getName());
+		result.setDescription(entity.getDescription());
 		
-		res.setFacultyId(obj.getFacultyId());
+		result.setFacultyId(entity.getFacultyId());
 
-		return res;
+		return result;
 	}
 
 }

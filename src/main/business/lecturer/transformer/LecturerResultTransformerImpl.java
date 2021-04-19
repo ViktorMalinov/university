@@ -6,19 +6,19 @@ import main.service.lecturer.LecturerResult;
 public class LecturerResultTransformerImpl implements LecturerResultTransformer {
 
 	@Override
-	public LecturerResult transform(Lecturer obj) {
-		LecturerResult res = new LecturerResult();
+	public LecturerResult transform(Lecturer entity) {
+		LecturerResult result = new LecturerResult();
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
+		result.setId(entity.getId());
+		result.setCode(entity.getCode());
+		result.setName(entity.getName());
+		result.setDescription(entity.getDescription());
 		
-		res.setFamilyName(obj.getFamilyName());
-		res.setApiUserId(obj.getApiUserId());
-		res.setDepartmentId(obj.getDepartmentId());
+		result.setFamilyName(entity.getFamilyName());
+		result.setApiUserId(entity.getApiUserId());
+		result.setDepartmentId(entity.getDepartmentId());
 		
-		return res;
+		return result;
 	}
 
 }

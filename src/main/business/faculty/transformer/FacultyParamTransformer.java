@@ -5,5 +5,5 @@ import main.service.faculty.FacultyParam;
 
 public interface FacultyParamTransformer {
 
-	Faculty transform(FacultyParam obj);
+	Faculty transform(FacultyParam param);
 }

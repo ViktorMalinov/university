@@ -15,7 +15,7 @@ import main.service.speciality.SpecialityResult;
 
 public class SpecialityProcessorImpl implements SpecialityProcessor {
 
-	SpecialityDao db = new SpecialityDaoHMapImpl();
+	SpecialityDao dao = new SpecialityDaoHMapImpl();
 	SpecialityParamTransformer paramTransformer = new SpecialityParamTransformerImpl(); 
 	SpecialityResultTransformer resultTransformer = new SpecialityResultTransformerImpl();
 	
@@ -23,11 +23,11 @@ public class SpecialityProcessorImpl implements SpecialityProcessor {
 	@Override
 	public SpecialityResult create(SpecialityParam param) {
 		Speciality entity = paramTransformer.transform(param); 
-		Set<Long> idSet = db.getKeySet();		// get all id's from db object
+		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
 		entity.setId(id);		
 		
-		entity = db.create(entity);
+		entity = dao.create(entity);
 		
 		SpecialityResult result = resultTransformer.transform(entity);
 		return result;
@@ -35,7 +35,7 @@ public class SpecialityProcessorImpl implements SpecialityProcessor {
 	
 	@Override
 	public SpecialityResult get(Long id) {
-		Speciality entity = db.get(id);
+		Speciality entity = dao.get(id);
 		SpecialityResult result = resultTransformer.transform(entity);
 		return result;
 	}
@@ -43,12 +43,12 @@ public class SpecialityProcessorImpl implements SpecialityProcessor {
 	@Override
 	public void update(SpecialityParam param) {
 		Speciality entity = paramTransformer.transform(param);
-		db.update(entity);
+		dao.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		db.delete(id);
+		dao.delete(id);
 	}
 
 }

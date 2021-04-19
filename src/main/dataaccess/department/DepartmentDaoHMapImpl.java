@@ -12,20 +12,20 @@ public class DepartmentDaoHMapImpl implements DepartmentDao {
 	
 	
 	@Override
-	public Department create(Department obj) {
-		datasource.put(obj.getId(), obj);
-		return obj;
+	public Department create(Department entity) {
+		datasource.put(entity.getId(), entity);
+		return entity;
 	}
 
 	@Override
 	public Department get(Long id) {
-		Department obj = datasource.get(id);
-		return obj;	
+		Department entity = datasource.get(id);
+		return entity;	
 	}
 
 	@Override
-	public void update(Department obj) {
-		datasource.put(obj.getId(), obj);
+	public void update(Department entity) {
+		datasource.put(entity.getId(), entity);
 	}
 
 	@Override

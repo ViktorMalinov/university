@@ -11,20 +11,20 @@ public class SpecialityDaoHMapImpl implements SpecialityDao {
 	
 	
 	@Override
-	public Speciality create(Speciality obj) {
-		datasource.put(obj.getId(), obj);
-		return obj;
+	public Speciality create(Speciality entity) {
+		datasource.put(entity.getId(), entity);
+		return entity;
 	}
 
 	@Override
 	public Speciality get(Long id) {
-		Speciality obj = datasource.get(id);
-		return obj;	
+		Speciality entity = datasource.get(id);
+		return entity;	
 	}
 
 	@Override
-	public void update(Speciality obj) {
-		datasource.put(obj.getId(), obj);
+	public void update(Speciality entity) {
+		datasource.put(entity.getId(), entity);
 	}
 
 	@Override

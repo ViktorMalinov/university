@@ -15,18 +15,18 @@ import main.service.apiuser.ApiUserResult;
 
 public class ApiUserProcessorImpl implements ApiUserProcessor {
 
-	ApiUserDao db = new ApiUserDaoHMapImpl();
+	ApiUserDao dao = new ApiUserDaoHMapImpl();
 	ApiUserParamTransformer paramTransformer = new ApiUserParamTransformerImpl(); 
 	ApiUserResultTransformer resultTransformer = new ApiUserResultTransformerImpl();
 	
 	@Override
 	public ApiUserResult create(ApiUserParam param) {
 		ApiUser entity = paramTransformer.transform(param); 
-		Set<Long> idSet = db.getKeySet();		// get all id's from db object
+		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
 		entity.setId(id);		
 		
-		entity = db.create(entity);
+		entity = dao.create(entity);
 		
 		ApiUserResult result = resultTransformer.transform(entity);
 		return result;
@@ -34,18 +34,18 @@ public class ApiUserProcessorImpl implements ApiUserProcessor {
 
 	@Override
 	public ApiUserResult get(Long id) {
-		ApiUser entity = db.get(id);
+		ApiUser entity = dao.get(id);
 		ApiUserResult result = resultTransformer.transform(entity);
 		return result;	}
 
 	@Override
 	public void update(ApiUserParam param) {
 		ApiUser entity = paramTransformer.transform(param);
-		db.update(entity);	}
+		dao.update(entity);	}
 
 	@Override
 	public void delete(Long id) {
-		db.delete(id);
+		dao.delete(id);
 	}
 
 }

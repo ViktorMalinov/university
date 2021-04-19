@@ -5,5 +5,5 @@ import main.service.faculty.FacultyResult;
 
 public interface FacultyResultTransformer {
 	
-	FacultyResult transform(Faculty obj);
+	FacultyResult transform(Faculty entity);
 }

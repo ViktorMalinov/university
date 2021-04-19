@@ -15,7 +15,7 @@ import main.service.discipline.DisciplineResult;
 
 public class DisciplineProcessorImpl implements DisciplineProcessor {
 
-	DisciplineDao db = new DisciplineDaoHMapImpl();
+	DisciplineDao dao = new DisciplineDaoHMapImpl();
 	DisciplineParamTransformer paramTransformer = new DisciplineParamTransformerImpl(); 
 	DisciplineResultTransformer resultTransformer = new DisciplineResultTransformerImpl();
 	
@@ -23,11 +23,11 @@ public class DisciplineProcessorImpl implements DisciplineProcessor {
 	@Override
 	public DisciplineResult create(DisciplineParam param) {
 		Discipline entity = paramTransformer.transform(param); 
-		Set<Long> idSet = db.getKeySet();		// get all id's from db object
+		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
 		entity.setId(id);		
 		
-		entity = db.create(entity);
+		entity = dao.create(entity);
 		
 		DisciplineResult result = resultTransformer.transform(entity);
 		return result;
@@ -35,7 +35,7 @@ public class DisciplineProcessorImpl implements DisciplineProcessor {
 	
 	@Override
 	public DisciplineResult get(Long id) {
-		Discipline entity = db.get(id);
+		Discipline entity = dao.get(id);
 		DisciplineResult result = resultTransformer.transform(entity);
 		return result;
 	}
@@ -43,12 +43,12 @@ public class DisciplineProcessorImpl implements DisciplineProcessor {
 	@Override
 	public void update(DisciplineParam param) {
 		Discipline entity = paramTransformer.transform(param);
-		db.update(entity);
+		dao.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		db.delete(id);
+		dao.delete(id);
 	}
 
 }

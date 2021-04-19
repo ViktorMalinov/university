@@ -5,5 +5,5 @@ import main.service.department.DepartmentParam;
 
 public interface DepartmentParamTransformer {
 
-	Department transform(DepartmentParam obj);
+	Department transform(DepartmentParam param);
 }

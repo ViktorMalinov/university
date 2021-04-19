@@ -9,20 +9,20 @@ public class ApiGroupUserDaoHMapImpl implements ApiGroupUserDao {
 	private static Map<Long, ApiGroupUser> datasource = new HashMap<Long, ApiGroupUser>();
 	
 	@Override
-	public ApiGroupUser create(ApiGroupUser obj) {
-		datasource.put(obj.getId(), obj);
-		return obj;
+	public ApiGroupUser create(ApiGroupUser entity) {
+		datasource.put(entity.getId(), entity);
+		return entity;
 	}
 
 	@Override
 	public ApiGroupUser get(Long id) {
-		ApiGroupUser obj = datasource.get(id);
-		return obj;
+		ApiGroupUser entity = datasource.get(id);
+		return entity;
 	}
 
 	@Override
-	public void update(ApiGroupUser obj) {
-		datasource.put(obj.getId(), obj);
+	public void update(ApiGroupUser entity) {
+		datasource.put(entity.getId(), entity);
 
 	}
 

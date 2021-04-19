@@ -12,20 +12,20 @@ public class FacultyDaoHMapImpl implements FacultyDao {
 	
 	
 	@Override
-	public Faculty create(Faculty obj) {
-		datasource.put(obj.getId(), obj);
-		return obj;
+	public Faculty create(Faculty entity) {
+		datasource.put(entity.getId(), entity);
+		return entity;
 	}
 
 	@Override
 	public Faculty get(Long id) {
-		Faculty obj = datasource.get(id);
-		return obj;	
+		Faculty entity = datasource.get(id);
+		return entity;	
 	}
 
 	@Override
-	public void update(Faculty obj) {
-		datasource.put(obj.getId(), obj);
+	public void update(Faculty entity) {
+		datasource.put(entity.getId(), entity);
 	}
 
 	@Override

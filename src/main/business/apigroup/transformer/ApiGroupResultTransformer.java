@@ -5,5 +5,5 @@ import main.service.apigroup.ApiGroupResult;
 
 public interface ApiGroupResultTransformer {
 
-	ApiGroupResult transform(ApiGroup obj);
+	ApiGroupResult transform(ApiGroup entity);
 }

@@ -5,6 +5,6 @@ import main.service.apiuser.ApiUserParam;
 
 public interface ApiUserParamTransformer {
 	
-	ApiUser transform(ApiUserParam obj);
+	ApiUser transform(ApiUserParam param);
 
 }

@@ -6,15 +6,15 @@ import main.service.discipline.DisciplineParam;
 public class DisciplineParamTransformerImpl implements DisciplineParamTransformer {
 
 	@Override
-	public Discipline transform(DisciplineParam obj) {
-		Discipline res = new Discipline();
+	public Discipline transform(DisciplineParam param) {
+		Discipline entity = new Discipline();
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
+		entity.setId(param.getId());
+		entity.setCode(param.getCode());
+		entity.setName(param.getName());
+		entity.setDescription(param.getDescription());
 		
-		return res;
+		return entity;
 	}
 
 }

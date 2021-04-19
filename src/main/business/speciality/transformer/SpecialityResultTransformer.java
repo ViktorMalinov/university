@@ -5,5 +5,5 @@ import main.service.speciality.SpecialityResult;
 
 public interface SpecialityResultTransformer {
 
-	SpecialityResult transform(Speciality obj);
+	SpecialityResult transform(Speciality entity);
 }

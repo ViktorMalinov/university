@@ -6,16 +6,16 @@ import main.service.apigroup.ApiGroupResult;
 public class ApiGroupResultTransformerImpl implements ApiGroupResultTransformer {
 
 	@Override
-	public ApiGroupResult transform(ApiGroup obj) {
-		ApiGroupResult res = new ApiGroupResult();
+	public ApiGroupResult transform(ApiGroup entity) {
+		ApiGroupResult result = new ApiGroupResult();
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
-		res.setDisplayName(obj.getDisplayName());
+		result.setId(entity.getId());
+		result.setCode(entity.getCode());
+		result.setName(entity.getName());
+		result.setDescription(entity.getDescription());
+		result.setDisplayName(entity.getDisplayName());
 		
-		return res;
+		return result;
 	}
 
 }

@@ -6,14 +6,14 @@ import main.service.apigroupuser.ApiGroupUserResult;
 public class ApiGroupUserResultTransformerImpl implements ApiGroupUserResultTransformer {
 
 	@Override
-	public ApiGroupUserResult transform(ApiGroupUser obj) {
-		ApiGroupUserResult res = new ApiGroupUserResult();
+	public ApiGroupUserResult transform(ApiGroupUser entity) {
+		ApiGroupUserResult result = new ApiGroupUserResult();
 		
-		res.setId(obj.getId());
-		res.setApiGroupId(obj.getApiGroupId());
-		res.setApiUserId(obj.getApiUserId());
+		result.setId(entity.getId());
+		result.setApiGroupId(entity.getApiGroupId());
+		result.setApiUserId(entity.getApiUserId());
 		
-		return res;
+		return result;
 	}
 
 }

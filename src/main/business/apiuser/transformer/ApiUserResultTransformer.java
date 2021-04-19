@@ -5,5 +5,5 @@ import main.service.apiuser.ApiUserResult;
 
 public interface ApiUserResultTransformer {
 
-	ApiUserResult transform(ApiUser obj);
+	ApiUserResult transform(ApiUser entity);
 }

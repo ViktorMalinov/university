@@ -6,19 +6,19 @@ import main.service.apiuser.ApiUserParam;
 public class ApiUserParamTransformerImpl implements ApiUserParamTransformer {
 
 	@Override
-	public ApiUser transform(ApiUserParam obj) {
-		ApiUser res = new ApiUser();
+	public ApiUser transform(ApiUserParam param) {
+		ApiUser entity = new ApiUser();
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setDescription(obj.getDescription());
-		res.setDisplayName(obj.getDisplayName());
-		res.setEmail(obj.getEmail());
-		res.setPassword(obj.getPassword());		
-		res.setUsername(obj.getUsername());
+		entity.setId(param.getId());
+		entity.setCode(param.getCode());
+		entity.setDescription(param.getDescription());
+		entity.setDisplayName(param.getDisplayName());
+		entity.setEmail(param.getEmail());
+		entity.setPassword(param.getPassword());		
+		entity.setUsername(param.getUsername());
 		
 		
-		return res;
+		return entity;
 	}
 
 }

@@ -15,7 +15,7 @@ import main.service.apigroup.ApiGroupResult;
 
 public class ApiGroupProcessorImpl implements ApiGroupProcessor {
 
-	ApiGroupDao db = new ApiGroupDaoHMapImpl();
+	ApiGroupDao dao = new ApiGroupDaoHMapImpl();
 	ApiGroupParamTransformer paramTransformer = new ApiGroupParamTransformerImpl(); 
 	ApiGroupResultTransformer resultTransformer = new ApiGroupResultTransformerImpl();
 	
@@ -23,11 +23,11 @@ public class ApiGroupProcessorImpl implements ApiGroupProcessor {
 	@Override
 	public ApiGroupResult create(ApiGroupParam param) {
 		ApiGroup entity = paramTransformer.transform(param); 
-		Set<Long> idSet = db.getKeySet();		// get all id's from db object
+		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
 		entity.setId(id);		
 		
-		entity = db.create(entity);
+		entity = dao.create(entity);
 		
 		ApiGroupResult result = resultTransformer.transform(entity);
 		return result;
@@ -35,7 +35,7 @@ public class ApiGroupProcessorImpl implements ApiGroupProcessor {
 	
 	@Override
 	public ApiGroupResult get(Long id) {
-		ApiGroup entity = db.get(id);
+		ApiGroup entity = dao.get(id);
 		ApiGroupResult result = resultTransformer.transform(entity);
 		return result;
 	}
@@ -43,12 +43,12 @@ public class ApiGroupProcessorImpl implements ApiGroupProcessor {
 	@Override
 	public void update(ApiGroupParam param) {
 		ApiGroup entity = paramTransformer.transform(param);
-		db.update(entity);
+		dao.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		db.delete(id);
+		dao.delete(id);
 	}
 
 }

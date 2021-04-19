@@ -5,5 +5,5 @@ import main.service.facultydiscipline.FacultyDisciplineResult;
 
 public interface FacultyDisciplineResultTransformer {
 
-	FacultyDisciplineResult transform(FacultyDiscipline obj);
+	FacultyDisciplineResult transform(FacultyDiscipline entity);
 }

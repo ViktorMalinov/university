@@ -6,19 +6,19 @@ import main.service.lecturer.LecturerParam;
 public class LecturerParamTransformerImpl implements LecturerParamTransformer {
 
 	@Override
-	public Lecturer transform(LecturerParam obj) {
-		Lecturer res = new Lecturer();	
+	public Lecturer transform(LecturerParam param) {
+		Lecturer entity = new Lecturer();	
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
+		entity.setId(param.getId());
+		entity.setCode(param.getCode());
+		entity.setName(param.getName());
+		entity.setDescription(param.getDescription());
 		
-		res.setFamilyName(obj.getFamilyName());
-		res.setApiUserId(obj.getApiUserId());
-		res.setDepartmentId(obj.getDepartmentId());
+		entity.setFamilyName(param.getFamilyName());
+		entity.setApiUserId(param.getApiUserId());
+		entity.setDepartmentId(param.getDepartmentId());
 		
-		return res;
+		return entity;
 	}
 
 }

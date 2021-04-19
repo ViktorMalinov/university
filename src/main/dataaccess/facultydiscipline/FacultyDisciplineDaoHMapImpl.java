@@ -11,20 +11,20 @@ public class FacultyDisciplineDaoHMapImpl implements FacultyDisciplineDao {
 	
 	
 	@Override
-	public FacultyDiscipline create(FacultyDiscipline obj) {
-		datasource.put(obj.getId(), obj);
-		return obj;
+	public FacultyDiscipline create(FacultyDiscipline entity) {
+		datasource.put(entity.getId(), entity);
+		return entity;
 	}
 
 	@Override
 	public FacultyDiscipline get(Long id) {
-		FacultyDiscipline obj = datasource.get(id);
-		return obj;	
+		FacultyDiscipline entity = datasource.get(id);
+		return entity;	
 	}
 
 	@Override
-	public void update(FacultyDiscipline obj) {
-		datasource.put(obj.getId(), obj);
+	public void update(FacultyDiscipline entity) {
+		datasource.put(entity.getId(), entity);
 	}
 
 	@Override

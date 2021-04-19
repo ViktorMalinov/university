@@ -5,6 +5,6 @@ import main.service.lecturer.LecturerParam;
 
 public interface LecturerParamTransformer {
 	
-	Lecturer transform(LecturerParam obj);
+	Lecturer transform(LecturerParam param);
 
 }

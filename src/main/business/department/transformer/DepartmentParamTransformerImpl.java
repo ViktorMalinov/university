@@ -6,16 +6,16 @@ import main.service.department.DepartmentParam;
 public class DepartmentParamTransformerImpl implements DepartmentParamTransformer {
 
 	@Override
-	public Department transform(DepartmentParam obj) {
-		Department res = new Department();
+	public Department transform(DepartmentParam param) {
+		Department entity = new Department();
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
-		res.setFacultyId(obj.getFacultyId());
+		entity.setId(param.getId());
+		entity.setCode(param.getCode());
+		entity.setName(param.getName());
+		entity.setDescription(param.getDescription());
+		entity.setFacultyId(param.getFacultyId());
 		
-		return res;
+		return entity;
 	}
 
 }

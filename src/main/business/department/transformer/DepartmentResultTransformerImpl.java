@@ -6,16 +6,16 @@ import main.service.department.DepartmentResult;
 public class DepartmentResultTransformerImpl implements DepartmentResultTransformer {
 
 	@Override
-	public DepartmentResult transform(Department obj) {
-		DepartmentResult res = new DepartmentResult();
+	public DepartmentResult transform(Department entity) {
+		DepartmentResult result = new DepartmentResult();
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
-		res.setFacultyId(obj.getFacultyId());
+		result.setId(entity.getId());
+		result.setCode(entity.getCode());
+		result.setName(entity.getName());
+		result.setDescription(entity.getDescription());
+		result.setFacultyId(entity.getFacultyId());
 		
-		return res;
+		return result;
 	}
 
 }

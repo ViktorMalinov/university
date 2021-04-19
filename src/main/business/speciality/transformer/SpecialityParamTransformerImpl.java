@@ -6,17 +6,17 @@ import main.service.speciality.SpecialityParam;
 public class SpecialityParamTransformerImpl implements SpecialityParamTransformer {
 
 	@Override
-	public Speciality transform(SpecialityParam obj) {
-		Speciality res = new Speciality();
+	public Speciality transform(SpecialityParam param) {
+		Speciality entity = new Speciality();
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setName(obj.getName());
-		res.setDescription(obj.getDescription());
+		entity.setId(param.getId());
+		entity.setCode(param.getCode());
+		entity.setName(param.getName());
+		entity.setDescription(param.getDescription());
 		
-		res.setFacultyId(obj.getFacultyId());
+		entity.setFacultyId(param.getFacultyId());
 		
-		return res;
+		return entity;
 	}
 
 }

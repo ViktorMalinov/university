@@ -15,7 +15,7 @@ import main.service.lecturer.LecturerResult;
 
 public class LecturerProcessorImpl implements LecturerProcessor {
 
-	LecturerDao db = new LecturerDaoHMapImpl();
+	LecturerDao dao = new LecturerDaoHMapImpl();
 	LecturerParamTransformer paramTransformer = new LecturerParamTransformerImpl(); 
 	LecturerResultTransformer resultTransformer = new LecturerResultTransformerImpl();
 	
@@ -23,11 +23,11 @@ public class LecturerProcessorImpl implements LecturerProcessor {
 	@Override
 	public LecturerResult create(LecturerParam param) {
 		Lecturer entity = paramTransformer.transform(param); 
-		Set<Long> idSet = db.getKeySet();		// get all id's from db object
+		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
 		entity.setId(id);		
 		
-		entity = db.create(entity);
+		entity = dao.create(entity);
 		
 		LecturerResult result = resultTransformer.transform(entity);
 		return result;
@@ -35,7 +35,7 @@ public class LecturerProcessorImpl implements LecturerProcessor {
 	
 	@Override
 	public LecturerResult get(Long id) {
-		Lecturer entity = db.get(id);
+		Lecturer entity = dao.get(id);
 		LecturerResult result = resultTransformer.transform(entity);
 		return result;
 	}
@@ -43,12 +43,12 @@ public class LecturerProcessorImpl implements LecturerProcessor {
 	@Override
 	public void update(LecturerParam param) {
 		Lecturer entity = paramTransformer.transform(param);
-		db.update(entity);
+		dao.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		db.delete(id);
+		dao.delete(id);
 	}
 
 }

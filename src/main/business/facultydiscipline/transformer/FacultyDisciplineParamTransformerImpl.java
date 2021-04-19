@@ -6,14 +6,14 @@ import main.service.facultydiscipline.FacultyDisciplineParam;
 public class FacultyDisciplineParamTransformerImpl implements FacultyDisciplineParamTransformer {
 
 	@Override
-	public FacultyDiscipline transform(FacultyDisciplineParam obj) {
-		FacultyDiscipline res = new FacultyDiscipline();
+	public FacultyDiscipline transform(FacultyDisciplineParam param) {
+		FacultyDiscipline entity = new FacultyDiscipline();
 		
-		res.setId(obj.getId());
-		res.setDisciplineId(obj.getDisciplineId());
-		res.setFacultyId(obj.getFacultyId());
+		entity.setId(param.getId());
+		entity.setDisciplineId(param.getDisciplineId());
+		entity.setFacultyId(param.getFacultyId());
 		
-		return res;
+		return entity;
 	}
 
 }

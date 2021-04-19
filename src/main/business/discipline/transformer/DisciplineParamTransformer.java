@@ -5,5 +5,5 @@ import main.service.discipline.DisciplineParam;
 
 public interface DisciplineParamTransformer {
 
-	Discipline transform(DisciplineParam obj);
+	Discipline transform(DisciplineParam param);
 }

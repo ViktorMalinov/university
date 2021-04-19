@@ -5,5 +5,5 @@ import main.service.lecturer.LecturerResult;
 
 public interface LecturerResultTransformer {
 
-	LecturerResult transform(Lecturer obj);
+	LecturerResult transform(Lecturer entity);
 }

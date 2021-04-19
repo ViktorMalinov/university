@@ -11,20 +11,20 @@ public class LecturerDaoHMapImpl implements LecturerDao {
 	
 	
 	@Override
-	public Lecturer create(Lecturer obj) {
-		datasource.put(obj.getId(), obj);
-		return obj;
+	public Lecturer create(Lecturer entity) {
+		datasource.put(entity.getId(), entity);
+		return entity;
 	}
 
 	@Override
 	public Lecturer get(Long id) {
-		Lecturer obj = datasource.get(id);
-		return obj;	
+		Lecturer entity = datasource.get(id);
+		return entity;	
 	}
 
 	@Override
-	public void update(Lecturer obj) {
-		datasource.put(obj.getId(), obj);
+	public void update(Lecturer entity) {
+		datasource.put(entity.getId(), entity);
 	}
 
 	@Override

@@ -15,7 +15,7 @@ import main.service.faculty.FacultyResult;
 
 public class FacultyProcessorImpl implements FacultyProcessor {
 
-	FacultyDao db = new FacultyDaoHMapImpl();
+	FacultyDao dao = new FacultyDaoHMapImpl();
 	FacultyParamTransformer paramTransformer = new FacultyParamTransformerImpl(); 
 	FacultyResultTransformer resultTransformer = new FacultyResultTransformerImpl();
 	
@@ -23,11 +23,11 @@ public class FacultyProcessorImpl implements FacultyProcessor {
 	@Override
 	public FacultyResult create(FacultyParam param) {
 		Faculty entity = paramTransformer.transform(param); 
-		Set<Long> idSet = db.getKeySet();		// get all id's from db object
+		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
 		entity.setId(id);		
 		
-		entity = db.create(entity);
+		entity = dao.create(entity);
 		
 		FacultyResult result = resultTransformer.transform(entity);
 		return result;
@@ -35,7 +35,7 @@ public class FacultyProcessorImpl implements FacultyProcessor {
 	
 	@Override
 	public FacultyResult get(Long id) {
-		Faculty entity = db.get(id);
+		Faculty entity = dao.get(id);
 		FacultyResult result = resultTransformer.transform(entity);
 		return result;
 	}
@@ -43,12 +43,12 @@ public class FacultyProcessorImpl implements FacultyProcessor {
 	@Override
 	public void update(FacultyParam param) {
 		Faculty entity = paramTransformer.transform(param);
-		db.update(entity);
+		dao.update(entity);
 	}
 	
 	@Override
 	public void delete(Long id) {
-		db.delete(id);
+		dao.delete(id);
 	}
 
 

@@ -11,20 +11,20 @@ public class ApiGroupDaoHMapImpl implements ApiGroupDao {
 	
 		
 	@Override
-	public ApiGroup create(ApiGroup obj) {
-		datasource.put(obj.getId(), obj);
-		return obj;
+	public ApiGroup create(ApiGroup entity) {
+		datasource.put(entity.getId(), entity);
+		return entity;
 	}
 
 	@Override
 	public ApiGroup get(Long id) {
-		ApiGroup obj = datasource.get(id);
-		return obj;
+		ApiGroup entity = datasource.get(id);
+		return entity;
 	}
 
 	@Override
-	public void update(ApiGroup obj) {
-		datasource.put(obj.getId(), obj);
+	public void update(ApiGroup entity) {
+		datasource.put(entity.getId(), entity);
 	}
 
 	@Override

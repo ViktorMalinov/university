@@ -15,7 +15,7 @@ import main.service.department.DepartmentResult;
 
 public class DepartmentProcessorImpl implements DepartmentProcessor {
 
-	DepartmentDao db = new DepartmentDaoHMapImpl();
+	DepartmentDao dao = new DepartmentDaoHMapImpl();
 	DepartmentParamTransformer paramTransformer = new DepartmentParamTransformerImpl(); 
 	DepartmentResultTransformer resultTransformer = new DepartmentResultTransformerImpl();
 
@@ -23,11 +23,11 @@ public class DepartmentProcessorImpl implements DepartmentProcessor {
 	@Override
 	public DepartmentResult create(DepartmentParam param) {
 		Department entity = paramTransformer.transform(param); 
-		Set<Long> idSet = db.getKeySet();		// get all id's from db object
+		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
 		entity.setId(id);		
 		
-		entity = db.create(entity);
+		entity = dao.create(entity);
 		
 		DepartmentResult result = resultTransformer.transform(entity);
 		return result;	
@@ -35,7 +35,7 @@ public class DepartmentProcessorImpl implements DepartmentProcessor {
 
 	@Override
 	public DepartmentResult get(Long id) {
-		Department entity = db.get(id);
+		Department entity = dao.get(id);
 		DepartmentResult result = resultTransformer.transform(entity);
 		return result;
 	}
@@ -43,12 +43,12 @@ public class DepartmentProcessorImpl implements DepartmentProcessor {
 	@Override
 	public void update(DepartmentParam param) {
 		Department entity = paramTransformer.transform(param);
-		db.update(entity);
+		dao.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		db.delete(id);
+		dao.delete(id);
 	}
 
 }

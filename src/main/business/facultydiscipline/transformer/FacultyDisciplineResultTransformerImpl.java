@@ -6,14 +6,14 @@ import main.service.facultydiscipline.FacultyDisciplineResult;
 public class FacultyDisciplineResultTransformerImpl implements FacultyDisciplineResultTransformer {
 
 	@Override
-	public FacultyDisciplineResult transform(FacultyDiscipline obj) {
-		FacultyDisciplineResult res = new FacultyDisciplineResult();
+	public FacultyDisciplineResult transform(FacultyDiscipline entity) {
+		FacultyDisciplineResult result = new FacultyDisciplineResult();
 		
-		res.setId(obj.getId());
-		res.setDisciplineId(obj.getDisciplineId());
-		res.setFacultyId(obj.getFacultyId());
+		result.setId(entity.getId());
+		result.setDisciplineId(entity.getDisciplineId());
+		result.setFacultyId(entity.getFacultyId());
 		
-		return res;
+		return result;
 	}
 
 }

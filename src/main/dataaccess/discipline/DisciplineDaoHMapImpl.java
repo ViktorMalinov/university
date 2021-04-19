@@ -10,20 +10,20 @@ public class DisciplineDaoHMapImpl implements DisciplineDao {
 	private static Map<Long, Discipline> datasource = new HashMap<Long, Discipline>();
 	
 	@Override
-	public Discipline create(Discipline obj) {
-		datasource.put(obj.getId(), obj);
-		return obj;
+	public Discipline create(Discipline entity) {
+		datasource.put(entity.getId(), entity);
+		return entity;
 	}
 
 	@Override
 	public Discipline get(Long id) {
-		Discipline obj = datasource.get(id);
-		return obj;	
+		Discipline entity = datasource.get(id);
+		return entity;	
 	}
 
 	@Override
-	public void update(Discipline obj) {
-		datasource.put(obj.getId(), obj);
+	public void update(Discipline entity) {
+		datasource.put(entity.getId(), entity);
 	}
 
 	@Override

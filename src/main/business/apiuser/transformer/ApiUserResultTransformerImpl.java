@@ -6,18 +6,18 @@ import main.service.apiuser.ApiUserResult;
 public class ApiUserResultTransformerImpl implements ApiUserResultTransformer {
 
 	@Override
-	public ApiUserResult transform(ApiUser obj) {
-		ApiUserResult res = new ApiUserResult();
+	public ApiUserResult transform(ApiUser entity) {
+		ApiUserResult result = new ApiUserResult();
 		
-		res.setId(obj.getId());
-		res.setCode(obj.getCode());
-		res.setDescription(obj.getDescription());
-		res.setDisplayName(obj.getDisplayName());
-		res.setEmail(obj.getEmail());
-		res.setPassword(obj.getPassword());		
-		res.setUsername(obj.getUsername());
+		result.setId(entity.getId());
+		result.setCode(entity.getCode());
+		result.setDescription(entity.getDescription());
+		result.setDisplayName(entity.getDisplayName());
+		result.setEmail(entity.getEmail());
+		result.setPassword(entity.getPassword());		
+		result.setUsername(entity.getUsername());
 		
-		return res;
+		return result;
 	}
 
 }

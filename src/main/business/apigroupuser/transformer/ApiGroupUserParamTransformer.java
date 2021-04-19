@@ -5,5 +5,5 @@ import main.service.apigroupuser.ApiGroupUserParam;
 
 public interface ApiGroupUserParamTransformer {
 
-	ApiGroupUser transform(ApiGroupUserParam obj);
+	ApiGroupUser transform(ApiGroupUserParam param);
 }

@@ -15,7 +15,7 @@ import main.service.facultydiscipline.FacultyDisciplineResult;
 
 public class FacultyDisciplineProcessorImpl implements FacultyDisciplineProcessor {
 
-	FacultyDisciplineDao db = new FacultyDisciplineDaoHMapImpl();
+	FacultyDisciplineDao dao = new FacultyDisciplineDaoHMapImpl();
 	FacultyDisciplineParamTransformer paramTransformer = new FacultyDisciplineParamTransformerImpl(); 
 	FacultyDisciplineResultTransformer resultTransformer = new FacultyDisciplineResultTransformerImpl();
 	
@@ -23,11 +23,11 @@ public class FacultyDisciplineProcessorImpl implements FacultyDisciplineProcesso
 	@Override
 	public FacultyDisciplineResult create(FacultyDisciplineParam param) {
 		FacultyDiscipline entity = paramTransformer.transform(param); 
-		Set<Long> idSet = db.getKeySet();		// get all id's from db object
+		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
 		entity.setId(id);		
 		
-		entity = db.create(entity);
+		entity = dao.create(entity);
 		
 		FacultyDisciplineResult result = resultTransformer.transform(entity);
 		return result;
@@ -35,7 +35,7 @@ public class FacultyDisciplineProcessorImpl implements FacultyDisciplineProcesso
 	
 	@Override
 	public FacultyDisciplineResult get(Long id) {
-		FacultyDiscipline entity = db.get(id);
+		FacultyDiscipline entity = dao.get(id);
 		FacultyDisciplineResult result = resultTransformer.transform(entity);
 		return result;
 	}
@@ -43,12 +43,12 @@ public class FacultyDisciplineProcessorImpl implements FacultyDisciplineProcesso
 	@Override
 	public void update(FacultyDisciplineParam param) {
 		FacultyDiscipline entity = paramTransformer.transform(param);
-		db.update(entity);
+		dao.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		db.delete(id);
+		dao.delete(id);
 	}
 
 }
