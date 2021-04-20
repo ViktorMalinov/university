@@ -9,21 +9,24 @@ public class DepartmentServiceImpl implements DepartmentService {
 	
 	
 	@Override
-	public DepartmentResult create(DepartmentParam param) {
-		DepartmentResult result = processor.create(param);
+	public DepartmentResult create(DepartmentParam param) throws Exception {
+		DepartmentResult result;
+		
+		result = processor.create(param);
+
 		return result;
 	}
 	
 	
 	@Override
-	public DepartmentResult get(Long id) {
+	public DepartmentResult get(Long id)  throws Exception {
 		DepartmentResult result = processor.get(id);
 		return result;
 	}
 	
 	
 	@Override
-	public void update(DepartmentParam param) {
+	public void update(DepartmentParam param)  throws Exception {
 		processor.update(param);
 	}
 	

@@ -21,7 +21,7 @@ public class DepartmentProcessorImpl implements DepartmentProcessor {
 
 	
 	@Override
-	public DepartmentResult create(DepartmentParam param) {
+	public DepartmentResult create(DepartmentParam param) throws Exception {
 		Department entity = paramTransformer.transform(param); 
 		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
@@ -34,14 +34,14 @@ public class DepartmentProcessorImpl implements DepartmentProcessor {
 	}
 
 	@Override
-	public DepartmentResult get(Long id) {
+	public DepartmentResult get(Long id) throws Exception {
 		Department entity = dao.get(id);
 		DepartmentResult result = resultTransformer.transform(entity);
 		return result;
 	}
 
 	@Override
-	public void update(DepartmentParam param) {
+	public void update(DepartmentParam param) throws Exception {
 		Department entity = paramTransformer.transform(param);
 		dao.update(entity);
 	}
