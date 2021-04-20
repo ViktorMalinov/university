@@ -5,5 +5,5 @@ import main.service.department.DepartmentParam;
 
 public interface DepartmentParamTransformer {
 
-	Department transform(DepartmentParam param);
+	Department transform(DepartmentParam param) throws Exception;
 }

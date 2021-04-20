@@ -5,5 +5,5 @@ import main.service.department.DepartmentResult;
 
 public interface DepartmentResultTransformer {
 
-	DepartmentResult transform(Department entity);
+	DepartmentResult transform(Department entity) throws Exception;
 }
