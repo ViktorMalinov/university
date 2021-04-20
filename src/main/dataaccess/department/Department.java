@@ -1,12 +1,14 @@
 package main.dataaccess.department;
 
+import main.dataaccess.faculty.Faculty;
+
 public class Department {
 
 	private Long id;
 	private Long code;
 	private String name;
 	private String description;
-	private Long facultyId;
+	private Faculty faculty;
 
 
 	public Long getId() {
@@ -49,14 +51,16 @@ public class Department {
 	}
 
 
-	public Long getFacultyId() {
-		return facultyId;
+	public Faculty getFaculty() {
+		return faculty;
 	}
 
 
-	public void setFacultyId(Long facultyId) {
-		this.facultyId = facultyId;
+	public void setFaculty(Faculty faculty) {
+		this.faculty = faculty;
 	}
+
+
 
 	
 	
