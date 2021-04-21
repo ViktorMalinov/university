@@ -6,7 +6,7 @@ import main.service.speciality.SpecialityResult;
 public class SpecialityResultTransformerImpl implements SpecialityResultTransformer {
 
 	@Override
-	public SpecialityResult transform(Speciality entity) {
+	public SpecialityResult transform(Speciality entity) throws Exception {
 		SpecialityResult result = new SpecialityResult();
 		
 		result.setId(entity.getId());
@@ -14,8 +14,18 @@ public class SpecialityResultTransformerImpl implements SpecialityResultTransfor
 		result.setName(entity.getName());
 		result.setDescription(entity.getDescription());
 		
-		result.setFacultyId(entity.getFacultyId());
+		
+		if (entity.getFaculty() == null) {
+			throw new Exception("The object Faculty was NOT found!");
+		}
+		
+		if (entity.getFaculty().getName().isEmpty()) {
+			throw new Exception("The Faculty NAME is empty!");
+		}
 
+		result.setFacultyId(entity.getFaculty().getId());
+		result.setFacultyName(entity.getFaculty().getName());
+		
 		return result;
 	}
 

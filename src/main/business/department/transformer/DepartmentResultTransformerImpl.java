@@ -15,13 +15,13 @@ public class DepartmentResultTransformerImpl implements DepartmentResultTransfor
 		result.setDescription(entity.getDescription());
 		
 		
-			if (entity.getFaculty() == null) {
-				throw new Exception("The object Faculty was NOT found!");
-			}
+		if (entity.getFaculty() == null) {
+			throw new Exception("The object Faculty was NOT found!");
+		}
 		
-			if (entity.getFaculty().getName().isEmpty()) {
-				throw new Exception("The Faculty NAME is empty!");
-			}
+		if (entity.getFaculty().getName().isEmpty()) {
+			throw new Exception("The Faculty NAME is empty!");
+		}
 			
 		
 		result.setFacultyId(entity.getFaculty().getId());

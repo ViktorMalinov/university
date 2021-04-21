@@ -21,7 +21,7 @@ public class FacultyDisciplineProcessorImpl implements FacultyDisciplineProcesso
 	
 	
 	@Override
-	public FacultyDisciplineResult create(FacultyDisciplineParam param) {
+	public FacultyDisciplineResult create(FacultyDisciplineParam param) throws Exception {
 		FacultyDiscipline entity = paramTransformer.transform(param); 
 		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
@@ -34,14 +34,14 @@ public class FacultyDisciplineProcessorImpl implements FacultyDisciplineProcesso
 	}
 	
 	@Override
-	public FacultyDisciplineResult get(Long id) {
+	public FacultyDisciplineResult get(Long id) throws Exception {
 		FacultyDiscipline entity = dao.get(id);
 		FacultyDisciplineResult result = resultTransformer.transform(entity);
 		return result;
 	}
 
 	@Override
-	public void update(FacultyDisciplineParam param) {
+	public void update(FacultyDisciplineParam param) throws Exception {
 		FacultyDiscipline entity = paramTransformer.transform(param);
 		dao.update(entity);
 	}

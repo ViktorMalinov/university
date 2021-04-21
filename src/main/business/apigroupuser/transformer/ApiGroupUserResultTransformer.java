@@ -5,5 +5,5 @@ import main.service.apigroupuser.ApiGroupUserResult;
 
 public interface ApiGroupUserResultTransformer {
 
-	ApiGroupUserResult transform(ApiGroupUser entity);
+	ApiGroupUserResult transform(ApiGroupUser entity) throws Exception;
 }

@@ -9,21 +9,21 @@ public class LecturerServiceImpl implements LecturerService {
 	
 	
 	@Override
-	public LecturerResult create(LecturerParam param) {
+	public LecturerResult create(LecturerParam param) throws Exception {
 		LecturerResult result = processor.create(param);
 		return result;
 	}
 	
 	
 	@Override
-	public LecturerResult get(Long id) {
+	public LecturerResult get(Long id) throws Exception {
 		LecturerResult result = processor.get(id);
 		return result;
 	}
 	
 	
 	@Override
-	public void update(LecturerParam param) {
+	public void update(LecturerParam param) throws Exception {
 		processor.update(param);
 	}
 	

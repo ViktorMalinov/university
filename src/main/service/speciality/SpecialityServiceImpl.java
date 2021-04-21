@@ -9,21 +9,21 @@ public class SpecialityServiceImpl implements SpecialityService {
 	
 	
 	@Override
-	public SpecialityResult create(SpecialityParam param) {
+	public SpecialityResult create(SpecialityParam param) throws Exception {
 		SpecialityResult result = processor.create(param);
 		return result;
 	}
 	
 	
 	@Override
-	public SpecialityResult get(Long id) {
+	public SpecialityResult get(Long id) throws Exception {
 		SpecialityResult result = processor.get(id);
 		return result;
 	}
 	
 	
 	@Override
-	public void update(SpecialityParam param) {
+	public void update(SpecialityParam param) throws Exception {
 		processor.update(param);
 	}
 	

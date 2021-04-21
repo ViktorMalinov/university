@@ -5,5 +5,5 @@ import main.service.facultydiscipline.FacultyDisciplineParam;
 
 public interface FacultyDisciplineParamTransformer {
 
-	FacultyDiscipline transform(FacultyDisciplineParam param);
+	FacultyDiscipline transform(FacultyDisciplineParam param) throws Exception;
 }

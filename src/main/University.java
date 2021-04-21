@@ -39,12 +39,13 @@ import main.service.speciality.SpecialityServiceImpl;
 
 public class University {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
-		apiGroupTest(); 
+		apiGroupTest();
+		ApiUserTest();
 		apiGroupUserTest();
 		
-		// ApiUserTest();
+		
 		// DepartmentTest();
 		// DisciplineTest();
 		// FacultyTest();
@@ -109,8 +110,11 @@ public class University {
 		System.out.println();
 	}
 	
+	
+	
+	
 	//-------------------------------------------------
-	public static void apiGroupUserTest() {
+	public static void apiGroupUserTest()  throws Exception {
 		ApiGroupUserService apiGroupUser = new ApiGroupUserServiceImpl(); 
 		ApiGroupUserParam param = new ApiGroupUserParam();
 		
@@ -118,17 +122,14 @@ public class University {
 		System.out.println("------ ApiGroupUser TEST ----------");
 		// create
 		//param.setId(id);
-		param.setApiGroupId(123L);
-		param.setApiUserId(12L);
-		apiGroupUser.create(param);
-
-		param.setApiGroupId(12L);
+		param.setApiGroupId(1L);
 		param.setApiUserId(1L);
 		apiGroupUser.create(param);
 
-		param.setApiGroupId(1000L);
-		param.setApiUserId(2000L);
+		param.setApiGroupId(2L);
+		param.setApiUserId(2L);
 		apiGroupUser.create(param);
+
 		
 		// get
 		ApiGroupUserResult res =  apiGroupUser.get(1L);
@@ -137,21 +138,19 @@ public class University {
 		res =  apiGroupUser.get(2L);
 		System.out.printf("id: %d, Groupid: %d, user id: %d%n", res.getId(), res.getApiGroupId(), res.getApiUserId());
 
-		res =  apiGroupUser.get(3L);
-		System.out.printf("id: %d, Groupid: %d, user id: %d%n", res.getId(), res.getApiGroupId(), res.getApiUserId());
 
 		// update
 		
 		// delete
-		apiGroupUser.delete(3L); // deleting group 
-		System.out.println("id: 3 was deleted...");
+		apiGroupUser.delete(2L); // deleting group 
+		System.out.println("id: 2 was deleted...");
 		
 		System.out.println();
 		System.out.println();
 	}
 
 	
-	/*
+	
 	
 	public static void ApiUserTest() {
 		ApiUserService аpiUser = new ApiUserServiceImpl(); 
@@ -162,47 +161,38 @@ public class University {
 		// create
 		//param.setId(id);
 		param.setCode(10L);
-		param.setName("Group 1");
+		param.setDisplayName("Group 1");
 		param.setDescription("First group ever... :)");
 		аpiUser.create(param);
 
 		param.setCode(20L);
-		param.setName("Group 2");
+		param.setDisplayName("Group 2");
 		param.setDescription("Secong group ever... :)");
 		аpiUser.create(param);
 
-		param.setCode(30L);
-		param.setName("Group 3");
-		param.setDescription("Last group ever... :)");
 		
 		// get
 		ApiUserResult res =  аpiUser.get(1L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getDisplayName(), res.getDescription());
 		
 		res =  аpiUser.get(2L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getDisplayName(), res.getDescription());
 		
 		// update
 		param.setId(res.getId());
 		param.setDescription(res.getDescription());
 		param.setCode(21L);
-		param.setName("Group 2a");
+		param.setDisplayName("Group 2a");
 		аpiUser.update(param);
 		res =  аpiUser.get(2L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getDisplayName(), res.getDescription());
 		
-		// delete
-		аpiUser.delete(3L); // deleting group 
-		System.out.println("id: 3 was deleted...");
-		
-		System.out.println();
-		System.out.println();
 	}
 
 
 	
 	
-	
+	/*
 	public static void DepartmentTest() {
 		DepartmentService Department = new DepartmentServiceImpl(); 
 		DepartmentParam param = new DepartmentParam();

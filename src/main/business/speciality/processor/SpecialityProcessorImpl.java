@@ -21,7 +21,7 @@ public class SpecialityProcessorImpl implements SpecialityProcessor {
 	
 	
 	@Override
-	public SpecialityResult create(SpecialityParam param) {
+	public SpecialityResult create(SpecialityParam param) throws Exception {
 		Speciality entity = paramTransformer.transform(param); 
 		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
@@ -34,14 +34,14 @@ public class SpecialityProcessorImpl implements SpecialityProcessor {
 	}
 	
 	@Override
-	public SpecialityResult get(Long id) {
+	public SpecialityResult get(Long id) throws Exception {
 		Speciality entity = dao.get(id);
 		SpecialityResult result = resultTransformer.transform(entity);
 		return result;
 	}
 
 	@Override
-	public void update(SpecialityParam param) {
+	public void update(SpecialityParam param) throws Exception {
 		Speciality entity = paramTransformer.transform(param);
 		dao.update(entity);
 	}

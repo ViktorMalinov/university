@@ -1,13 +1,16 @@
 package main.dataaccess.apigroupuser;
 
+import main.dataaccess.apigroup.ApiGroup;
+import main.dataaccess.apiuser.ApiUser;
+
 public class ApiGroupUser {
 
 	private Long id;
-	private Long apiGroupId;
-	private Long apiUserId;
 	
-	
+	private ApiGroup apiGroup;
+	private ApiUser apiUser;
 
+	
 	public Long getId() {
 		return id;
 	}
@@ -18,26 +21,27 @@ public class ApiGroupUser {
 	}
 
 
-	public Long getApiUserId() {
-		return apiUserId;
+	public ApiGroup getApiGroup() {
+		return apiGroup;
 	}
 
 
-	public void setApiUserId(Long apiUserId) {
-		this.apiUserId = apiUserId;
+	public void setApiGroup(ApiGroup apiGroup) {
+		this.apiGroup = apiGroup;
 	}
 
 
-	public Long getApiGroupId() {
-		return apiGroupId;
+	public ApiUser getApiUser() {
+		return apiUser;
 	}
 
 
-	public void setApiGroupId(Long apiGroupId) {
-		this.apiGroupId = apiGroupId;
+	public void setApiUser(ApiUser apiUser) {
+		this.apiUser = apiUser;
 	}
-	
-	
+
+
+
 	
 	
 

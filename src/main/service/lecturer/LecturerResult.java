@@ -10,6 +10,8 @@ public class LecturerResult {
 	private Long apiUserId;
 	private Long departmentId;
 	
+	private String apiUserDisplayName;
+	private String departmentName;
 	
 	public Long getApiUserId() {
 		return apiUserId;
@@ -52,6 +54,18 @@ public class LecturerResult {
 	}
 	public void setFamilyName(String familyName) {
 		this.familyName = familyName;
+	}
+	public String getApiUserDisplayName() {
+		return apiUserDisplayName;
+	}
+	public void setApiUserDisplayName(String apiUserDisplayName) {
+		this.apiUserDisplayName = apiUserDisplayName;
+	}
+	public String getDepartmentName() {
+		return departmentName;
+	}
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
 
 	

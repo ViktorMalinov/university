@@ -9,21 +9,21 @@ public class FacultyDisciplineServiceImpl implements FacultyDisciplineService {
 	
 	
 	@Override
-	public FacultyDisciplineResult create(FacultyDisciplineParam param) {
+	public FacultyDisciplineResult create(FacultyDisciplineParam param) throws Exception {
 		FacultyDisciplineResult result = processor.create(param);
 		return result;
 	}
 	
 	
 	@Override
-	public FacultyDisciplineResult get(Long id) {
+	public FacultyDisciplineResult get(Long id) throws Exception {
 		FacultyDisciplineResult result = processor.get(id);
 		return result;
 	}
 	
 	
 	@Override
-	public void update(FacultyDisciplineParam param) {
+	public void update(FacultyDisciplineParam param) throws Exception {
 		processor.update(param);
 	}
 	

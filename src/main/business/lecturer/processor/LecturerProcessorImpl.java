@@ -21,7 +21,7 @@ public class LecturerProcessorImpl implements LecturerProcessor {
 	
 	
 	@Override
-	public LecturerResult create(LecturerParam param) {
+	public LecturerResult create(LecturerParam param) throws Exception {
 		Lecturer entity = paramTransformer.transform(param); 
 		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
@@ -34,14 +34,14 @@ public class LecturerProcessorImpl implements LecturerProcessor {
 	}
 	
 	@Override
-	public LecturerResult get(Long id) {
+	public LecturerResult get(Long id) throws Exception{
 		Lecturer entity = dao.get(id);
 		LecturerResult result = resultTransformer.transform(entity);
 		return result;
 	}
 
 	@Override
-	public void update(LecturerParam param) {
+	public void update(LecturerParam param) throws Exception {
 		Lecturer entity = paramTransformer.transform(param);
 		dao.update(entity);
 	}

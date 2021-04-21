@@ -21,7 +21,7 @@ public class ApiGroupUserProcessorImpl implements ApiGroupUserProcessor {
 	
 	
 	@Override
-	public ApiGroupUserResult create(ApiGroupUserParam param) {
+	public ApiGroupUserResult create(ApiGroupUserParam param) throws Exception {
 		ApiGroupUser entity = paramTransformer.transform(param); 
 		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
@@ -34,14 +34,14 @@ public class ApiGroupUserProcessorImpl implements ApiGroupUserProcessor {
 	}
 
 	@Override
-	public ApiGroupUserResult get(Long id) {
+	public ApiGroupUserResult get(Long id) throws Exception {
 		ApiGroupUser entity = dao.get(id);
 		ApiGroupUserResult result = resultTransformer.transform(entity);
 		return result;
 	}
 
 	@Override
-	public void update(ApiGroupUserParam param) {
+	public void update(ApiGroupUserParam param) throws Exception {
 		ApiGroupUser entity = paramTransformer.transform(param);
 		dao.update(entity);
 	}

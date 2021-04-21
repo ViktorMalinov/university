@@ -1,18 +1,15 @@
 package main.dataaccess.facultydiscipline;
 
+import main.dataaccess.discipline.Discipline;
+import main.dataaccess.faculty.Faculty;
+
 public class FacultyDiscipline {
 
 	private Long id;
-	private Long disciplineId;
-	private Long facultyId;
 	
-	public Long getDisciplineId() {
-		return disciplineId;
-	}
-
-	public void setDisciplineId(Long disciplineId) {
-		this.disciplineId = disciplineId;
-	}
+	private Faculty faculty;
+	private Discipline discipline;
+	
 
 	public Long getId() {
 		return id;
@@ -22,13 +19,22 @@ public class FacultyDiscipline {
 		this.id = id;
 	}
 
-	public Long getFacultyId() {
-		return facultyId;
+	public Faculty getFaculty() {
+		return faculty;
 	}
 
-	public void setFacultyId(Long facultyId) {
-		this.facultyId = facultyId;
+	public void setFaculty(Faculty faculty) {
+		this.faculty = faculty;
 	}
+
+	public Discipline getDiscipline() {
+		return discipline;
+	}
+
+	public void setDiscipline(Discipline discipline) {
+		this.discipline = discipline;
+	}
+
 
 	
 }

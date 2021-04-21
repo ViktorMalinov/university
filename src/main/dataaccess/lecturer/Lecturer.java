@@ -1,5 +1,8 @@
 package main.dataaccess.lecturer;
 
+import main.dataaccess.apiuser.ApiUser;
+import main.dataaccess.department.Department;
+
 public class Lecturer {
 
 	private Long id;
@@ -7,22 +10,11 @@ public class Lecturer {
 	private String name;
 	private String description;
 	private String familyName;
-	private Long apiUserId;
-	private Long departmentId;
+	
+	private ApiUser apiUser;
+	private Department department;
 	
 	
-	public Long getApiUserId() {
-		return apiUserId;
-	}
-	public void setApiUserId(Long apiUserId) {
-		this.apiUserId = apiUserId;
-	}
-	public Long getDepartmentId() {
-		return departmentId;
-	}
-	public void setDepartmentId(Long departmentId) {
-		this.departmentId = departmentId;
-	}
 	public Long getId() {
 		return id;
 	}
@@ -53,6 +45,19 @@ public class Lecturer {
 	public void setFamilyName(String familyName) {
 		this.familyName = familyName;
 	}
+	public ApiUser getApiUser() {
+		return apiUser;
+	}
+	public void setApiUser(ApiUser apiUser) {
+		this.apiUser = apiUser;
+	}
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
 
 	
 }

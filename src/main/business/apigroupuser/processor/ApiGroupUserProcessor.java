@@ -5,8 +5,8 @@ import main.service.apigroupuser.ApiGroupUserResult;
 
 public interface ApiGroupUserProcessor {
 
-	ApiGroupUserResult create(ApiGroupUserParam param);
-	ApiGroupUserResult get(Long id);
-	void update(ApiGroupUserParam param);
+	ApiGroupUserResult create(ApiGroupUserParam param) throws Exception;
+	ApiGroupUserResult get(Long id) throws Exception;
+	void update(ApiGroupUserParam param) throws Exception;
 	void delete(Long id);
 }

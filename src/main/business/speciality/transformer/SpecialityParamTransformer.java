@@ -5,5 +5,5 @@ import main.service.speciality.SpecialityParam;
 
 public interface SpecialityParamTransformer {
 
-	Speciality transform(SpecialityParam param);
+	Speciality transform(SpecialityParam param) throws Exception;
 }

@@ -20,17 +20,17 @@ public class DepartmentParamTransformerImpl implements DepartmentParamTransforme
 		entity.setName(param.getName());
 		entity.setDescription(param.getDescription());
 		
-			if (param.getFacultyId() == null) {
-				throw new Exception("The Faculty ID was NOT found!");
-			}
+		if (param.getFacultyId() == null) {
+			throw new Exception("The Faculty ID was NOT found!");
+		}
 
-			Faculty fResult = dao.get(param.getFacultyId()); // ---
+		Faculty fResult = dao.get(param.getFacultyId()); // ---
 			
-			if (fResult == null) {
-				throw new Exception("The Faculty DAO was NOT found!");
-			}
+		if (fResult == null) {
+			throw new Exception("The Faculty DAO was NOT found!");
+		}
 
-			entity.setFaculty(fResult); // ---
+		entity.setFaculty(fResult); // ---
 		
 			
 		return entity;

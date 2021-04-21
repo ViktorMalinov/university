@@ -7,7 +7,7 @@ public class SpecialityResult {
 	private String name;
 	private String description;
 	private Long facultyId;
-	
+	private String facultyName;
 	
 	public Long getId() {
 		return id;
@@ -38,6 +38,12 @@ public class SpecialityResult {
 	}
 	public void setFacultyId(Long facultyId) {
 		this.facultyId = facultyId;
+	}
+	public String getFacultyName() {
+		return facultyName;
+	}
+	public void setFacultyName(String facultyName) {
+		this.facultyName = facultyName;
 	}
 
 }
