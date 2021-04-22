@@ -1,5 +1,7 @@
 package main.business.department.transformer;
 
+import main.business.department.validator.BusinessDepartmentValidatorImpl;
+import main.common.Validator;
 import main.dataaccess.department.Department;
 import main.dataaccess.faculty.Faculty;
 import main.dataaccess.faculty.FacultyDao;
@@ -9,6 +11,8 @@ import main.service.department.DepartmentParam;
 public class DepartmentParamTransformerImpl implements DepartmentParamTransformer {
 
 	private FacultyDao dao = new FacultyDaoHMapImpl();
+	private Validator<Long> validateLong = new BusinessDepartmentValidatorImpl<Long>();
+	private Validator<Faculty> validateFaculty = new BusinessDepartmentValidatorImpl<Faculty>();
 	
 	@Override
 	public Department transform(DepartmentParam param) throws Exception {
@@ -20,16 +24,10 @@ public class DepartmentParamTransformerImpl implements DepartmentParamTransforme
 		entity.setName(param.getName());
 		entity.setDescription(param.getDescription());
 		
-		if (param.getFacultyId() == null) {
-			throw new Exception("The Faculty ID was NOT found!");
-		}
-
-		Faculty fResult = dao.get(param.getFacultyId()); // ---
-			
-		if (fResult == null) {
-			throw new Exception("The Faculty DAO was NOT found!");
-		}
-
+		validateLong.validate(param.getFacultyId(), "The Faculty ID was NOT found!");
+		Faculty fResult = dao.get(param.getFacultyId()); 
+		
+		validateFaculty.validate(fResult, "The Faculty DAO was NOT found!");
 		entity.setFaculty(fResult); // ---
 		
 			
