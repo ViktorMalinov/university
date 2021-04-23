@@ -12,30 +12,6 @@ import main.service.apiuser.ApiUserParam;
 import main.service.apiuser.ApiUserResult;
 import main.service.apiuser.ApiUserService;
 import main.service.apiuser.ApiUserServiceImpl;
-import main.service.department.DepartmentParam;
-import main.service.department.DepartmentResult;
-import main.service.department.DepartmentService;
-import main.service.department.DepartmentServiceImpl;
-import main.service.discipline.DisciplineParam;
-import main.service.discipline.DisciplineResult;
-import main.service.discipline.DisciplineService;
-import main.service.discipline.DisciplineServiceImpl;
-import main.service.faculty.FacultyParam;
-import main.service.faculty.FacultyResult;
-import main.service.faculty.FacultyService;
-import main.service.faculty.FacultyServiceImpl;
-import main.service.facultydiscipline.FacultyDisciplineParam;
-import main.service.facultydiscipline.FacultyDisciplineResult;
-import main.service.facultydiscipline.FacultyDisciplineService;
-import main.service.facultydiscipline.FacultyDisciplineServiceImpl;
-import main.service.lecturer.LecturerParam;
-import main.service.lecturer.LecturerResult;
-import main.service.lecturer.LecturerService;
-import main.service.lecturer.LecturerServiceImpl;
-import main.service.speciality.SpecialityParam;
-import main.service.speciality.SpecialityResult;
-import main.service.speciality.SpecialityService;
-import main.service.speciality.SpecialityServiceImpl;
 
 public class University {
 
@@ -61,7 +37,7 @@ public class University {
 	
 	
 	
-	public static void apiGroupTest() {
+	public static void apiGroupTest() throws Exception {
 		ApiGroupService apiGroup = new ApiGroupServiceImpl(); 
 		ApiGroupParam param = new ApiGroupParam();
 		
@@ -152,7 +128,7 @@ public class University {
 	
 	
 	
-	public static void ApiUserTest() {
+	public static void ApiUserTest()  throws Exception{
 		ApiUserService аpiUser = new ApiUserServiceImpl(); 
 		ApiUserParam param = new ApiUserParam();
 		

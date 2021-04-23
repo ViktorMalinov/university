@@ -9,21 +9,21 @@ public class ApiGroupServiceImpl implements ApiGroupService {
 	
 	
 	@Override
-	public ApiGroupResult create(ApiGroupParam param) {
+	public ApiGroupResult create(ApiGroupParam param) throws Exception {
 		ApiGroupResult result = processor.create(param);
 		return result;
 	}
 	
 	
 	@Override
-	public ApiGroupResult get(Long id) {
+	public ApiGroupResult get(Long id) throws Exception {
 		ApiGroupResult result = processor.get(id);
 		return result;
 	}
 	
 	
 	@Override
-	public void update(ApiGroupParam param) {
+	public void update(ApiGroupParam param) throws Exception {
 		processor.update(param);
 	}
 	

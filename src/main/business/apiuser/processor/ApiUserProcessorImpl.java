@@ -20,7 +20,7 @@ public class ApiUserProcessorImpl implements ApiUserProcessor {
 	ApiUserResultTransformer resultTransformer = new ApiUserResultTransformerImpl();
 	
 	@Override
-	public ApiUserResult create(ApiUserParam param) {
+	public ApiUserResult create(ApiUserParam param) throws Exception {
 		ApiUser entity = paramTransformer.transform(param); 
 		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
@@ -33,13 +33,13 @@ public class ApiUserProcessorImpl implements ApiUserProcessor {
 	}
 
 	@Override
-	public ApiUserResult get(Long id) {
+	public ApiUserResult get(Long id) throws Exception {
 		ApiUser entity = dao.get(id);
 		ApiUserResult result = resultTransformer.transform(entity);
 		return result;	}
 
 	@Override
-	public void update(ApiUserParam param) {
+	public void update(ApiUserParam param) throws Exception {
 		ApiUser entity = paramTransformer.transform(param);
 		dao.update(entity);	}
 

@@ -21,7 +21,7 @@ public class DisciplineProcessorImpl implements DisciplineProcessor {
 	
 	
 	@Override
-	public DisciplineResult create(DisciplineParam param) {
+	public DisciplineResult create(DisciplineParam param) throws Exception {
 		Discipline entity = paramTransformer.transform(param); 
 		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
@@ -34,14 +34,14 @@ public class DisciplineProcessorImpl implements DisciplineProcessor {
 	}
 	
 	@Override
-	public DisciplineResult get(Long id) {
+	public DisciplineResult get(Long id)  throws Exception{
 		Discipline entity = dao.get(id);
 		DisciplineResult result = resultTransformer.transform(entity);
 		return result;
 	}
 
 	@Override
-	public void update(DisciplineParam param) {
+	public void update(DisciplineParam param)  throws Exception{
 		Discipline entity = paramTransformer.transform(param);
 		dao.update(entity);
 	}

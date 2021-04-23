@@ -1,12 +1,19 @@
 package main.business.apigroup.transformer;
 
+import main.business.apigroup.validator.ApiGroupParamValidator;
+import main.business.apigroup.validator.ApiGroupParamValidatorImpl;
 import main.dataaccess.apigroup.ApiGroup;
 import main.service.apigroup.ApiGroupParam;
 
 public class ApiGroupParamTransformerImpl implements ApiGroupParamTransformer {
 
+	private ApiGroupParamValidator validator = new ApiGroupParamValidatorImpl();
+	
 	@Override
-	public ApiGroup transform(ApiGroupParam param) {
+	public ApiGroup transform(ApiGroupParam param) throws Exception {
+
+		validator.validate(param);
+		
 		ApiGroup entity = new ApiGroup();
 		
 		entity.setId(param.getId());

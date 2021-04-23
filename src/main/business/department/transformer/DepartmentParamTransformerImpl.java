@@ -15,18 +15,18 @@ public class DepartmentParamTransformerImpl implements DepartmentParamTransforme
 	
 	@Override
 	public Department transform(DepartmentParam param) throws Exception {
+
+		validator.validate(param);
+
 		Department entity = new Department();
-		
-		
+	
 		entity.setId(param.getId());
 		entity.setCode(param.getCode());
 		entity.setName(param.getName());
 		entity.setDescription(param.getDescription());
 		
-		validator.validate(param);
-		
 		Faculty fResult = dao.get(param.getFacultyId()); 
-		entity.setFaculty(fResult); // ---
+		entity.setFaculty(fResult); 
 		
 			
 		return entity;

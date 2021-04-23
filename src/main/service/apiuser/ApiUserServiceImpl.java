@@ -9,21 +9,21 @@ public class ApiUserServiceImpl implements ApiUserService {
 	
 	
 	@Override
-	public ApiUserResult create(ApiUserParam param) {
+	public ApiUserResult create(ApiUserParam param)  throws Exception{
 		ApiUserResult result = processor.create(param);
 		return result;
 	}
 	
 	
 	@Override
-	public ApiUserResult get(Long id) {
+	public ApiUserResult get(Long id)  throws Exception{
 		ApiUserResult result = processor.get(id);
 		return result;
 	}
 	
 	
 	@Override
-	public void update(ApiUserParam param) {
+	public void update(ApiUserParam param)  throws Exception{
 		processor.update(param);
 	}
 	

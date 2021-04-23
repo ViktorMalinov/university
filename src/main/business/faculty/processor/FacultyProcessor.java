@@ -5,9 +5,9 @@ import main.service.faculty.FacultyResult;
 
 public interface FacultyProcessor {
 	
-	FacultyResult create(FacultyParam param);
-	FacultyResult get(Long id);
-	void update(FacultyParam param);
+	FacultyResult create(FacultyParam param) throws Exception;
+	FacultyResult get(Long id) throws Exception;
+	void update(FacultyParam param) throws Exception;
 	void delete(Long id);
 
 }

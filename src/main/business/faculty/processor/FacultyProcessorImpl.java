@@ -21,7 +21,7 @@ public class FacultyProcessorImpl implements FacultyProcessor {
 	
 	
 	@Override
-	public FacultyResult create(FacultyParam param) {
+	public FacultyResult create(FacultyParam param) throws Exception {
 		Faculty entity = paramTransformer.transform(param); 
 		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
 		Long id = Utils.getNextId(idSet); 	// get next id
@@ -34,14 +34,14 @@ public class FacultyProcessorImpl implements FacultyProcessor {
 	}
 	
 	@Override
-	public FacultyResult get(Long id) {
+	public FacultyResult get(Long id) throws Exception {
 		Faculty entity = dao.get(id);
 		FacultyResult result = resultTransformer.transform(entity);
 		return result;
 	}
 	
 	@Override
-	public void update(FacultyParam param) {
+	public void update(FacultyParam param) throws Exception {
 		Faculty entity = paramTransformer.transform(param);
 		dao.update(entity);
 	}

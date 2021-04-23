@@ -9,21 +9,21 @@ public class FacultyServiceImpl implements FacultyService {
 	
 	
 	@Override
-	public FacultyResult create(FacultyParam param) {
+	public FacultyResult create(FacultyParam param) throws Exception {
 		FacultyResult result = processor.create(param);
 		return result;
 	}
 	
 	
 	@Override
-	public FacultyResult get(Long id) {
+	public FacultyResult get(Long id) throws Exception {
 		FacultyResult result = processor.get(id);
 		return result;
 	}
 	
 	
 	@Override
-	public void update(FacultyParam param) {
+	public void update(FacultyParam param) throws Exception {
 		processor.update(param);
 	}
 	

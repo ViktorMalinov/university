@@ -5,5 +5,5 @@ import main.service.apigroup.ApiGroupParam;
 
 public interface ApiGroupParamTransformer {
 
-	ApiGroup transform(ApiGroupParam param);
+	ApiGroup transform(ApiGroupParam param) throws Exception;
 }

@@ -5,6 +5,6 @@ import main.service.apiuser.ApiUserParam;
 
 public interface ApiUserParamTransformer {
 	
-	ApiUser transform(ApiUserParam param);
+	ApiUser transform(ApiUserParam param) throws Exception;
 
 }

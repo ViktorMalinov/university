@@ -9,21 +9,21 @@ public class DisciplineServiceImpl implements DisciplineService {
 	
 	
 	@Override
-	public DisciplineResult create(DisciplineParam param) {
+	public DisciplineResult create(DisciplineParam param) throws Exception {
 		DisciplineResult result = processor.create(param);
 		return result;
 	}
 	
 	
 	@Override
-	public DisciplineResult get(Long id) {
+	public DisciplineResult get(Long id) throws Exception {
 		DisciplineResult result = processor.get(id);
 		return result;
 	}
 	
 	
 	@Override
-	public void update(DisciplineParam param) {
+	public void update(DisciplineParam param) throws Exception {
 		processor.update(param);
 	}
 	

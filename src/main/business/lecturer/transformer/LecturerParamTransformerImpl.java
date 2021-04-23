@@ -1,5 +1,7 @@
 package main.business.lecturer.transformer;
 
+import main.business.lecturer.validator.LecturerParamValidator;
+import main.business.lecturer.validator.LecturerParamValidatorImpl;
 import main.dataaccess.apiuser.ApiUser;
 import main.dataaccess.apiuser.ApiUserDao;
 import main.dataaccess.apiuser.ApiUserDaoHMapImpl;
@@ -13,9 +15,13 @@ public class LecturerParamTransformerImpl implements LecturerParamTransformer {
 
 	private ApiUserDao apiUserDao = new ApiUserDaoHMapImpl();
 	private DepartmentDao departmentDao = new DepartmentDaoHMapImpl(); 
+	private LecturerParamValidator validator = new LecturerParamValidatorImpl();
 	
 	@Override
 	public Lecturer transform(LecturerParam param) throws Exception {
+
+		validator.validate(param);
+		
 		Lecturer entity = new Lecturer();	
 		
 		entity.setId(param.getId());
@@ -23,29 +29,12 @@ public class LecturerParamTransformerImpl implements LecturerParamTransformer {
 		entity.setName(param.getName());
 		entity.setDescription(param.getDescription());
 		entity.setFamilyName(param.getFamilyName());
-		
-		if (param.getApiUserId() == null) {
-			throw new Exception("The API user ID was NOT found!");
-		}		
-
-		if (param.getDepartmentId() == null) {
-			throw new Exception("The Department ID was NOT found!");
-		}		
 
 		Department department = departmentDao.get(param.getDepartmentId());
 		ApiUser apiUser = apiUserDao.get(param.getApiUserId());
 		
-		if (department == null) {
-			throw new Exception("The Department DAO was NOT found!");
-		}
-		
-		if (apiUser == null) {
-			throw new Exception("The Department DAO was NOT found!");
-		}
-		
 		entity.setApiUser(apiUser);
 		entity.setDepartment(department);
-		
 		
 		return entity;
 	}

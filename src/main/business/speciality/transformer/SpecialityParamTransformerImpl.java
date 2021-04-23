@@ -1,5 +1,7 @@
 package main.business.speciality.transformer;
 
+import main.business.speciality.validator.SpecialityParamValidator;
+import main.business.speciality.validator.SpecialityParamValidatorImpl;
 import main.dataaccess.faculty.Faculty;
 import main.dataaccess.faculty.FacultyDao;
 import main.dataaccess.faculty.FacultyDaoHMapImpl;
@@ -9,9 +11,13 @@ import main.service.speciality.SpecialityParam;
 public class SpecialityParamTransformerImpl implements SpecialityParamTransformer {
 
 	private FacultyDao dao = new FacultyDaoHMapImpl();
+	private SpecialityParamValidator validator = new SpecialityParamValidatorImpl();
 	
 	@Override
 	public Speciality transform(SpecialityParam param) throws Exception {
+		
+		validator.validate(param);
+		
 		Speciality entity = new Speciality();
 		
 		entity.setId(param.getId());
@@ -19,22 +25,13 @@ public class SpecialityParamTransformerImpl implements SpecialityParamTransforme
 		entity.setName(param.getName());
 		entity.setDescription(param.getDescription());
 		
-		if (param.getFacultyId() == null) {
-			throw new Exception("The Faculty ID was NOT found!");
-		}
+		Faculty faculty = dao.get(param.getFacultyId()); // ---
+		entity.setFaculty(faculty); // ---		
 
-		Faculty fResult = dao.get(param.getFacultyId()); // ---
-			
-		if (fResult == null) {
-			throw new Exception("The Faculty DAO was NOT found!");
-		}
-
-		entity.setFaculty(fResult); // ---		
-		
-		
 		return entity;
 	}
 
+	
 	public FacultyDao getDao() {
 		return dao;
 	}

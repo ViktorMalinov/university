@@ -1,12 +1,19 @@
 package main.business.discipline.transformer;
 
+import main.business.discipline.validator.DisciplineParamValidator;
+import main.business.discipline.validator.DisciplineParamValidatorImpl;
 import main.dataaccess.discipline.Discipline;
 import main.service.discipline.DisciplineParam;
 
 public class DisciplineParamTransformerImpl implements DisciplineParamTransformer {
 
+	DisciplineParamValidator validator = new DisciplineParamValidatorImpl();
+	
 	@Override
-	public Discipline transform(DisciplineParam param) {
+	public Discipline transform(DisciplineParam param) throws Exception {
+		
+		validator.validate(param);
+				
 		Discipline entity = new Discipline();
 		
 		entity.setId(param.getId());
