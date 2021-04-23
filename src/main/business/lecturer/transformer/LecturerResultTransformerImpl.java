@@ -1,6 +1,6 @@
 package main.business.lecturer.transformer;
 
-import main.dataaccess.lecturer.Lecturer;
+import main.dataaccess.lecturer.dao.Lecturer;
 import main.service.lecturer.LecturerResult;
 
 public class LecturerResultTransformerImpl implements LecturerResultTransformer {

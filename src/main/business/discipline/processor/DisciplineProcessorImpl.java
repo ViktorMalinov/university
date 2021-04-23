@@ -7,9 +7,9 @@ import main.business.discipline.transformer.DisciplineParamTransformerImpl;
 import main.business.discipline.transformer.DisciplineResultTransformer;
 import main.business.discipline.transformer.DisciplineResultTransformerImpl;
 import main.common.Utils;
-import main.dataaccess.discipline.Discipline;
-import main.dataaccess.discipline.DisciplineDao;
-import main.dataaccess.discipline.DisciplineDaoHMapImpl;
+import main.dataaccess.discipline.dao.Discipline;
+import main.dataaccess.discipline.dao.DisciplineDao;
+import main.dataaccess.discipline.dao.DisciplineDaoHMapImpl;
 import main.service.discipline.DisciplineParam;
 import main.service.discipline.DisciplineResult;
 

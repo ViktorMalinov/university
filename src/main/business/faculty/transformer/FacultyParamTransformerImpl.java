@@ -2,7 +2,7 @@ package main.business.faculty.transformer;
 
 import main.business.faculty.validator.FacultyParamValidator;
 import main.business.faculty.validator.FacultyParamValidatorImpl;
-import main.dataaccess.faculty.Faculty;
+import main.dataaccess.faculty.dao.Faculty;
 import main.service.faculty.FacultyParam;
 
 public class FacultyParamTransformerImpl implements FacultyParamTransformer {

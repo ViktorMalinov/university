@@ -7,9 +7,9 @@ import main.business.faculty.transformer.FacultyParamTransformerImpl;
 import main.business.faculty.transformer.FacultyResultTransformer;
 import main.business.faculty.transformer.FacultyResultTransformerImpl;
 import main.common.Utils;
-import main.dataaccess.faculty.Faculty;
-import main.dataaccess.faculty.FacultyDao;
-import main.dataaccess.faculty.FacultyDaoHMapImpl;
+import main.dataaccess.faculty.dao.Faculty;
+import main.dataaccess.faculty.dao.FacultyDao;
+import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
 import main.service.faculty.FacultyParam;
 import main.service.faculty.FacultyResult;
 

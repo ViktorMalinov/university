@@ -2,13 +2,13 @@ package main.business.facultydiscipline.transformer;
 
 import main.business.facultydiscipline.validator.FacultyDisciplineParamValidator;
 import main.business.facultydiscipline.validator.FacultyDisciplineParamValidatorImpl;
-import main.dataaccess.discipline.Discipline;
-import main.dataaccess.discipline.DisciplineDao;
-import main.dataaccess.discipline.DisciplineDaoHMapImpl;
-import main.dataaccess.faculty.Faculty;
-import main.dataaccess.faculty.FacultyDao;
-import main.dataaccess.faculty.FacultyDaoHMapImpl;
-import main.dataaccess.facultydiscipline.FacultyDiscipline;
+import main.dataaccess.discipline.dao.Discipline;
+import main.dataaccess.discipline.dao.DisciplineDao;
+import main.dataaccess.discipline.dao.DisciplineDaoHMapImpl;
+import main.dataaccess.faculty.dao.Faculty;
+import main.dataaccess.faculty.dao.FacultyDao;
+import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
+import main.dataaccess.facultydiscipline.dao.FacultyDiscipline;
 import main.service.facultydiscipline.FacultyDisciplineParam;
 
 public class FacultyDisciplineParamTransformerImpl implements FacultyDisciplineParamTransformer {

@@ -2,10 +2,10 @@ package main.business.department.transformer;
 
 import main.business.department.validator.DepartmentParamValidator;
 import main.business.department.validator.DepartmentParamValidatorImpl;
-import main.dataaccess.department.Department;
-import main.dataaccess.faculty.Faculty;
-import main.dataaccess.faculty.FacultyDao;
-import main.dataaccess.faculty.FacultyDaoHMapImpl;
+import main.dataaccess.department.dao.Department;
+import main.dataaccess.faculty.dao.Faculty;
+import main.dataaccess.faculty.dao.FacultyDao;
+import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
 import main.service.department.DepartmentParam;
 
 public class DepartmentParamTransformerImpl implements DepartmentParamTransformer {

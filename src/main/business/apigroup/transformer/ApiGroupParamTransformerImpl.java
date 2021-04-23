@@ -2,7 +2,7 @@ package main.business.apigroup.transformer;
 
 import main.business.apigroup.validator.ApiGroupParamValidator;
 import main.business.apigroup.validator.ApiGroupParamValidatorImpl;
-import main.dataaccess.apigroup.ApiGroup;
+import main.dataaccess.apigroup.dao.ApiGroup;
 import main.service.apigroup.ApiGroupParam;
 
 public class ApiGroupParamTransformerImpl implements ApiGroupParamTransformer {

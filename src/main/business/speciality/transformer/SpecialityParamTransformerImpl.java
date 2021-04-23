@@ -2,10 +2,10 @@ package main.business.speciality.transformer;
 
 import main.business.speciality.validator.SpecialityParamValidator;
 import main.business.speciality.validator.SpecialityParamValidatorImpl;
-import main.dataaccess.faculty.Faculty;
-import main.dataaccess.faculty.FacultyDao;
-import main.dataaccess.faculty.FacultyDaoHMapImpl;
-import main.dataaccess.speciality.Speciality;
+import main.dataaccess.faculty.dao.Faculty;
+import main.dataaccess.faculty.dao.FacultyDao;
+import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
+import main.dataaccess.speciality.dao.Speciality;
 import main.service.speciality.SpecialityParam;
 
 public class SpecialityParamTransformerImpl implements SpecialityParamTransformer {

@@ -2,7 +2,7 @@ package main.business.apiuser.transformer;
 
 import main.business.apiuser.validator.ApiUserParamValidator;
 import main.business.apiuser.validator.ApiUserParamValidatorImpl;
-import main.dataaccess.apiuser.ApiUser;
+import main.dataaccess.apiuser.dao.ApiUser;
 import main.service.apiuser.ApiUserParam;
 
 public class ApiUserParamTransformerImpl implements ApiUserParamTransformer {

@@ -1,11 +1,11 @@
 package main.business.lecturer.validator;
 
-import main.dataaccess.apiuser.ApiUser;
-import main.dataaccess.apiuser.ApiUserDao;
-import main.dataaccess.apiuser.ApiUserDaoHMapImpl;
-import main.dataaccess.department.Department;
-import main.dataaccess.department.DepartmentDao;
-import main.dataaccess.department.DepartmentDaoHMapImpl;
+import main.dataaccess.apiuser.dao.ApiUser;
+import main.dataaccess.apiuser.dao.ApiUserDao;
+import main.dataaccess.apiuser.dao.ApiUserDaoHMapImpl;
+import main.dataaccess.department.dao.Department;
+import main.dataaccess.department.dao.DepartmentDao;
+import main.dataaccess.department.dao.DepartmentDaoHMapImpl;
 import main.service.lecturer.LecturerParam;
 
 public class LecturerParamValidatorImpl implements LecturerParamValidator {

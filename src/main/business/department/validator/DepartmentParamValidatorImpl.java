@@ -1,8 +1,8 @@
 package main.business.department.validator;
 
-import main.dataaccess.faculty.Faculty;
-import main.dataaccess.faculty.FacultyDao;
-import main.dataaccess.faculty.FacultyDaoHMapImpl;
+import main.dataaccess.faculty.dao.Faculty;
+import main.dataaccess.faculty.dao.FacultyDao;
+import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
 import main.service.department.DepartmentParam;
 
 public class DepartmentParamValidatorImpl implements DepartmentParamValidator {

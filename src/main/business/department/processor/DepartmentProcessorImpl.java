@@ -7,9 +7,9 @@ import main.business.department.transformer.DepartmentParamTransformerImpl;
 import main.business.department.transformer.DepartmentResultTransformer;
 import main.business.department.transformer.DepartmentResultTransformerImpl;
 import main.common.Utils;
-import main.dataaccess.department.Department;
-import main.dataaccess.department.DepartmentDao;
-import main.dataaccess.department.DepartmentDaoHMapImpl;
+import main.dataaccess.department.dao.Department;
+import main.dataaccess.department.dao.DepartmentDao;
+import main.dataaccess.department.dao.DepartmentDaoHMapImpl;
 import main.service.department.DepartmentParam;
 import main.service.department.DepartmentResult;
 

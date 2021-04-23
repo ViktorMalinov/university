@@ -7,9 +7,9 @@ import main.business.facultydiscipline.transformer.FacultyDisciplineParamTransfo
 import main.business.facultydiscipline.transformer.FacultyDisciplineResultTransformer;
 import main.business.facultydiscipline.transformer.FacultyDisciplineResultTransformerImpl;
 import main.common.Utils;
-import main.dataaccess.facultydiscipline.FacultyDiscipline;
-import main.dataaccess.facultydiscipline.FacultyDisciplineDao;
-import main.dataaccess.facultydiscipline.FacultyDisciplineDaoHMapImpl;
+import main.dataaccess.facultydiscipline.dao.FacultyDiscipline;
+import main.dataaccess.facultydiscipline.dao.FacultyDisciplineDao;
+import main.dataaccess.facultydiscipline.dao.FacultyDisciplineDaoHMapImpl;
 import main.service.facultydiscipline.FacultyDisciplineParam;
 import main.service.facultydiscipline.FacultyDisciplineResult;
 

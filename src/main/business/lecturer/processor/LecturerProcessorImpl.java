@@ -7,9 +7,9 @@ import main.business.lecturer.transformer.LecturerParamTransformerImpl;
 import main.business.lecturer.transformer.LecturerResultTransformer;
 import main.business.lecturer.transformer.LecturerResultTransformerImpl;
 import main.common.Utils;
-import main.dataaccess.lecturer.Lecturer;
-import main.dataaccess.lecturer.LecturerDao;
-import main.dataaccess.lecturer.LecturerDaoHMapImpl;
+import main.dataaccess.lecturer.dao.Lecturer;
+import main.dataaccess.lecturer.dao.LecturerDao;
+import main.dataaccess.lecturer.dao.LecturerDaoHMapImpl;
 import main.service.lecturer.LecturerParam;
 import main.service.lecturer.LecturerResult;
 

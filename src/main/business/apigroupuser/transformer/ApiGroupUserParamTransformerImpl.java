@@ -2,13 +2,13 @@ package main.business.apigroupuser.transformer;
 
 import main.business.apigroupuser.validator.ApiGroupUserParamValidator;
 import main.business.apigroupuser.validator.ApiGroupUserParamValidatorImpl;
-import main.dataaccess.apigroup.ApiGroup;
-import main.dataaccess.apigroup.ApiGroupDao;
-import main.dataaccess.apigroup.ApiGroupDaoHMapImpl;
-import main.dataaccess.apigroupuser.ApiGroupUser;
-import main.dataaccess.apiuser.ApiUser;
-import main.dataaccess.apiuser.ApiUserDao;
-import main.dataaccess.apiuser.ApiUserDaoHMapImpl;
+import main.dataaccess.apigroup.dao.ApiGroup;
+import main.dataaccess.apigroup.dao.ApiGroupDao;
+import main.dataaccess.apigroup.dao.ApiGroupDaoHMapImpl;
+import main.dataaccess.apigroupuser.dao.ApiGroupUser;
+import main.dataaccess.apiuser.dao.ApiUser;
+import main.dataaccess.apiuser.dao.ApiUserDao;
+import main.dataaccess.apiuser.dao.ApiUserDaoHMapImpl;
 import main.service.apigroupuser.ApiGroupUserParam;
 
 public class ApiGroupUserParamTransformerImpl implements ApiGroupUserParamTransformer {

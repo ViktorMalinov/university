@@ -1,11 +1,11 @@
 package main.business.facultydiscipline.validator;
 
-import main.dataaccess.discipline.Discipline;
-import main.dataaccess.discipline.DisciplineDao;
-import main.dataaccess.discipline.DisciplineDaoHMapImpl;
-import main.dataaccess.faculty.Faculty;
-import main.dataaccess.faculty.FacultyDao;
-import main.dataaccess.faculty.FacultyDaoHMapImpl;
+import main.dataaccess.discipline.dao.Discipline;
+import main.dataaccess.discipline.dao.DisciplineDao;
+import main.dataaccess.discipline.dao.DisciplineDaoHMapImpl;
+import main.dataaccess.faculty.dao.Faculty;
+import main.dataaccess.faculty.dao.FacultyDao;
+import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
 import main.service.facultydiscipline.FacultyDisciplineParam;
 
 public class FacultyDisciplineParamValidatorImpl implements FacultyDisciplineParamValidator {

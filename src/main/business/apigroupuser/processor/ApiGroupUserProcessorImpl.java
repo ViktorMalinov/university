@@ -7,9 +7,9 @@ import main.business.apigroupuser.transformer.ApiGroupUserParamTransformerImpl;
 import main.business.apigroupuser.transformer.ApiGroupUserResultTransformer;
 import main.business.apigroupuser.transformer.ApiGroupUserResultTransformerImpl;
 import main.common.Utils;
-import main.dataaccess.apigroupuser.ApiGroupUser;
-import main.dataaccess.apigroupuser.ApiGroupUserDao;
-import main.dataaccess.apigroupuser.ApiGroupUserDaoHMapImpl;
+import main.dataaccess.apigroupuser.dao.ApiGroupUser;
+import main.dataaccess.apigroupuser.dao.ApiGroupUserDao;
+import main.dataaccess.apigroupuser.dao.ApiGroupUserDaoHMapImpl;
 import main.service.apigroupuser.ApiGroupUserParam;
 import main.service.apigroupuser.ApiGroupUserResult;
 

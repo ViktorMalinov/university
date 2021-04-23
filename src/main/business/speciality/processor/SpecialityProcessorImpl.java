@@ -7,9 +7,9 @@ import main.business.speciality.transformer.SpecialityParamTransformerImpl;
 import main.business.speciality.transformer.SpecialityResultTransformer;
 import main.business.speciality.transformer.SpecialityResultTransformerImpl;
 import main.common.Utils;
-import main.dataaccess.speciality.Speciality;
-import main.dataaccess.speciality.SpecialityDao;
-import main.dataaccess.speciality.SpecialityDaoHMapImpl;
+import main.dataaccess.speciality.dao.Speciality;
+import main.dataaccess.speciality.dao.SpecialityDao;
+import main.dataaccess.speciality.dao.SpecialityDaoHMapImpl;
 import main.service.speciality.SpecialityParam;
 import main.service.speciality.SpecialityResult;
 
