@@ -1,43 +1,43 @@
 package main.dataaccess.department.dao;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
+
+import main.dataaccess.department.repo.DepartmentRepoManager;
+import main.dataaccess.department.repo.DepartmentRepoManagerImpl;
 
 
 public class DepartmentDaoHMapImpl implements DepartmentDao {
 
-	private static Map<Long, Department> datasource = new HashMap<Long, Department>();
 	
-	
+	private DepartmentRepoManager repo = new DepartmentRepoManagerImpl();
 	
 	@Override
 	public Department create(Department entity) {
-		datasource.put(entity.getId(), entity);
-		return entity;
+		Department res = repo.insert(entity);
+		return res;
 	}
 
 	@Override
 	public Department get(Long id) {
-		Department entity = datasource.get(id);
+		Department entity = repo.select(id);
 		return entity;	
 	}
 
 	@Override
 	public void update(Department entity) {
-		datasource.put(entity.getId(), entity);
+		repo.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		datasource.remove(id);
+		repo.delete(id);
 
 	}
 	
 	@Override
-	public Set<Long> getKeySet() {
-		Set<Long> res = datasource.keySet();
-		return res;
+	public List<Department> selectAll() {
+		List<Department> allData = repo.selectAll();
+		return allData;
 	}
 
 

@@ -1,12 +1,9 @@
 package main.business.department.processor;
 
-import java.util.Set;
-
 import main.business.department.transformer.DepartmentParamTransformer;
 import main.business.department.transformer.DepartmentParamTransformerImpl;
 import main.business.department.transformer.DepartmentResultTransformer;
 import main.business.department.transformer.DepartmentResultTransformerImpl;
-import main.common.Utils;
 import main.dataaccess.department.dao.Department;
 import main.dataaccess.department.dao.DepartmentDao;
 import main.dataaccess.department.dao.DepartmentDaoHMapImpl;
@@ -23,9 +20,6 @@ public class DepartmentProcessorImpl implements DepartmentProcessor {
 	@Override
 	public DepartmentResult create(DepartmentParam param) throws Exception {
 		Department entity = paramTransformer.transform(param); 
-		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
-		Long id = Utils.getNextId(idSet); 	// get next id
-		entity.setId(id);		
 		
 		entity = dao.create(entity);
 		

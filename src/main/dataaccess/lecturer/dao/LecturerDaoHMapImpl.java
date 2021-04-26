@@ -1,41 +1,44 @@
 package main.dataaccess.lecturer.dao;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
+
+import main.dataaccess.lecturer.repo.LecturerRepoManager;
+import main.dataaccess.lecturer.repo.LecturerRepoManagerImpl;
 
 
 public class LecturerDaoHMapImpl implements LecturerDao {
 
-	private static Map<Long, Lecturer> datasource = new HashMap<Long, Lecturer>();
+	private LecturerRepoManager repo = new LecturerRepoManagerImpl();
 	
 	
 	@Override
 	public Lecturer create(Lecturer entity) {
-		datasource.put(entity.getId(), entity);
-		return entity;
+		Lecturer res = repo.insert(entity);
+		return res;
 	}
 
 	@Override
 	public Lecturer get(Long id) {
-		Lecturer entity = datasource.get(id);
+		Lecturer entity = repo.select(id);
 		return entity;	
 	}
 
 	@Override
 	public void update(Lecturer entity) {
-		datasource.put(entity.getId(), entity);
+		repo.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		datasource.remove(id);
+		repo.delete(id);
+	}
+	
+	@Override
+	public List<Lecturer> selectAll() {
+		List<Lecturer> allData = repo.selectAll();
+		return allData;
 	}
 
-	@Override
-	public Set<Long> getKeySet() {
-		Set<Long> res = datasource.keySet();
-		return res;
-	}
+
 
 }

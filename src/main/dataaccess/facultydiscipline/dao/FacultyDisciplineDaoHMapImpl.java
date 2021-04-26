@@ -1,42 +1,40 @@
 package main.dataaccess.facultydiscipline.dao;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
+
+import main.dataaccess.facultydiscipline.repo.FacultyDisciplineRepoManager;
+import main.dataaccess.facultydiscipline.repo.FacultyDisciplineRepoManagerImpl;
 
 
 public class FacultyDisciplineDaoHMapImpl implements FacultyDisciplineDao {
 
-	private static Map<Long, FacultyDiscipline> datasource = new HashMap<Long, FacultyDiscipline>();
-	
+	private FacultyDisciplineRepoManager repo = new FacultyDisciplineRepoManagerImpl();	
 	
 	@Override
 	public FacultyDiscipline create(FacultyDiscipline entity) {
-		datasource.put(entity.getId(), entity);
-		return entity;
+		FacultyDiscipline res = repo.insert(entity);
+		return res;
 	}
 
 	@Override
 	public FacultyDiscipline get(Long id) {
-		FacultyDiscipline entity = datasource.get(id);
+		FacultyDiscipline entity = repo.select(id);
 		return entity;	
 	}
 
 	@Override
 	public void update(FacultyDiscipline entity) {
-		datasource.put(entity.getId(), entity);
+		repo.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		datasource.remove(id);
+		repo.delete(id);
 	}
 	
 	@Override
-	public Set<Long> getKeySet() {
-		Set<Long> res = datasource.keySet();
-		return res;
+	public List<FacultyDiscipline> selectAll() {
+		List<FacultyDiscipline> allData = repo.selectAll();
+		return allData;
 	}
-
-
 }

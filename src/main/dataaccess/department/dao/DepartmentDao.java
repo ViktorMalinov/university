@@ -1,6 +1,6 @@
 package main.dataaccess.department.dao;
 
-import java.util.Set;
+import java.util.List;
 
 public interface DepartmentDao {
 
@@ -8,5 +8,5 @@ public interface DepartmentDao {
 	Department get(Long id);
 	void update(Department obj);
 	void delete(Long id);
-	Set<Long> getKeySet();
+	List<Department> selectAll();
 }

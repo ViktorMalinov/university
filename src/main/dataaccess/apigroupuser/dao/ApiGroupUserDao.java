@@ -1,6 +1,6 @@
 package main.dataaccess.apigroupuser.dao;
 
-import java.util.Set;
+import java.util.List;
 
 public interface ApiGroupUserDao {
 
@@ -8,5 +8,5 @@ public interface ApiGroupUserDao {
 	ApiGroupUser get(Long id);
 	void update(ApiGroupUser obj);
 	void delete(Long id);
-	Set<Long> getKeySet();
+	List<ApiGroupUser> selectAll();
 }

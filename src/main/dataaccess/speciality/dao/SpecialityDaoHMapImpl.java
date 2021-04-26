@@ -1,41 +1,42 @@
 package main.dataaccess.speciality.dao;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
+
+import main.dataaccess.speciality.repo.SpecialityRepoManager;
+import main.dataaccess.speciality.repo.SpecialityRepoManagerImpl;
 
 
 public class SpecialityDaoHMapImpl implements SpecialityDao {
 
-	private static Map<Long, Speciality> datasource = new HashMap<Long, Speciality>();
+	private SpecialityRepoManager repo = new SpecialityRepoManagerImpl();
 	
 	
 	@Override
 	public Speciality create(Speciality entity) {
-		datasource.put(entity.getId(), entity);
-		return entity;
+		Speciality res = repo.insert(entity);
+		return res;
 	}
 
 	@Override
 	public Speciality get(Long id) {
-		Speciality entity = datasource.get(id);
+		Speciality entity = repo.select(id);
 		return entity;	
 	}
 
 	@Override
 	public void update(Speciality entity) {
-		datasource.put(entity.getId(), entity);
+		repo.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		datasource.remove(id);
+		repo.delete(id);
 	}
 
 	@Override
-	public Set<Long> getKeySet() {
-		Set<Long> res = datasource.keySet();
-		return res;
+	public List<Speciality> selectAll() {
+		List<Speciality> allData = repo.selectAll();
+		return allData;
 	}
 
 }

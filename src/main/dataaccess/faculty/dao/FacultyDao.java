@@ -1,6 +1,6 @@
 package main.dataaccess.faculty.dao;
 
-import java.util.Set;
+import java.util.List;
 
 public interface FacultyDao {
 
@@ -8,5 +8,5 @@ public interface FacultyDao {
 	Faculty get(Long id);
 	void update(Faculty obj);
 	void delete(Long id);
-	Set<Long> getKeySet();
+	List<Faculty> selectAll();
 }

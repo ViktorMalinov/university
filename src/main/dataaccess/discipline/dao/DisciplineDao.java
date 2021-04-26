@@ -1,6 +1,6 @@
 package main.dataaccess.discipline.dao;
 
-import java.util.Set;
+import java.util.List;
 
 public interface DisciplineDao {
 	
@@ -8,5 +8,5 @@ public interface DisciplineDao {
 	Discipline get(Long id);
 	void update(Discipline obj);
 	void delete(Long id);
-	Set<Long> getKeySet();
+	List<Discipline> selectAll();
 }

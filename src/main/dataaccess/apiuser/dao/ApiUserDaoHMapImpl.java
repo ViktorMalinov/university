@@ -1,42 +1,43 @@
 package main.dataaccess.apiuser.dao;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
+
+import main.dataaccess.apiuser.repo.ApiUserRepoManager;
+import main.dataaccess.apiuser.repo.ApiUserRepoManagerImpl;
 
 
 
 public class ApiUserDaoHMapImpl implements ApiUserDao {
 
-	private static Map<Long, ApiUser> datasource = new HashMap<Long, ApiUser>();
+	private ApiUserRepoManager repo = new ApiUserRepoManagerImpl(); 
 	
 	
 	@Override
 	public ApiUser create(ApiUser entity) {
-		datasource.put(entity.getId(), entity);
-		return entity;
+		ApiUser res = repo.insert(entity);
+		return res;
 	}
 
 	@Override
 	public ApiUser get(Long id) {
-		ApiUser entity = datasource.get(id);
+		ApiUser entity = repo.select(id);
 		return entity;	
 	}
 
 	@Override
 	public void update(ApiUser entity) {
-		datasource.put(entity.getId(), entity);
+		repo.update(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		datasource.remove(id);
+		repo.delete(id);
 	}
 
 	@Override
-	public Set<Long> getKeySet() {
-		Set<Long> res = datasource.keySet();
-		return res;
+	public List<ApiUser> selectAll() {
+		List<ApiUser> allData = repo.selectAll();
+		return allData;
 	}
 
 }

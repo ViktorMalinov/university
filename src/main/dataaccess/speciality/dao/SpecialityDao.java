@@ -1,6 +1,6 @@
 package main.dataaccess.speciality.dao;
 
-import java.util.Set;
+import java.util.List;
 
 public interface SpecialityDao {
 
@@ -8,5 +8,5 @@ public interface SpecialityDao {
 	Speciality get(Long id);
 	void update(Speciality obj);
 	void delete(Long id);
-	Set<Long> getKeySet();
+	List<Speciality> selectAll();
 }

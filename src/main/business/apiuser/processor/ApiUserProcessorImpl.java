@@ -1,12 +1,9 @@
 package main.business.apiuser.processor;
 
-import java.util.Set;
-
 import main.business.apiuser.transformer.ApiUserParamTransformer;
 import main.business.apiuser.transformer.ApiUserParamTransformerImpl;
 import main.business.apiuser.transformer.ApiUserResultTransformer;
 import main.business.apiuser.transformer.ApiUserResultTransformerImpl;
-import main.common.Utils;
 import main.dataaccess.apiuser.dao.ApiUser;
 import main.dataaccess.apiuser.dao.ApiUserDao;
 import main.dataaccess.apiuser.dao.ApiUserDaoHMapImpl;
@@ -22,9 +19,6 @@ public class ApiUserProcessorImpl implements ApiUserProcessor {
 	@Override
 	public ApiUserResult create(ApiUserParam param) throws Exception {
 		ApiUser entity = paramTransformer.transform(param); 
-		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
-		Long id = Utils.getNextId(idSet); 	// get next id
-		entity.setId(id);		
 		
 		entity = dao.create(entity);
 		

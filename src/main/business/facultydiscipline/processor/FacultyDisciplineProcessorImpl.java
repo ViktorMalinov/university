@@ -1,12 +1,9 @@
 package main.business.facultydiscipline.processor;
 
-import java.util.Set;
-
 import main.business.facultydiscipline.transformer.FacultyDisciplineParamTransformer;
 import main.business.facultydiscipline.transformer.FacultyDisciplineParamTransformerImpl;
 import main.business.facultydiscipline.transformer.FacultyDisciplineResultTransformer;
 import main.business.facultydiscipline.transformer.FacultyDisciplineResultTransformerImpl;
-import main.common.Utils;
 import main.dataaccess.facultydiscipline.dao.FacultyDiscipline;
 import main.dataaccess.facultydiscipline.dao.FacultyDisciplineDao;
 import main.dataaccess.facultydiscipline.dao.FacultyDisciplineDaoHMapImpl;
@@ -23,9 +20,6 @@ public class FacultyDisciplineProcessorImpl implements FacultyDisciplineProcesso
 	@Override
 	public FacultyDisciplineResult create(FacultyDisciplineParam param) throws Exception {
 		FacultyDiscipline entity = paramTransformer.transform(param); 
-		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
-		Long id = Utils.getNextId(idSet); 	// get next id
-		entity.setId(id);		
 		
 		entity = dao.create(entity);
 		

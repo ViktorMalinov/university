@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import main.common.Utils;
 import main.dataaccess.apigroup.dao.ApiGroup;
 
 public class ApiGroupRepoManagerImpl implements ApiGroupRepoManager {
@@ -13,6 +14,11 @@ public class ApiGroupRepoManagerImpl implements ApiGroupRepoManager {
 	
 	@Override
 	public ApiGroup insert(ApiGroup entity) {
+		
+		Set<Long> idSet = datasource.keySet();		// get all id's from db object
+		Long id = Utils.getNextId(idSet); 	// get next id
+		entity.setId(id);		
+		
 		datasource.put(entity.getId(), entity);
 		return entity;
 	}
@@ -33,11 +39,6 @@ public class ApiGroupRepoManagerImpl implements ApiGroupRepoManager {
 		datasource.remove(id);
 	}
 
-	@Override
-	public Set<Long> getKeySet() {
-		Set<Long> res = datasource.keySet();
-		return res;
-	}
 
 	@Override
 	public List<ApiGroup> selectAll() {

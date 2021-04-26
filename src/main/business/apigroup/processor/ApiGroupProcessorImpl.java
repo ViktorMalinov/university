@@ -1,11 +1,9 @@
 package main.business.apigroup.processor;
 
-import java.util.Set;
 import main.business.apigroup.transformer.ApiGroupParamTransformer;
 import main.business.apigroup.transformer.ApiGroupParamTransformerImpl;
 import main.business.apigroup.transformer.ApiGroupResultTransformer;
 import main.business.apigroup.transformer.ApiGroupResultTransformerImpl;
-import main.common.Utils;
 import main.dataaccess.apigroup.dao.ApiGroup;
 import main.dataaccess.apigroup.dao.ApiGroupDao;
 import main.dataaccess.apigroup.dao.ApiGroupDaoHMapImpl;
@@ -23,9 +21,6 @@ public class ApiGroupProcessorImpl implements ApiGroupProcessor {
 	@Override
 	public ApiGroupResult create(ApiGroupParam param) throws Exception {
 		ApiGroup entity = paramTransformer.transform(param); 
-		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
-		Long id = Utils.getNextId(idSet); 	// get next id
-		entity.setId(id);		
 		
 		entity = dao.create(entity);
 		

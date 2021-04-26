@@ -1,12 +1,9 @@
 package main.business.faculty.processor;
 
-import java.util.Set;
-
 import main.business.faculty.transformer.FacultyParamTransformer;
 import main.business.faculty.transformer.FacultyParamTransformerImpl;
 import main.business.faculty.transformer.FacultyResultTransformer;
 import main.business.faculty.transformer.FacultyResultTransformerImpl;
-import main.common.Utils;
 import main.dataaccess.faculty.dao.Faculty;
 import main.dataaccess.faculty.dao.FacultyDao;
 import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
@@ -23,10 +20,7 @@ public class FacultyProcessorImpl implements FacultyProcessor {
 	@Override
 	public FacultyResult create(FacultyParam param) throws Exception {
 		Faculty entity = paramTransformer.transform(param); 
-		Set<Long> idSet = dao.getKeySet();		// get all id's from db object
-		Long id = Utils.getNextId(idSet); 	// get next id
-		entity.setId(id);		
-		
+
 		entity = dao.create(entity);
 		
 		FacultyResult result = resultTransformer.transform(entity);
