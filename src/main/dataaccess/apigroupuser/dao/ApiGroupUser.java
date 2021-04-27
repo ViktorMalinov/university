@@ -2,24 +2,14 @@ package main.dataaccess.apigroupuser.dao;
 
 import main.dataaccess.apigroup.dao.ApiGroup;
 import main.dataaccess.apiuser.dao.ApiUser;
+import main.dataaccess.common.Persistent;
 
-public class ApiGroupUser {
+public class ApiGroupUser extends Persistent {
 
-	private Long id;
-	
 	private ApiGroup apiGroup;
 	private ApiUser apiUser;
 
 	
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 
 	public ApiGroup getApiGroup() {
 		return apiGroup;
