@@ -1,45 +1,13 @@
 package main.service.apiuser;
 
-public class ApiUserParam {
+import main.service.common.NameDto;
 
-	private Long id;
-	private Long code;
-	private String description;
+public class ApiUserParam extends NameDto {
+
 	private String displayName;
 	private String email;
 	private String password;
 	private String username;
-	
-
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	public Long getCode() {
-		return code;
-	}
-
-
-	public void setCode(Long code) {
-		this.code = code;
-	}
-
-
-
-	public String getDescription() {
-		return description;
-	}
-
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
 
 
 	public String getDisplayName() {
