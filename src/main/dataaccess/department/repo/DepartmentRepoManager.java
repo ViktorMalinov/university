@@ -1,14 +1,8 @@
 package main.dataaccess.department.repo;
 
-import java.util.List;
-
+import main.dataaccess.common.BaseRepoManager;
 import main.dataaccess.department.dao.Department;
 
-public interface DepartmentRepoManager {
+public interface DepartmentRepoManager extends BaseRepoManager <Long, Department>{
 
-	Department insert(Department entity);
-	Department select(Long id);
-	void update(Department entity);
-	void delete(Long id);
-	List<Department> selectAll();
 }
