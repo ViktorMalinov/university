@@ -1,16 +1,13 @@
 package main.business.faculty.validator;
 
+import main.business.common.BaseParamValidatorImpl;
 import main.service.faculty.FacultyParam;
 
-public class FacultyParamValidatorImpl implements FacultyParamValidator {
+public class FacultyParamValidatorImpl extends BaseParamValidatorImpl <FacultyParam> {
 
 	@Override
-	public void validate(FacultyParam param) throws Exception {
-		
-		if (param == null) {
-			throw new Exception( "Department param object you want to manipulate was not found!" );
-		}
-		
+	public void customValidate(FacultyParam param) throws Exception {
 	}
+
 
 }

@@ -1,20 +1,17 @@
 package main.business.speciality.validator;
 
+import main.business.common.BaseParamValidatorImpl;
 import main.dataaccess.faculty.dao.Faculty;
 import main.dataaccess.faculty.dao.FacultyDao;
 import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
 import main.service.speciality.SpecialityParam;
 
-public class SpecialityParamValidatorImpl implements SpecialityParamValidator {
+public class SpecialityParamValidatorImpl extends BaseParamValidatorImpl <SpecialityParam> {
 
 	private FacultyDao dao = new FacultyDaoHMapImpl();
 	
 	@Override
-	public void validate(SpecialityParam param) throws Exception {
-
-		if (param == null) {
-			throw new Exception( "Speciality param object you want to manipulate was not found!" );
-		}
+	public void customValidate(SpecialityParam param) throws Exception {
 
 		if (param.getFacultyId() == null) {
 			throw new Exception( "The object you want to manipulate was not found!" );

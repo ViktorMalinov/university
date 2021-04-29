@@ -1,16 +1,13 @@
 package main.business.apiuser.validator;
 
+import main.business.common.BaseParamValidatorImpl;
 import main.service.apiuser.ApiUserParam;
 
-public class ApiUserParamValidatorImpl implements ApiUserParamValidator {
+public class ApiUserParamValidatorImpl extends BaseParamValidatorImpl <ApiUserParam> {
 
 	@Override
-	public void validate(ApiUserParam param) throws Exception {
-
-		if (param == null) {
-			throw new Exception( "Department param object you want to manipulate was not found!" );
-		}
-
+	public void customValidate(ApiUserParam param) throws Exception {
 	}
+
 
 }

@@ -1,5 +1,6 @@
 package main.business.facultydiscipline.validator;
 
+import main.business.common.BaseParamValidatorImpl;
 import main.dataaccess.discipline.dao.Discipline;
 import main.dataaccess.discipline.dao.DisciplineDao;
 import main.dataaccess.discipline.dao.DisciplineDaoHMapImpl;
@@ -8,17 +9,13 @@ import main.dataaccess.faculty.dao.FacultyDao;
 import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
 import main.service.facultydiscipline.FacultyDisciplineParam;
 
-public class FacultyDisciplineParamValidatorImpl implements FacultyDisciplineParamValidator {
+public class FacultyDisciplineParamValidatorImpl extends BaseParamValidatorImpl <FacultyDisciplineParam> {
 
 	private FacultyDao facultyDao = new FacultyDaoHMapImpl();
 	private DisciplineDao disciplineDao = new DisciplineDaoHMapImpl(); 
 	
 	@Override
-	public void validate(FacultyDisciplineParam param) throws Exception {
-		
-		if (param == null) {
-			throw new Exception( "FacultyDiscipline param object you want to manipulate was not found!" );
-		}
+	public void customValidate(FacultyDisciplineParam param) throws Exception {
 		
 		if (param.getDisciplineId() == null) {
 			throw new Exception("The object you want to manipulate was not found!");

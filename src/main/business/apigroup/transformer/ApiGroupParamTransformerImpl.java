@@ -1,13 +1,13 @@
 package main.business.apigroup.transformer;
 
-import main.business.apigroup.validator.ApiGroupParamValidator;
 import main.business.apigroup.validator.ApiGroupParamValidatorImpl;
+import main.business.common.BaseParamValidatorImpl;
 import main.dataaccess.apigroup.dao.ApiGroup;
 import main.service.apigroup.ApiGroupParam;
 
 public class ApiGroupParamTransformerImpl implements ApiGroupParamTransformer {
 
-	private ApiGroupParamValidator validator = new ApiGroupParamValidatorImpl();
+	private BaseParamValidatorImpl <ApiGroupParam> validator = new ApiGroupParamValidatorImpl();
 	
 	@Override
 	public ApiGroup transform(ApiGroupParam param) throws Exception {

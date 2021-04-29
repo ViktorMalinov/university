@@ -1,13 +1,13 @@
 package main.business.apiuser.transformer;
 
-import main.business.apiuser.validator.ApiUserParamValidator;
 import main.business.apiuser.validator.ApiUserParamValidatorImpl;
+import main.business.common.BaseParamValidatorImpl;
 import main.dataaccess.apiuser.dao.ApiUser;
 import main.service.apiuser.ApiUserParam;
 
 public class ApiUserParamTransformerImpl implements ApiUserParamTransformer {
 
-	private ApiUserParamValidator validator = new ApiUserParamValidatorImpl();
+	private BaseParamValidatorImpl <ApiUserParam> validator = new ApiUserParamValidatorImpl();
 	
 	@Override
 	public ApiUser transform(ApiUserParam param) throws Exception {

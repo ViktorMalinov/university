@@ -1,6 +1,6 @@
 package main.business.facultydiscipline.transformer;
 
-import main.business.facultydiscipline.validator.FacultyDisciplineParamValidator;
+import main.business.common.BaseParamValidatorImpl;
 import main.business.facultydiscipline.validator.FacultyDisciplineParamValidatorImpl;
 import main.dataaccess.discipline.dao.Discipline;
 import main.dataaccess.discipline.dao.DisciplineDao;
@@ -15,7 +15,7 @@ public class FacultyDisciplineParamTransformerImpl implements FacultyDisciplineP
 
 	private FacultyDao facultyDao = new FacultyDaoHMapImpl();
 	private DisciplineDao disciplineDao = new DisciplineDaoHMapImpl();
-	private FacultyDisciplineParamValidator validator = new FacultyDisciplineParamValidatorImpl();
+	private BaseParamValidatorImpl <FacultyDisciplineParam> validator = new FacultyDisciplineParamValidatorImpl();
 	
 	@Override
 	public FacultyDiscipline transform(FacultyDisciplineParam param) throws Exception {
