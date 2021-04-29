@@ -9,7 +9,7 @@ import main.dataaccess.faculty.dao.FacultyDao;
 import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
 import main.service.facultydiscipline.FacultyDisciplineParam;
 
-public class FacultyDisciplineParamValidatorImpl extends BaseParamValidatorImpl <FacultyDisciplineParam> {
+public class FacultyDisciplineParamValidatorImpl extends BaseParamValidatorImpl <FacultyDisciplineParam> implements FacultyDisciplineParamValidator{
 
 	private FacultyDao facultyDao = new FacultyDaoHMapImpl();
 	private DisciplineDao disciplineDao = new DisciplineDaoHMapImpl(); 

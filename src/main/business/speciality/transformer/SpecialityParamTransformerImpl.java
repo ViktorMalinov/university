@@ -1,6 +1,6 @@
 package main.business.speciality.transformer;
 
-import main.business.common.BaseParamValidatorImpl;
+import main.business.speciality.validator.SpecialityParamValidator;
 import main.business.speciality.validator.SpecialityParamValidatorImpl;
 import main.dataaccess.faculty.dao.Faculty;
 import main.dataaccess.faculty.dao.FacultyDao;
@@ -11,7 +11,7 @@ import main.service.speciality.SpecialityParam;
 public class SpecialityParamTransformerImpl implements SpecialityParamTransformer {
 
 	private FacultyDao dao = new FacultyDaoHMapImpl();
-	private BaseParamValidatorImpl <SpecialityParam> validator = new SpecialityParamValidatorImpl();
+	private SpecialityParamValidator validator = new SpecialityParamValidatorImpl();
 	
 	@Override
 	public Speciality transform(SpecialityParam param) throws Exception {

@@ -9,7 +9,7 @@ import main.dataaccess.apiuser.dao.ApiUserDao;
 import main.dataaccess.apiuser.dao.ApiUserDaoHMapImpl;
 import main.service.apigroupuser.ApiGroupUserParam;
 
-public class ApiGroupUserParamValidatorImpl extends BaseParamValidatorImpl <ApiGroupUserParam> {
+public class ApiGroupUserParamValidatorImpl extends BaseParamValidatorImpl <ApiGroupUserParam> implements ApiGroupUserParamValidator{
 
 	ApiGroupDao	apiGroupDao = new ApiGroupDaoHMapImpl();
 	ApiUserDao apiUserDao = new ApiUserDaoHMapImpl();

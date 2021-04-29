@@ -9,7 +9,7 @@ import main.dataaccess.department.dao.DepartmentDao;
 import main.dataaccess.department.dao.DepartmentDaoHMapImpl;
 import main.service.lecturer.LecturerParam;
 
-public class LecturerParamValidatorImpl extends BaseParamValidatorImpl <LecturerParam> {
+public class LecturerParamValidatorImpl extends BaseParamValidatorImpl <LecturerParam> implements LecturerParamValidator{
 
 	private ApiUserDao apiUserDao = new ApiUserDaoHMapImpl();
 	private DepartmentDao departmentDao = new DepartmentDaoHMapImpl(); 

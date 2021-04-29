@@ -1,7 +1,7 @@
 package main.business.apigroupuser.transformer;
 
+import main.business.apigroupuser.validator.ApiGroupUserParamValidator;
 import main.business.apigroupuser.validator.ApiGroupUserParamValidatorImpl;
-import main.business.common.BaseParamValidatorImpl;
 import main.dataaccess.apigroup.dao.ApiGroup;
 import main.dataaccess.apigroup.dao.ApiGroupDao;
 import main.dataaccess.apigroup.dao.ApiGroupDaoHMapImpl;
@@ -15,7 +15,7 @@ public class ApiGroupUserParamTransformerImpl implements ApiGroupUserParamTransf
 
 	private ApiGroupDao	apiGroupDao = new ApiGroupDaoHMapImpl();
 	private ApiUserDao apiUserDao = new ApiUserDaoHMapImpl();
-	private BaseParamValidatorImpl <ApiGroupUserParam> validator = new ApiGroupUserParamValidatorImpl();
+	private ApiGroupUserParamValidator validator = new ApiGroupUserParamValidatorImpl();
 	
 	@Override
 	public ApiGroupUser transform(ApiGroupUserParam param) throws Exception {

@@ -1,13 +1,13 @@
 package main.business.faculty.transformer;
 
-import main.business.common.BaseParamValidatorImpl;
+import main.business.faculty.validator.FacultyParamValidator;
 import main.business.faculty.validator.FacultyParamValidatorImpl;
 import main.dataaccess.faculty.dao.Faculty;
 import main.service.faculty.FacultyParam;
 
 public class FacultyParamTransformerImpl implements FacultyParamTransformer {
 
-	private BaseParamValidatorImpl <FacultyParam> validator = new FacultyParamValidatorImpl();
+	private FacultyParamValidator validator = new FacultyParamValidatorImpl();
 		
 	@Override
 	public Faculty transform(FacultyParam param) throws Exception {

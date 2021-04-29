@@ -14,6 +14,6 @@ public abstract class BaseParamValidatorImpl<T> implements Validator<T> {
 		
 	}
 
-	public abstract void customValidate(T param)  throws Exception ;
+	public abstract void customValidate(T param)  throws Exception;
 		
 }

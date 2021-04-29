@@ -1,6 +1,6 @@
 package main.business.department.transformer;
 
-import main.business.common.BaseParamValidatorImpl;
+import main.business.department.validator.DepartmentParamValidator;
 import main.business.department.validator.DepartmentParamValidatorImpl;
 import main.dataaccess.department.dao.Department;
 import main.dataaccess.faculty.dao.Faculty;
@@ -12,7 +12,7 @@ public class DepartmentParamTransformerImpl implements DepartmentParamTransforme
 
 	private FacultyDao dao = new FacultyDaoHMapImpl();
 	
-	private BaseParamValidatorImpl<DepartmentParam> validator = new DepartmentParamValidatorImpl();
+	private DepartmentParamValidator validator = new DepartmentParamValidatorImpl();
 	
 	@Override
 	public Department transform(DepartmentParam param) throws Exception {

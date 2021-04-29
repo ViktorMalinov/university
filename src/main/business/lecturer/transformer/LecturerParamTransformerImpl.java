@@ -1,6 +1,6 @@
 package main.business.lecturer.transformer;
 
-import main.business.common.BaseParamValidatorImpl;
+import main.business.lecturer.validator.LecturerParamValidator;
 import main.business.lecturer.validator.LecturerParamValidatorImpl;
 import main.dataaccess.apiuser.dao.ApiUser;
 import main.dataaccess.apiuser.dao.ApiUserDao;
@@ -15,7 +15,7 @@ public class LecturerParamTransformerImpl implements LecturerParamTransformer {
 
 	private ApiUserDao apiUserDao = new ApiUserDaoHMapImpl();
 	private DepartmentDao departmentDao = new DepartmentDaoHMapImpl(); 
-	private BaseParamValidatorImpl <LecturerParam> validator = new LecturerParamValidatorImpl();
+	private LecturerParamValidator validator = new LecturerParamValidatorImpl();
 	
 	@Override
 	public Lecturer transform(LecturerParam param) throws Exception {

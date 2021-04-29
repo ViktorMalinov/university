@@ -1,13 +1,13 @@
 package main.business.discipline.transformer;
 
-import main.business.common.BaseParamValidatorImpl;
+import main.business.discipline.validator.DisciplineParamValidator;
 import main.business.discipline.validator.DisciplineParamValidatorImpl;
 import main.dataaccess.discipline.dao.Discipline;
 import main.service.discipline.DisciplineParam;
 
 public class DisciplineParamTransformerImpl implements DisciplineParamTransformer {
 
-	BaseParamValidatorImpl <DisciplineParam> validator = new DisciplineParamValidatorImpl();
+	private DisciplineParamValidator validator = new DisciplineParamValidatorImpl();
 	
 	@Override
 	public Discipline transform(DisciplineParam param) throws Exception {
