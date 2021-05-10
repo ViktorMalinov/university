@@ -1,15 +1,8 @@
 package main.dataaccess.apigroupuser.repo;
 
-import java.util.List;
-
 import main.dataaccess.apigroupuser.dao.ApiGroupUser;
+import main.dataaccess.common.BaseRepoManager;
 
-public interface ApiGroupUserRepoManager {
-
-	ApiGroupUser insert(ApiGroupUser entity);
-	ApiGroupUser select(Long id);
-	void update(ApiGroupUser entity);
-	void delete(Long id);
-	List<ApiGroupUser> selectAll();
+public interface ApiGroupUserRepoManager extends BaseRepoManager <Long, ApiGroupUser>{
 
 }

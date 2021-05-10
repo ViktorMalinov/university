@@ -1,14 +1,8 @@
 package main.dataaccess.discipline.repo;
 
-import java.util.List;
-
+import main.dataaccess.common.BaseRepoManager;
 import main.dataaccess.discipline.dao.Discipline;
 
-public interface DisciplineRepoManager {
+public interface DisciplineRepoManager extends BaseRepoManager<Long, Discipline> {
 
-	Discipline insert(Discipline entity);
-	Discipline select(Long id);
-	void update(Discipline entity);
-	void delete(Long id);
-	List<Discipline> selectAll();
 }

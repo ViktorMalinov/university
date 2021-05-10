@@ -1,14 +1,8 @@
 package main.dataaccess.lecturer.repo;
 
-import java.util.List;
-
+import main.dataaccess.common.BaseRepoManager;
 import main.dataaccess.lecturer.dao.Lecturer;
 
-public interface LecturerRepoManager {
+public interface LecturerRepoManager extends BaseRepoManager<Long, Lecturer> {
 
-	Lecturer insert(Lecturer entity);
-	Lecturer select(Long id);
-	void update(Lecturer entity);
-	void delete(Long id);
-	List<Lecturer> selectAll();
 }
