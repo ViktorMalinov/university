@@ -1,14 +1,21 @@
 package main.dataaccess.department.dao;
 
-import java.util.List;
-
+import main.dataaccess.common.BaseDaoHMapImpl;
+import main.dataaccess.common.BaseRepoManager;
 import main.dataaccess.department.repo.DepartmentRepoManager;
 import main.dataaccess.department.repo.DepartmentRepoManagerImpl;
 
 
-public class DepartmentDaoHMapImpl implements DepartmentDao {
+public class DepartmentDaoHMapImpl extends BaseDaoHMapImpl <Long, Department> implements DepartmentDao {
+
+	@Override
+	public BaseRepoManager<Long, Department> getRepo() {
+		DepartmentRepoManager repo = new DepartmentRepoManagerImpl();
+		return repo;
+	}
 
 	
+	/*
 	private DepartmentRepoManager repo = new DepartmentRepoManagerImpl();
 	
 	@Override
@@ -39,6 +46,6 @@ public class DepartmentDaoHMapImpl implements DepartmentDao {
 		List<Department> allData = repo.selectAll();
 		return allData;
 	}
-
+*/
 
 }

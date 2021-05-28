@@ -33,8 +33,13 @@ public class University {
 		System.out.println("");
 	}
 	
-	
-	
+
+	/*
+	@Test
+	public static void testApiGroupTest() {
+		
+	}
+	*/
 	
 	
 	public static void apiGroupTest() throws Exception {
