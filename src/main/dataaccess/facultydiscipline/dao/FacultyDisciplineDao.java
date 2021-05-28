@@ -1,12 +1,7 @@
 package main.dataaccess.facultydiscipline.dao;
 
-import java.util.List;
+import main.dataaccess.common.BaseDao;
 
-public interface FacultyDisciplineDao {
+public interface FacultyDisciplineDao extends BaseDao <Long, FacultyDiscipline> {
 
-	FacultyDiscipline create(FacultyDiscipline obj);
-	FacultyDiscipline get(Long id);
-	void update(FacultyDiscipline obj);
-	void delete(Long id);
-	List<FacultyDiscipline> selectAll();
 }

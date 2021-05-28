@@ -1,12 +1,7 @@
 package main.dataaccess.speciality.dao;
 
-import java.util.List;
+import main.dataaccess.common.BaseDao;
 
-public interface SpecialityDao {
+public interface SpecialityDao extends BaseDao <Long, Speciality> {
 
-	Speciality create(Speciality obj);
-	Speciality get(Long id);
-	void update(Speciality obj);
-	void delete(Long id);
-	List<Speciality> selectAll();
 }

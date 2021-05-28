@@ -2,38 +2,36 @@ package main.dataaccess.common;
 
 import java.util.List;
 
-public abstract class BaseDaoHMapImpl <PK, ENT> implements BaseDao <PK, ENT> {
+public class BaseDaoHMapImpl <PK, ENT, MAN extends BaseRepoManager<PK,ENT>> implements BaseDao <PK, ENT> {
 
-	//private BaseRepoManager<PK, ENT> repo = new BaseRepoManager<PK, ENT>();
-	
-	public abstract BaseRepoManager<PK, ENT> getRepo();
+	protected MAN repoManager;
 	
 	@Override
 	public ENT create(ENT entity) {
-		ENT res = getRepo().insert(entity);
+		ENT res = repoManager.insert(entity);
 		return res;
 	}
 
 	@Override
 	public ENT get(PK id) {
-		ENT entity = getRepo().select(id);
+		ENT entity = repoManager.select(id);
 		return entity;	
 	}
 
 	@Override
 	public void update(ENT entity) {
-		getRepo().update(entity);
+		repoManager.update(entity);
 	}
 
 	@Override
 	public void delete(PK id) {
-		getRepo().delete(id);
+		repoManager.delete(id);
 
 	}
 	
 	@Override
 	public List<ENT> selectAll() {
-		List<ENT> allData = getRepo().selectAll();
+		List<ENT> allData = repoManager.selectAll();
 		return allData;
 	}
 	

@@ -1,12 +1,7 @@
 package main.dataaccess.apigroupuser.dao;
 
-import java.util.List;
+import main.dataaccess.common.BaseDao;
 
-public interface ApiGroupUserDao {
+public interface ApiGroupUserDao extends BaseDao <Long, ApiGroupUser> {
 
-	ApiGroupUser create(ApiGroupUser obj);
-	ApiGroupUser get(Long id);
-	void update(ApiGroupUser obj);
-	void delete(Long id);
-	List<ApiGroupUser> selectAll();
 }
