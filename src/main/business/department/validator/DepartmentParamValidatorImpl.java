@@ -6,7 +6,7 @@ import main.dataaccess.faculty.dao.FacultyDao;
 import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
 import main.service.department.DepartmentParam;
 
-public class DepartmentParamValidatorImpl extends BaseParamValidatorImpl <DepartmentParam> implements DepartmentParamValidator{
+public class DepartmentParamValidatorImpl extends BaseParamValidatorImpl<DepartmentParam> implements DepartmentParamValidator{
 
 	private FacultyDao dao = new FacultyDaoHMapImpl(); 
 	

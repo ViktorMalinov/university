@@ -1,12 +1,9 @@
 package main.business.department.processor;
 
+import main.business.common.BaseProcessor;
 import main.service.department.DepartmentParam;
 import main.service.department.DepartmentResult;
 
-public interface DepartmentProcessor {
+public interface DepartmentProcessor extends BaseProcessor<DepartmentParam, DepartmentResult, Long> {
 
-	DepartmentResult create(DepartmentParam param) throws Exception;
-	DepartmentResult get(Long id) throws Exception;
-	void update(DepartmentParam param) throws Exception;
-	void delete(Long id);
 }
