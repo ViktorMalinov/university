@@ -1,21 +1,20 @@
 package main.business.apigroup.transformer;
 
+import main.business.common.BaseResultTransformerImpl;
 import main.dataaccess.apigroup.dao.ApiGroup;
 import main.service.apigroup.ApiGroupResult;
 
-public class ApiGroupResultTransformerImpl implements ApiGroupResultTransformer {
+public class ApiGroupResultTransformerImpl 
+	extends BaseResultTransformerImpl<ApiGroupResult,ApiGroup> 
+	implements ApiGroupResultTransformer {
 
-	@Override
-	public ApiGroupResult transform(ApiGroup entity) {
+	public ApiGroupResult getNewResult() {
 		ApiGroupResult result = new ApiGroupResult();
-		
-		result.setId(entity.getId());
-		result.setCode(entity.getCode());
-		result.setName(entity.getName());
-		result.setDescription(entity.getDescription());
-		result.setDisplayName(entity.getDisplayName());
-		
 		return result;
+	}
+	
+	protected void setProperties(ApiGroup entity, ApiGroupResult result) {
+		result.setDisplayName(entity.getDisplayName());
 	}
 
 }

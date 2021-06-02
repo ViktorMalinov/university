@@ -1,6 +1,6 @@
 package main.business.facultydiscipline.transformer;
 
-import main.business.facultydiscipline.validator.FacultyDisciplineParamValidator;
+import main.business.common.BaseDtoParamTransformerImpl;
 import main.business.facultydiscipline.validator.FacultyDisciplineParamValidatorImpl;
 import main.dataaccess.discipline.dao.Discipline;
 import main.dataaccess.discipline.dao.DisciplineDao;
@@ -11,27 +11,30 @@ import main.dataaccess.faculty.dao.FacultyDaoHMapImpl;
 import main.dataaccess.facultydiscipline.dao.FacultyDiscipline;
 import main.service.facultydiscipline.FacultyDisciplineParam;
 
-public class FacultyDisciplineParamTransformerImpl implements FacultyDisciplineParamTransformer {
+public class FacultyDisciplineParamTransformerImpl 
+extends BaseDtoParamTransformerImpl<FacultyDisciplineParam, FacultyDiscipline, FacultyDisciplineParamValidatorImpl>
+implements FacultyDisciplineParamTransformer {
+
 
 	private FacultyDao facultyDao = new FacultyDaoHMapImpl();
 	private DisciplineDao disciplineDao = new DisciplineDaoHMapImpl();
-	private FacultyDisciplineParamValidator validator = new FacultyDisciplineParamValidatorImpl();
+	
+	public FacultyDisciplineParamTransformerImpl() {
+		this.validator = new FacultyDisciplineParamValidatorImpl();
+	}
 	
 	@Override
-	public FacultyDiscipline transform(FacultyDisciplineParam param) throws Exception {
-
-		validator.validate(param);
-		
+	protected FacultyDiscipline getNewEntity() {
 		FacultyDiscipline entity = new FacultyDiscipline();
-		
+		return entity;
+	}
+
+	protected void setProperties(FacultyDiscipline entity, FacultyDisciplineParam param) {
 		Discipline discipline = disciplineDao.get(param.getDisciplineId());
 		Faculty faculty = facultyDao.get(param.getFacultyId());
-		
-		entity.setId(param.getId());
+
 		entity.setDiscipline(discipline);
 		entity.setFaculty(faculty);
-		
-		return entity;
 	}
 
 }

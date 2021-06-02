@@ -1,12 +1,9 @@
 package main.business.apigroupuser.processor;
 
+import main.business.common.BaseProcessor;
 import main.service.apigroupuser.ApiGroupUserParam;
 import main.service.apigroupuser.ApiGroupUserResult;
 
-public interface ApiGroupUserProcessor {
+public interface ApiGroupUserProcessor extends BaseProcessor<ApiGroupUserParam, ApiGroupUserResult, Long> {
 
-	ApiGroupUserResult create(ApiGroupUserParam param) throws Exception;
-	ApiGroupUserResult get(Long id) throws Exception;
-	void update(ApiGroupUserParam param) throws Exception;
-	void delete(Long id);
 }

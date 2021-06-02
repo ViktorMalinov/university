@@ -1,19 +1,15 @@
 package main.business.discipline.transformer;
 
+import main.business.common.BaseResultTransformerImpl;
 import main.dataaccess.discipline.dao.Discipline;
 import main.service.discipline.DisciplineResult;
 
-public class DisciplineResultTransformerImpl implements DisciplineResultTransformer {
+public class DisciplineResultTransformerImpl 
+		extends BaseResultTransformerImpl<DisciplineResult,Discipline>
+		implements DisciplineResultTransformer {
 
-	@Override
-	public DisciplineResult transform(Discipline entity) {
+	public DisciplineResult getNewResult() {
 		DisciplineResult result = new DisciplineResult();
-		
-		result.setId(entity.getId());
-		result.setCode(entity.getCode());
-		result.setName(entity.getName());
-		result.setDescription(entity.getDescription());
-		
 		return result;
 	}
 

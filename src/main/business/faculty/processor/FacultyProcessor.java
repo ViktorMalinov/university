@@ -1,13 +1,9 @@
 package main.business.faculty.processor;
 
+import main.business.common.BaseProcessor;
 import main.service.faculty.FacultyParam;
 import main.service.faculty.FacultyResult;
 
-public interface FacultyProcessor {
-	
-	FacultyResult create(FacultyParam param) throws Exception;
-	FacultyResult get(Long id) throws Exception;
-	void update(FacultyParam param) throws Exception;
-	void delete(Long id);
+public interface FacultyProcessor extends BaseProcessor<FacultyParam, FacultyResult, Long> {
 
 }

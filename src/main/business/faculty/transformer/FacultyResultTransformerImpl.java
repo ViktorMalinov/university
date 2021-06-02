@@ -1,20 +1,15 @@
 package main.business.faculty.transformer;
 
+import main.business.common.BaseResultTransformerImpl;
 import main.dataaccess.faculty.dao.Faculty;
 import main.service.faculty.FacultyResult;
 
-public class FacultyResultTransformerImpl implements FacultyResultTransformer {
+public class FacultyResultTransformerImpl 
+extends BaseResultTransformerImpl<FacultyResult,Faculty>
+implements FacultyResultTransformer {
 
-	@Override
-	public FacultyResult transform(Faculty entity) {
+	public FacultyResult getNewResult() {
 		FacultyResult result = new FacultyResult();
-		
-		result.setId(entity.getId());
-		result.setCode(entity.getCode());
-		result.setName(entity.getName());
-		result.setDescription(entity.getDescription());
-		
 		return result;
 	}
-
 }

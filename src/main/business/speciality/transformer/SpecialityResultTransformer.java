@@ -1,9 +1,9 @@
 package main.business.speciality.transformer;
 
+import main.business.common.BaseResultTransformer;
 import main.dataaccess.speciality.dao.Speciality;
 import main.service.speciality.SpecialityResult;
 
-public interface SpecialityResultTransformer {
+public interface SpecialityResultTransformer extends BaseResultTransformer<SpecialityResult, Speciality> {
 
-	SpecialityResult transform(Speciality entity) throws Exception;
 }

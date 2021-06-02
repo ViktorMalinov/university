@@ -1,20 +1,21 @@
 package main.business.speciality.transformer;
 
+import main.business.common.BaseResultTransformerImpl;
 import main.dataaccess.speciality.dao.Speciality;
 import main.service.speciality.SpecialityResult;
 
-public class SpecialityResultTransformerImpl implements SpecialityResultTransformer {
+public class SpecialityResultTransformerImpl 
+extends BaseResultTransformerImpl<SpecialityResult,Speciality>
+implements SpecialityResultTransformer {
 
-	@Override
-	public SpecialityResult transform(Speciality entity) throws Exception {
+
+	public SpecialityResult getNewResult() {
 		SpecialityResult result = new SpecialityResult();
-		
-		result.setId(entity.getId());
-		result.setCode(entity.getCode());
-		result.setName(entity.getName());
-		result.setDescription(entity.getDescription());
-		
-		
+		return result;
+	}
+	
+	protected void setProperties(Speciality entity, SpecialityResult result) throws Exception {
+
 		if (entity.getFaculty() == null) {
 			throw new Exception("The object Faculty was NOT found!");
 		}
@@ -25,8 +26,6 @@ public class SpecialityResultTransformerImpl implements SpecialityResultTransfor
 
 		result.setFacultyId(entity.getFaculty().getId());
 		result.setFacultyName(entity.getFaculty().getName());
-		
-		return result;
 	}
 
 }
