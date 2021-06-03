@@ -1,9 +1,7 @@
 package main.service.facultydiscipline;
 
-public interface FacultyDisciplineService {
+import main.service.common.BaseService;
 
-	FacultyDisciplineResult create(FacultyDisciplineParam param) throws Exception;
-	FacultyDisciplineResult get(Long id) throws Exception;
-	void update(FacultyDisciplineParam param) throws Exception;
-	void delete(Long id);
+public interface FacultyDisciplineService extends BaseService<FacultyDisciplineParam, FacultyDisciplineResult, Long> {
+
 }

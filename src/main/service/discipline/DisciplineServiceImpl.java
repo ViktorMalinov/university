@@ -2,37 +2,18 @@ package main.service.discipline;
 
 import main.business.discipline.processor.DisciplineProcessor;
 import main.business.discipline.processor.DisciplineProcessorImpl;
+import main.service.common.BaseServiceImpl;
 
-public class DisciplineServiceImpl implements DisciplineService {
+public class DisciplineServiceImpl 
+extends BaseServiceImpl<
+		DisciplineParam,
+		DisciplineResult,
+		DisciplineProcessor,
+		Long>
+		implements DisciplineService {
 
-	private DisciplineProcessor processor = new DisciplineProcessorImpl();
-	
-	
-	@Override
-	public DisciplineResult create(DisciplineParam param) throws Exception {
-		DisciplineResult result = processor.create(param);
-		return result;
+	public DisciplineServiceImpl() {
+		this.processor = new DisciplineProcessorImpl();
 	}
-	
-	
-	@Override
-	public DisciplineResult get(Long id) throws Exception {
-		DisciplineResult result = processor.get(id);
-		return result;
-	}
-	
-	
-	@Override
-	public void update(DisciplineParam param) throws Exception {
-		processor.update(param);
-	}
-	
-	
-	@Override
-	public void delete(Long id) {
-		processor.delete(id);
-	}
-	
-
 
 }

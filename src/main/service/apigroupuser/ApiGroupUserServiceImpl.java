@@ -2,9 +2,22 @@ package main.service.apigroupuser;
 
 import main.business.apigroupuser.processor.ApiGroupUserProcessor;
 import main.business.apigroupuser.processor.ApiGroupUserProcessorImpl;
+import main.service.common.BaseDtoServiceImpl;
 
-public class ApiGroupUserServiceImpl implements ApiGroupUserService {
+public class ApiGroupUserServiceImpl 
+		extends BaseDtoServiceImpl<
+		ApiGroupUserParam,
+		ApiGroupUserResult,
+		ApiGroupUserProcessor,
+		Long>
+		implements ApiGroupUserService {
 
+	public ApiGroupUserServiceImpl() {
+		this.processor = new ApiGroupUserProcessorImpl();
+	}
+	
+	
+	/*
 	private ApiGroupUserProcessor processor = new ApiGroupUserProcessorImpl();
 	
 	
@@ -32,5 +45,6 @@ public class ApiGroupUserServiceImpl implements ApiGroupUserService {
 	public void delete(Long id) {
 		processor.delete(id);
 	}
+	*/
 	
 }

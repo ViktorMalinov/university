@@ -1,10 +1,7 @@
 package main.service.speciality;
 
-public interface SpecialityService {
+import main.service.common.BaseService;
 
-	SpecialityResult create(SpecialityParam param) throws Exception;
-	SpecialityResult get(Long id) throws Exception;
-	void update(SpecialityParam param) throws Exception;
-	void delete(Long id);
+public interface SpecialityService extends BaseService<SpecialityParam, SpecialityResult, Long> {
 
 }

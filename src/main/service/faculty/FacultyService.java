@@ -1,10 +1,7 @@
 package main.service.faculty;
 
-public interface FacultyService {
+import main.service.common.BaseService;
 
-	FacultyResult create(FacultyParam param) throws Exception;
-	FacultyResult get(Long id) throws Exception;
-	void update(FacultyParam param) throws Exception;
-	void delete(Long id);
+public interface FacultyService extends BaseService<FacultyParam, FacultyResult, Long> {
 
 }

@@ -1,10 +1,7 @@
 package main.service.department;
 
-public interface DepartmentService {
+import main.service.common.BaseService;
 
-	DepartmentResult create(DepartmentParam param) throws Exception;
-	DepartmentResult get(Long id) throws Exception;
-	void update(DepartmentParam param) throws Exception;
-	void delete(Long id);
+public interface DepartmentService extends BaseService<DepartmentParam, DepartmentResult, Long>{
 
 }

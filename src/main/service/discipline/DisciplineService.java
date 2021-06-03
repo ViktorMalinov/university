@@ -1,10 +1,7 @@
 package main.service.discipline;
 
-public interface DisciplineService {
+import main.service.common.BaseService;
 
-	DisciplineResult create(DisciplineParam param) throws Exception;
-	DisciplineResult get(Long id) throws Exception;
-	void update(DisciplineParam param) throws Exception;
-	void delete(Long id);
+public interface DisciplineService extends BaseService<DisciplineParam, DisciplineResult, Long> {
 	
 }
