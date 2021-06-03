@@ -20,7 +20,7 @@ public class ApiGroupParamTransformerImpl
 		return entity;
 	}
 
-	protected void setProperties(ApiGroup entity, ApiGroup param) {
+	protected void setProperties(ApiGroup entity, ApiGroupParam param) {
 		entity.setDisplayName(param.getDisplayName());	
 	}
 

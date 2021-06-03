@@ -29,7 +29,7 @@ public class University {
 		ApiUserTest();
 		apiGroupUserTest();
 		
-		//FacultyTest();
+		FacultyTest();
 		//DepartmentTest();
 
 		 // DisciplineTest();
