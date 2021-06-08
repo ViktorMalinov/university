@@ -14,5 +14,11 @@ public class SpecialityRepoManagerImpl extends PersistentRepoManagerImpl<Special
 	public Map<Long, Speciality> getDataSource() {
 		return datasource;
 	}
+	
+	
+	public String getPath() {
+		return "D:\\workspace\\Java\\Test\\University\\resources\\Speciality.json";
+	}
+	
 
 }

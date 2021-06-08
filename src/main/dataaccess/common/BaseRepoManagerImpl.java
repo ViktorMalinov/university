@@ -9,6 +9,7 @@ public abstract class BaseRepoManagerImpl<PK, ENT> implements BaseRepoManager<PK
 	public abstract PK getPk(ENT entity);
 	public abstract void setPk(ENT entity);
 	public abstract Map<PK, ENT> getDataSource();
+	public abstract String getPath();
 	
 	
 	@Override

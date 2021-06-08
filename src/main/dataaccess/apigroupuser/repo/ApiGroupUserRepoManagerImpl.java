@@ -15,4 +15,8 @@ public class ApiGroupUserRepoManagerImpl extends PersistentRepoManagerImpl<ApiGr
 		return datasource;
 	}
 
+	public String getPath() {
+		return "D:\\workspace\\Java\\Test\\University\\resources\\ApiGroupUser.json";
+	}
+
 }

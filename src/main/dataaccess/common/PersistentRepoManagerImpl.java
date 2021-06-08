@@ -8,7 +8,7 @@ public abstract class PersistentRepoManagerImpl<ENT extends Persistent> extends 
 		implements BaseRepoManager<Long, ENT> {
 
 	// protected Map<PK, ENT> datasource = new HashMap<PK, ENT>();
-	
+
 	
 	@Override
 	public Long getPk(ENT entity) {
@@ -23,4 +23,5 @@ public abstract class PersistentRepoManagerImpl<ENT extends Persistent> extends 
 		entity.setId(id);		
 	}
 
+	
 }

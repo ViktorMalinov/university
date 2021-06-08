@@ -15,4 +15,8 @@ public class FacultyDisciplineRepoManagerImpl extends PersistentRepoManagerImpl<
 		return datasource;
 	}
 
+	public String getPath() {
+		return "D:\\workspace\\Java\\Test\\University\\resources\\FacultyDiscipline.json";
+	}
+	
 }

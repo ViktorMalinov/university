@@ -15,4 +15,9 @@ public class ApiUserRepoManagerImpl extends PersistentRepoManagerImpl<ApiUser> i
 		return datasource;
 	}
 
+
+	public String getPath() {
+		return "D:\\workspace\\Java\\Test\\University\\resources\\ApiUser.json";
+	}
+	
 }

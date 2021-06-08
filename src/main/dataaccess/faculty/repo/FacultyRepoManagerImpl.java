@@ -14,5 +14,10 @@ public class FacultyRepoManagerImpl extends PersistentRepoManagerImpl<Faculty> i
 	public Map<Long, Faculty> getDataSource() {
 		return datasource;
 	}
-
+	
+	
+	public String getPath() {
+		return "D:\\workspace\\Java\\Test\\University\\resources\\Faculty.json";
+	}
+	
 }

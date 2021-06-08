@@ -15,4 +15,9 @@ public class LecturerRepoManagerImpl extends PersistentRepoManagerImpl<Lecturer>
 		return datasource;
 	}
 
+	
+	public String getPath() {
+		return "D:\\workspace\\Java\\Test\\University\\resources\\Lecturer.json";
+	}
+	
 }
