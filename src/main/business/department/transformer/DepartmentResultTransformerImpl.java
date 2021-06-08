@@ -1,24 +1,22 @@
 package main.business.department.transformer;
 
+import main.business.common.BaseResultTransformerImpl;
 import main.dataaccess.department.dao.Department;
 import main.service.department.DepartmentResult;
 
-public class DepartmentResultTransformerImpl implements DepartmentResultTransformer {
+public class DepartmentResultTransformerImpl 
+		extends BaseResultTransformerImpl<DepartmentResult,Department> 
+		implements DepartmentResultTransformer {
 
-	
-	@Override
-	public DepartmentResult transform(Department entity) throws Exception {
+	public DepartmentResult getNewResult() {
 		DepartmentResult result = new DepartmentResult();
-		
-		result.setId(entity.getId());
-		result.setCode(entity.getCode());
-		result.setName(entity.getName());
-		result.setDescription(entity.getDescription());
-		
+		return result;
+	}
+	
+	protected void setProperties(Department entity, DepartmentResult result) {
 		result.setFacultyId(entity.getFaculty().getId());
 		result.setFacultyName(entity.getFaculty().getName());
-		
-		return result;
 	}
 
 }
+

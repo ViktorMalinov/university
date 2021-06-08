@@ -1,23 +1,24 @@
 package main.business.apiuser.transformer;
 
+import main.business.common.BaseResultTransformerImpl;
 import main.dataaccess.apiuser.dao.ApiUser;
 import main.service.apiuser.ApiUserResult;
 
-public class ApiUserResultTransformerImpl implements ApiUserResultTransformer {
+public class ApiUserResultTransformerImpl 
+		extends BaseResultTransformerImpl<ApiUserResult, ApiUser>
+		implements ApiUserResultTransformer {
 
-	@Override
-	public ApiUserResult transform(ApiUser entity) {
+	
+	public ApiUserResult getNewResult() {
 		ApiUserResult result = new ApiUserResult();
-		
-		result.setId(entity.getId());
-		result.setCode(entity.getCode());
-		result.setDescription(entity.getDescription());
+		return result;
+	}
+	
+	protected void setProperties(ApiUser entity, ApiUserResult result) {
 		result.setDisplayName(entity.getDisplayName());
 		result.setEmail(entity.getEmail());
 		result.setPassword(entity.getPassword());		
 		result.setUsername(entity.getUsername());
-		
-		return result;
 	}
-
+	
 }

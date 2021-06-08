@@ -1,15 +1,13 @@
 package main.business.discipline.validator;
 
+import main.business.common.BaseParamValidatorImpl;
 import main.service.discipline.DisciplineParam;
 
-public class DisciplineParamValidatorImpl implements DisciplineParamValidator {
+public class DisciplineParamValidatorImpl extends BaseParamValidatorImpl <DisciplineParam> implements DisciplineParamValidator{
 
 	@Override
-	public void validate(DisciplineParam param) throws Exception {
-		
-		if (param == null) {
-			throw new Exception( "Department param object you want to manipulate was not found!" );
-		}
+	public void customValidate(DisciplineParam param) throws Exception {
 	}
+
 
 }

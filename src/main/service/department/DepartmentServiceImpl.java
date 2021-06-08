@@ -2,38 +2,19 @@ package main.service.department;
 
 import main.business.department.processor.DepartmentProcessor;
 import main.business.department.processor.DepartmentProcessorImpl;
+import main.service.common.BaseServiceImpl;
 
-public class DepartmentServiceImpl implements DepartmentService {
+public class DepartmentServiceImpl 
+		extends BaseServiceImpl<
+		DepartmentParam,
+		DepartmentResult,
+		DepartmentProcessor,
+		Long>
+		implements DepartmentService {
 
-	private DepartmentProcessor processor = new DepartmentProcessorImpl();
 	
-	
-	@Override
-	public DepartmentResult create(DepartmentParam param) throws Exception {
-		DepartmentResult result;
-		
-		result = processor.create(param);
-
-		return result;
-	}
-	
-	
-	@Override
-	public DepartmentResult get(Long id)  throws Exception {
-		DepartmentResult result = processor.get(id);
-		return result;
-	}
-	
-	
-	@Override
-	public void update(DepartmentParam param)  throws Exception {
-		processor.update(param);
-	}
-	
-	
-	@Override
-	public void delete(Long id) {
-		processor.delete(id);
+	public DepartmentServiceImpl() {
+		this.processor = new DepartmentProcessorImpl();
 	}
 	
 }

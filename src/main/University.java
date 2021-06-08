@@ -12,6 +12,14 @@ import main.service.apiuser.ApiUserParam;
 import main.service.apiuser.ApiUserResult;
 import main.service.apiuser.ApiUserService;
 import main.service.apiuser.ApiUserServiceImpl;
+import main.service.department.DepartmentParam;
+import main.service.department.DepartmentResult;
+import main.service.department.DepartmentService;
+import main.service.department.DepartmentServiceImpl;
+import main.service.faculty.FacultyParam;
+import main.service.faculty.FacultyResult;
+import main.service.faculty.FacultyService;
+import main.service.faculty.FacultyServiceImpl;
 
 public class University {
 
@@ -21,9 +29,10 @@ public class University {
 		ApiUserTest();
 		apiGroupUserTest();
 		
-		
-		// DepartmentTest();
-		// DisciplineTest();
+		FacultyTest();
+		//DepartmentTest();
+
+		 // DisciplineTest();
 		// FacultyTest();
 		// FacultyDisciplineTest();
 		// LecturerTest();
@@ -33,8 +42,13 @@ public class University {
 		System.out.println("");
 	}
 	
-	
-	
+
+	/*
+	@Test
+	public static void testApiGroupTest() {
+		
+	}
+	*/
 	
 	
 	public static void apiGroupTest() throws Exception {
@@ -168,8 +182,7 @@ public class University {
 
 	
 	
-	/*
-	public static void DepartmentTest() {
+	public static void DepartmentTest() throws Exception {
 		DepartmentService Department = new DepartmentServiceImpl(); 
 		DepartmentParam param = new DepartmentParam();
 		
@@ -216,7 +229,55 @@ public class University {
 	}
 
 
+	public static void FacultyTest() throws Exception {
+		FacultyService Faculty = new FacultyServiceImpl(); 
+		FacultyParam param = new FacultyParam();
+		
+		
+		System.out.println("------ Faculty TEST ----------");
+		// create
+		//param.setId(id);
+		param.setCode(10L);
+		param.setName("Group 1");
+		param.setDescription("First group ever... :)");
+		Faculty.create(param);
+
+		param.setCode(20L);
+		param.setName("Group 2");
+		param.setDescription("Secong group ever... :)");
+		Faculty.create(param);
+
+		param.setCode(30L);
+		param.setName("Group 3");
+		param.setDescription("Last group ever... :)");
+		
+		// get
+		FacultyResult res =  Faculty.get(1L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		res =  Faculty.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// update
+		param.setId(res.getId());
+		param.setDescription(res.getDescription());
+		param.setCode(21L);
+		param.setName("Group 2a");
+		Faculty.update(param);
+		res =  Faculty.get(2L);
+		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		
+		// delete
+		Faculty.delete(3L); // deleting group 
+		System.out.println("id: 3 was deleted...");
+		
+		System.out.println();
+		System.out.println();
+	}
+
 	
+	
+	/*
 	
 	
 	public static void DisciplineTest() {

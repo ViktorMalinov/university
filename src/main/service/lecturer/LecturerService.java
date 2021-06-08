@@ -1,10 +1,7 @@
 package main.service.lecturer;
 
-public interface LecturerService {
+import main.service.common.BaseService;
 
-	LecturerResult create(LecturerParam param) throws Exception;
-	LecturerResult get(Long id) throws Exception;
-	void update(LecturerParam param) throws Exception;
-	void delete(Long id);
-	
+public interface LecturerService extends BaseService<LecturerParam, LecturerResult, Long> {
+
 }

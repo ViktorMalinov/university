@@ -1,13 +1,9 @@
 package main.business.facultydiscipline.processor;
 
+import main.business.common.BaseProcessor;
 import main.service.facultydiscipline.FacultyDisciplineParam;
 import main.service.facultydiscipline.FacultyDisciplineResult;
 
-public interface FacultyDisciplineProcessor {
+public interface FacultyDisciplineProcessor extends BaseProcessor<FacultyDisciplineParam, FacultyDisciplineResult, Long> {
 
-	FacultyDisciplineResult create(FacultyDisciplineParam param) throws Exception;
-	FacultyDisciplineResult get(Long id) throws Exception;
-	void update(FacultyDisciplineParam param) throws Exception;
-	void delete(Long id);
-	
 }

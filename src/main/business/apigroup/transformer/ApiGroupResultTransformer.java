@@ -1,9 +1,9 @@
 package main.business.apigroup.transformer;
 
+import main.business.common.BaseResultTransformer;
 import main.dataaccess.apigroup.dao.ApiGroup;
 import main.service.apigroup.ApiGroupResult;
 
-public interface ApiGroupResultTransformer {
+public interface ApiGroupResultTransformer extends BaseResultTransformer<ApiGroupResult, ApiGroup> {
 
-	ApiGroupResult transform(ApiGroup entity);
 }

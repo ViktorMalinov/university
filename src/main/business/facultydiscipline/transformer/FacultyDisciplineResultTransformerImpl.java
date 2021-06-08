@@ -1,17 +1,20 @@
 package main.business.facultydiscipline.transformer;
 
+import main.business.common.BaseDtoResultTransformerImpl;
 import main.dataaccess.facultydiscipline.dao.FacultyDiscipline;
 import main.service.facultydiscipline.FacultyDisciplineResult;
 
-public class FacultyDisciplineResultTransformerImpl implements FacultyDisciplineResultTransformer {
+public class FacultyDisciplineResultTransformerImpl 
+		extends BaseDtoResultTransformerImpl<FacultyDisciplineResult,FacultyDiscipline> 
+		implements FacultyDisciplineResultTransformer {
 
-	@Override
-	public FacultyDisciplineResult transform(FacultyDiscipline entity) throws Exception {
+	public FacultyDisciplineResult getNewResult() {
 		FacultyDisciplineResult result = new FacultyDisciplineResult();
-		
-		result.setId(entity.getId());
-		
-		
+		return result;
+	}
+	
+	protected void setProperties(FacultyDiscipline entity, FacultyDisciplineResult result) throws Exception {
+
 		if (entity.getDiscipline() == null) {
 			throw new Exception("The object Discipline was NOT found!");
 		}
@@ -34,8 +37,7 @@ public class FacultyDisciplineResultTransformerImpl implements FacultyDiscipline
 		
 		result.setFacultyId(entity.getFaculty().getId());
 		result.setFacultyName(entity.getFaculty().getName());
-		
-		return result;
+	
 	}
 
 }

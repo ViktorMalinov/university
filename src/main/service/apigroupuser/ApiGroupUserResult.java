@@ -1,23 +1,14 @@
 package main.service.apigroupuser;
 
-public class ApiGroupUserResult {
+import main.service.common.BaseDto;
 
-	private Long id;
+public class ApiGroupUserResult extends BaseDto {
+
 	private Long apiGroupId;
 	private Long apiUserId;
 	
 	private String apiGroupDisplayName;
 	private String apiUserDisplayName;
-
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 
 	public Long getApiUserId() {
 		return apiUserId;

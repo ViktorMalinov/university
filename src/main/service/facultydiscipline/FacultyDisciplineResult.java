@@ -1,13 +1,15 @@
 package main.service.facultydiscipline;
 
-public class FacultyDisciplineResult {
+import main.service.common.BaseDto;
 
-	private Long id;
+public class FacultyDisciplineResult extends BaseDto {
+
 	private Long disciplineId;
 	private Long facultyId;
 	private String disciplineName;
 	private String facultyName;
 	
+
 	public Long getDisciplineId() {
 		return disciplineId;
 	}
@@ -16,14 +18,6 @@ public class FacultyDisciplineResult {
 		this.disciplineId = disciplineId;
 	}
 
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public Long getFacultyId() {
 		return facultyId;

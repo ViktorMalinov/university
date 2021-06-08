@@ -1,12 +1,7 @@
 package main.dataaccess.department.dao;
 
-import java.util.List;
+import main.dataaccess.common.BaseDao;
 
-public interface DepartmentDao {
+public interface DepartmentDao extends BaseDao <Long, Department> {
 
-	Department create(Department obj);
-	Department get(Long id);
-	void update(Department obj);
-	void delete(Long id);
-	List<Department> selectAll();
 }

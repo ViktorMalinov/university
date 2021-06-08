@@ -1,12 +1,8 @@
 package main.dataaccess.lecturer.dao;
 
-import java.util.List;
+import main.dataaccess.common.BaseDao;
 
-public interface LecturerDao {
+public interface LecturerDao extends BaseDao <Long, Lecturer> {
 
-	Lecturer create(Lecturer obj);
-	Lecturer get(Long id);
-	void update(Lecturer obj);
-	void delete(Long id);
-	List<Lecturer> selectAll();
+
 }

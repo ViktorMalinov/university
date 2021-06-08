@@ -1,21 +1,20 @@
 package main.business.lecturer.transformer;
 
+import main.business.common.BaseResultTransformerImpl;
 import main.dataaccess.lecturer.dao.Lecturer;
 import main.service.lecturer.LecturerResult;
 
-public class LecturerResultTransformerImpl implements LecturerResultTransformer {
+public class LecturerResultTransformerImpl 
+		extends BaseResultTransformerImpl<LecturerResult,Lecturer>
+		implements LecturerResultTransformer {
 
-	@Override
-	public LecturerResult transform(Lecturer entity) throws Exception {
+	public LecturerResult getNewResult() {
 		LecturerResult result = new LecturerResult();
-		
-		result.setId(entity.getId());
-		result.setCode(entity.getCode());
-		result.setName(entity.getName());
-		result.setDescription(entity.getDescription());
-		
+		return result;
+	}
+	
+	protected void setProperties(Lecturer entity, LecturerResult result) throws Exception {
 		result.setFamilyName(entity.getFamilyName());
-		
 		
 		if (entity.getDepartment() == null) {
 			throw new Exception("The object Department was NOT found!");
@@ -38,8 +37,7 @@ public class LecturerResultTransformerImpl implements LecturerResultTransformer 
 		
 		result.setApiUserId(entity.getApiUser().getId());
 		result.setApiUserDisplayName(entity.getApiUser().getDisplayName());
-		
-		return result;
+	
 	}
 
 }

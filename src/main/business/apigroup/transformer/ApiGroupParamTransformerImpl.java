@@ -1,28 +1,27 @@
 package main.business.apigroup.transformer;
 
-import main.business.apigroup.validator.ApiGroupParamValidator;
 import main.business.apigroup.validator.ApiGroupParamValidatorImpl;
+import main.business.common.BaseParamTransformerImpl;
 import main.dataaccess.apigroup.dao.ApiGroup;
 import main.service.apigroup.ApiGroupParam;
 
-public class ApiGroupParamTransformerImpl implements ApiGroupParamTransformer {
+public class ApiGroupParamTransformerImpl 
+		extends BaseParamTransformerImpl<ApiGroupParam, ApiGroup, ApiGroupParamValidatorImpl>
+		implements ApiGroupParamTransformer {
 
-	private ApiGroupParamValidator validator = new ApiGroupParamValidatorImpl();
 	
-	@Override
-	public ApiGroup transform(ApiGroupParam param) throws Exception {
+	public ApiGroupParamTransformerImpl() {
+		this.validator = new ApiGroupParamValidatorImpl();
+	}
 
-		validator.validate(param);
-		
+	@Override
+	protected ApiGroup getNewEntity() {
 		ApiGroup entity = new ApiGroup();
-		
-		entity.setId(param.getId());
-		entity.setCode(param.getCode());
-		entity.setName(param.getName());
-		entity.setDescription(param.getDescription());
-		entity.setDisplayName(param.getDisplayName());
-		
 		return entity;
+	}
+
+	protected void setProperties(ApiGroup entity, ApiGroupParam param) {
+		entity.setDisplayName(param.getDisplayName());	
 	}
 
 }

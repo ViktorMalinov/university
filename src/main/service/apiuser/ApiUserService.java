@@ -1,10 +1,7 @@
 package main.service.apiuser;
 
-public interface ApiUserService {
+import main.service.common.BaseService;
 
-	ApiUserResult create(ApiUserParam param) throws Exception;
-	ApiUserResult get(Long id) throws Exception;
-	void update(ApiUserParam param) throws Exception;
-	void delete(Long id) throws Exception;
+public interface ApiUserService extends BaseService<ApiUserParam, ApiUserResult, Long> {
 	
 }

@@ -1,13 +1,7 @@
 package main.dataaccess.apiuser.dao;
 
-import java.util.List;
+import main.dataaccess.common.BaseDao;
 
-public interface ApiUserDao {
-
-	ApiUser create(ApiUser obj);
-	ApiUser get(Long id);
-	void update(ApiUser obj);
-	void delete(Long id);
-	List<ApiUser> selectAll();
+public interface ApiUserDao extends BaseDao <Long, ApiUser> {
 
 }

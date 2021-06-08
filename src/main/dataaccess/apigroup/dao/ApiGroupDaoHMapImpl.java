@@ -1,41 +1,13 @@
 package main.dataaccess.apigroup.dao;
 
-import java.util.List;
 import main.dataaccess.apigroup.repo.ApiGroupRepoManager;
 import main.dataaccess.apigroup.repo.ApiGroupRepoManagerImpl;
+import main.dataaccess.common.BaseDaoHMapImpl;
 
-public class ApiGroupDaoHMapImpl implements ApiGroupDao {
+public class ApiGroupDaoHMapImpl extends BaseDaoHMapImpl <Long, ApiGroup, ApiGroupRepoManager> implements ApiGroupDao {
 
-	private ApiGroupRepoManager repo = new ApiGroupRepoManagerImpl();
-		
-	@Override
-	public ApiGroup create(ApiGroup entity) {
-		ApiGroup res = repo.insert(entity);
-		return res;
+	public ApiGroupDaoHMapImpl() {
+		this.repoManager = new ApiGroupRepoManagerImpl();
 	}
-
-	@Override
-	public ApiGroup get(Long id) {
-		ApiGroup entity = repo.select(id);
-		return entity;
-	}
-
-	@Override
-	public void update(ApiGroup entity) {
-		repo.update(entity);
-	}
-
-	@Override
-	public void delete(Long id) {
-		repo.delete(id);
-	}
-	
-
-	@Override
-	public List<ApiGroup> selectAll() {
-		List<ApiGroup> allData = repo.selectAll();
-		return allData;
-	}
-
 
 }

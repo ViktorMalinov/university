@@ -1,30 +1,30 @@
 package main.business.apiuser.transformer;
 
-import main.business.apiuser.validator.ApiUserParamValidator;
 import main.business.apiuser.validator.ApiUserParamValidatorImpl;
+import main.business.common.BaseParamTransformerImpl;
 import main.dataaccess.apiuser.dao.ApiUser;
 import main.service.apiuser.ApiUserParam;
 
-public class ApiUserParamTransformerImpl implements ApiUserParamTransformer {
+public class ApiUserParamTransformerImpl 
+		extends BaseParamTransformerImpl<ApiUserParam, ApiUser, ApiUserParamValidatorImpl>
+		implements ApiUserParamTransformer {
 
-	private ApiUserParamValidator validator = new ApiUserParamValidatorImpl();
+
+	public ApiUserParamTransformerImpl() {
+		this.validator = new ApiUserParamValidatorImpl();
+	}
 	
 	@Override
-	public ApiUser transform(ApiUserParam param) throws Exception {
-		validator.validate(param);		
-		
+	protected ApiUser getNewEntity() {
 		ApiUser entity = new ApiUser();
-		
-		entity.setId(param.getId());
-		entity.setCode(param.getCode());
-		entity.setDescription(param.getDescription());
+		return entity;
+	}
+
+	protected void setProperties(ApiUser entity, ApiUserParam param) {
 		entity.setDisplayName(param.getDisplayName());
 		entity.setEmail(param.getEmail());
 		entity.setPassword(param.getPassword());		
 		entity.setUsername(param.getUsername());
-		
-		
-		return entity;
 	}
 
 }
