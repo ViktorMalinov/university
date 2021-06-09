@@ -1,0 +1,20 @@
+[ {
+  "id" : 1,
+  "apiGroup" : {
+    "id" : 1,
+    "code" : 10,
+    "name" : "Group 1",
+    "description" : "First group ever... :)",
+    "displayName" : "Display Name AG"
+  },
+  "apiUser" : {
+    "id" : 1,
+    "code" : 10,
+    "name" : null,
+    "description" : "First group ever... :)",
+    "displayName" : "Group 1",
+    "email" : null,
+    "password" : null,
+    "username" : null
+  }
+} ]

@@ -24,5 +24,9 @@ public class NamePersistent extends Persistent {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public NamePersistent() {
+		
+	};
 
 }

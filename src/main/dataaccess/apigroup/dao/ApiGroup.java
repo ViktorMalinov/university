@@ -16,7 +16,9 @@ public class ApiGroup extends NamePersistent {
 		this.displayName = displayName;
 	} 
 	
-	
+	public ApiGroup() {
+		
+	};
 	
 	
 }

@@ -10,6 +10,10 @@ public class ApiGroupRepoManagerImpl extends PersistentRepoManagerImpl<ApiGroup>
 
 	private static Map<Long, ApiGroup> datasource = new HashMap<Long, ApiGroup>();
 
+	public ApiGroupRepoManagerImpl() {
+		load();
+	}
+	
 	@Override
 	public Map<Long, ApiGroup> getDataSource() {
 		return datasource;
