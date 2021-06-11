@@ -20,6 +20,13 @@ public class DepartmentRepoManagerImpl extends PersistentRepoManagerImpl<Departm
 		return datasource;
 	}
 
-	
+	@Override
+	public Class<?> getClazz() {
+		return Department.class;
+	}
+
+	public DepartmentRepoManagerImpl() {
+		load();
+	}
 
 }

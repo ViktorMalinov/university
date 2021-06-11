@@ -30,7 +30,7 @@ public class University {
 		apiGroupUserTest();
 		
 		FacultyTest();
-		//DepartmentTest();
+		DepartmentTest();
 
 		 // DisciplineTest();
 		// FacultyTest();
@@ -132,8 +132,8 @@ public class University {
 		// update
 		
 		// delete
-		apiGroupUser.delete(2L); // deleting group 
-		System.out.println("id: 2 was deleted...");
+		//apiGroupUser.delete(2L); // deleting group 
+		//System.out.println("id: 2 was deleted...");
 		
 		System.out.println();
 		System.out.println();
@@ -193,37 +193,38 @@ public class University {
 		param.setCode(10L);
 		param.setName("Group 1");
 		param.setDescription("First group ever... :)");
+		param.setFacultyId(1L);
 		Department.create(param);
 
 		param.setCode(20L);
 		param.setName("Group 2");
 		param.setDescription("Secong group ever... :)");
+		param.setFacultyId(2L);
 		Department.create(param);
 
-		param.setCode(30L);
-		param.setName("Group 3");
-		param.setDescription("Last group ever... :)");
+		//param.setCode(30L);
+		//param.setName("Group 3");
+		//param.setFacultyId(1L);
+		//param.setDescription("Last group ever... :)");
 		
 		// get
 		DepartmentResult res =  Department.get(1L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, code: %d, name: %s, description: %s, facultyID: %d %n", res.getId(), res.getCode(), res.getName(), res.getDescription(), res.getFacultyId());
 		
 		res =  Department.get(2L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, code: %d, name: %s, description: %s, facultyID: %d %n", res.getId(), res.getCode(), res.getName(), res.getDescription(), res.getFacultyId());
 		
 		// update
 		param.setId(res.getId());
 		param.setDescription(res.getDescription());
 		param.setCode(21L);
 		param.setName("Group 2a");
+		param.setFacultyId(2L);
 		Department.update(param);
 		res =  Department.get(2L);
-		System.out.printf("id: %d, code: %d, name: %s, description: %s%n", res.getId(), res.getCode(), res.getName(), res.getDescription());
+		System.out.printf("id: %d, code: %d, name: %s, description: %s, facultyID: %d %n", res.getId(), res.getCode(), res.getName(), res.getDescription(), res.getFacultyId());
 		
-		// delete
-		Department.delete(3L); // deleting group 
-		System.out.println("id: 3 was deleted...");
-		
+	
 		System.out.println();
 		System.out.println();
 	}

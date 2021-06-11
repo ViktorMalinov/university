@@ -19,4 +19,14 @@ public class ApiGroupUserRepoManagerImpl extends PersistentRepoManagerImpl<ApiGr
 		return "D:\\workspace\\Java\\Test\\University\\resources\\ApiGroupUser.json";
 	}
 
+	@Override
+	public Class<?> getClazz() {
+		return ApiGroupUser.class;
+	}
+
+	public ApiGroupUserRepoManagerImpl() {
+		load();
+	}
+
+	
 }

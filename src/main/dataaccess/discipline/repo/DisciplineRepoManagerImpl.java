@@ -20,5 +20,12 @@ public class DisciplineRepoManagerImpl extends PersistentRepoManagerImpl<Discipl
 		return "D:\\workspace\\Java\\Test\\University\\resources\\Discipline.json";
 	}
 	
-	
+	@Override
+	public Class<?> getClazz() {
+		return Discipline.class;
+	}
+
+	public DisciplineRepoManagerImpl() {
+		load();
+	}
 }

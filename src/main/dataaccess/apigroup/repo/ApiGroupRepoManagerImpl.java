@@ -10,9 +10,12 @@ public class ApiGroupRepoManagerImpl extends PersistentRepoManagerImpl<ApiGroup>
 
 	private static Map<Long, ApiGroup> datasource = new HashMap<Long, ApiGroup>();
 
+	
 	public ApiGroupRepoManagerImpl() {
 		load();
 	}
+	
+	
 	
 	@Override
 	public Map<Long, ApiGroup> getDataSource() {
@@ -22,5 +25,13 @@ public class ApiGroupRepoManagerImpl extends PersistentRepoManagerImpl<ApiGroup>
 	public String getPath() {
 		return "D:\\workspace\\Java\\Test\\University\\resources\\ApiGroup.json";
 	}
+	
+
+	@Override
+	public Class<?> getClazz() {
+		return ApiGroup.class;
+	}
+	
+	
 
 }

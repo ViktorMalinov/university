@@ -21,4 +21,12 @@ public class SpecialityRepoManagerImpl extends PersistentRepoManagerImpl<Special
 	}
 	
 
+	@Override
+	public Class<?> getClazz() {
+		return Speciality.class;
+	}
+
+	public SpecialityRepoManagerImpl() {
+		load();
+	}
 }

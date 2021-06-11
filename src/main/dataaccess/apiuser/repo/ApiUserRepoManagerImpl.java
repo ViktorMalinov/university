@@ -20,4 +20,13 @@ public class ApiUserRepoManagerImpl extends PersistentRepoManagerImpl<ApiUser> i
 		return "D:\\workspace\\Java\\Test\\University\\resources\\ApiUser.json";
 	}
 	
+	@Override
+	public Class<?> getClazz() {
+		return ApiUser.class;
+	}
+
+	public ApiUserRepoManagerImpl() {
+		load();
+	}
+
 }

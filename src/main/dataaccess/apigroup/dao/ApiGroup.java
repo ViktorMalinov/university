@@ -2,6 +2,7 @@ package main.dataaccess.apigroup.dao;
 
 import main.dataaccess.common.NamePersistent;
 
+
 public class ApiGroup extends NamePersistent {
 
 	
